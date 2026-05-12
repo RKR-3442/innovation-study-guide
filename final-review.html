@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#667eea">
+    <title>Final Review - Innovation Study Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        :root { --primary-color: #2c3e50; --secondary-color: #3498db; --memorize-color: #e74c3c; --understand-color: #9b59b6; --success-color: #27ae60; --warning-color: #f39c12; --light-bg: #ecf0f1; --dark-text: #2c3e50; --white: #ffffff; --shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark-text); background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); min-height: 100vh; padding: 15px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; animation: fadeIn 0.4s ease forwards; }
+        header { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: var(--white); padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
+        header p { font-size: 1.1em; opacity: 0.95; }
+        nav { background: var(--light-bg); padding: 25px 30px; border-bottom: 3px solid var(--success-color); position: sticky; top: 0; z-index: 100; }
+        .nav-toggle { display: none; background: var(--success-color); color: var(--white); border: none; padding: 12px 20px; border-radius: 8px; font-size: 1em; font-weight: 600; cursor: pointer; width: 100%; text-align: center; margin-bottom: 15px; }
+        nav h2 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.6em; text-align: center; }
+        .quick-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .nav-btn { background: var(--white); padding: 12px; border-radius: 10px; border-left: 4px solid var(--secondary-color); transition: transform 0.2s ease; text-align: center; }
+        .nav-btn:hover { transform: translateY(-3px); }
+        .nav-btn a { color: var(--dark-text); text-decoration: none; font-weight: 600; display: block; }
+        .chapter-num { color: var(--secondary-color); font-size: 0.8em; display: block; margin-bottom: 4px; }
+        main { padding: 30px; }
+        .review-section { margin-bottom: 35px; padding: 25px; background: var(--white); border-radius: 12px; box-shadow: var(--shadow); border-top: 4px solid var(--success-color); }
+        .review-section h2 { color: var(--primary-color); font-size: 1.8em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--light-bg); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 15px 0; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+        .comparison-table th { background: var(--primary-color); color: var(--white); padding: 12px; text-align: left; }
+        .comparison-table td { padding: 10px 12px; border-bottom: 1px solid var(--light-bg); font-size: 0.95em; }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        strong { color: var(--primary-color); font-weight: 600; }
+        ul, ol { margin-left: 25px; margin-top: 10px; }
+        li { margin: 8px 0; }
+        .mnemonic-card { background: linear-gradient(135deg, #fff9e6, #fff3cc); border: 2px solid var(--warning-color); border-radius: 10px; padding: 15px 20px; margin: 10px 0; }
+        .mnemonic-text { font-size: 1.3em; font-weight: 700; color: var(--memorize-color); }
+        .mnemonic-expand { font-size: 0.9em; color: var(--dark-text); margin-top: 8px; }
+        .concept-card { background: linear-gradient(135deg, #f0f4ff, #e8edff); border-left: 4px solid var(--understand-color); border-radius: 8px; padding: 15px 20px; margin: 10px 0; }
+        .concept-card strong { color: var(--understand-color); }
+        .connection-card { background: linear-gradient(135deg, #f5f0ff, #e6d9ff); border-left: 4px solid #9b59b6; border-radius: 8px; padding: 15px 20px; margin: 10px 0; }
+        .example-card { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 4px solid var(--success-color); border-radius: 8px; padding: 15px 20px; margin: 10px 0; }
+        .exam-formula { background: linear-gradient(135deg, #fff5f5, #ffe8e8); border: 3px solid var(--memorize-color); border-radius: 10px; padding: 20px; margin: 20px 0; }
+        .exam-formula h3 { color: var(--memorize-color); margin-bottom: 15px; font-size: 1.25em; }
+        .formula-step { background: white; padding: 10px 15px; margin: 8px 0; border-radius: 6px; border-left: 3px solid var(--memorize-color); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--success-color); color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; opacity: 0; pointer-events: none; z-index: 1000; transition: all 0.3s ease; }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px; }
+        @media (max-width: 768px) {
+            body { padding: 5px; font-size: 14px; }
+            header { padding: 20px 15px; }
+            header h1 { font-size: 1.5em; }
+            nav { padding: 15px; }
+            .nav-toggle { display: block; }
+            .quick-nav { max-height: 0; overflow: hidden; opacity: 0; grid-template-columns: 1fr; }
+            .quick-nav.show { max-height: 2000px; opacity: 1; }
+            main { padding: 15px; }
+            .review-section { padding: 15px; }
+            .comparison-table { font-size: 0.85em; display: block; overflow-x: auto; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🎯 Final Review</h1>
+        <p>All Mnemonics, Key Concepts &amp; Exam Strategy</p>
+        <p style="margin-top:10px;font-size:0.9em;opacity:0.85;">Your complete last-minute revision guide</p>
+    </header>
+    <nav id="toc">
+        <h2>📑 Quick Navigation</h2>
+        <button class="nav-toggle" id="navToggle" onclick="toggleNav()">Show Chapters</button>
+        <div class="quick-nav" id="quickNav">
+            <div class="nav-btn" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);"><span class="chapter-num" style="color:rgba(255,255,255,0.85);">🏠 HOME</span><a href="index.html" style="color:white;">Dashboard</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 3</span><a href="chapter-3.html">Innovation Theories</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 7</span><a href="chapter-7.html">IP Rights</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 8</span><a href="chapter-8.html">Innovation Strategy</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 9</span><a href="chapter-9.html">Tech Entrepreneurs</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 10</span><a href="chapter-10.html">Funding Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 11</span><a href="chapter-11.html">Managing Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 12</span><a href="chapter-12.html">Innovation Offshoring</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 13</span><a href="chapter-13.html">Green Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 14</span><a href="chapter-14.html">UAE Innovation</a></div>
+            <div class="nav-btn" style="background:linear-gradient(135deg,#e74c3c 0%,#c0392b 100%);"><span class="chapter-num" style="color:rgba(255,255,255,0.85);">✍️ PRACTICE</span><a href="exam-practice.html" style="color:white;">Exam Practice</a></div>
+            <div class="nav-btn" style="border-left-color:#27ae60;background:linear-gradient(135deg,#e8f8f5 0%,#d5f5e3 100%);"><span class="chapter-num" style="color:#27ae60;">📍 HERE</span><a href="final-review.html">Final Review</a></div>
+        </div>
+    </nav>
+    <main>
+
+        <!-- ALL MNEMONICS -->
+        <section class="review-section">
+            <h2>⭐ All Mnemonics — Memorize These</h2>
+            <div class="grid-2">
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">SPAD (Ch3)</div>
+                    <div class="mnemonic-expand">S-Curve · Punctuated Equilibrium · Absorptive Capacity · Dominant Design</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">FTS (Ch3)</div>
+                    <div class="mnemonic-expand">Dominant Design phases: Fluid → Transitional → Specific</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">RAA (Ch3)</div>
+                    <div class="mnemonic-expand">Absorptive Capacity: Recognize · Assimilate · Apply</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">PTCD (Ch7)</div>
+                    <div class="mnemonic-expand">IPR Types: Patent (20yr) · Trade Secret (unlimited) · Copyright (70yr) · Design (15yr)</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">NUI (Ch7)</div>
+                    <div class="mnemonic-expand">Patent criteria: Novelty · Useful · Inventive step</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">VGRPC (Ch8)</div>
+                    <div class="mnemonic-expand">Innovation Strategy: Vision · Goals · Resources · Processes · Culture</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">VRCAP (Ch9)</div>
+                    <div class="mnemonic-expand">Entrepreneur traits: Vision · Risk · Creativity · Adaptability · Persistence</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">Porter Diamond (Ch9)</div>
+                    <div class="mnemonic-expand">Factor Conditions · Demand Conditions · Related Industries · Firm Strategy &amp; Rivalry</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">POLC (Ch11)</div>
+                    <div class="mnemonic-expand">Management: Planning · Organizing · Leading · Controlling</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">C-S-S-C (Ch11)</div>
+                    <div class="mnemonic-expand">Portfolio: Core · Stretch · Speculative · Collaborative</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">CAST (Ch12)</div>
+                    <div class="mnemonic-expand">Offshoring benefits: Cost · Access · Speed · Talent</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">T-M-R (Ch13)</div>
+                    <div class="mnemonic-expand">Green innovation drivers: Technology · Market · Regulation</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">SAVED G (Ch14)</div>
+                    <div class="mnemonic-expand">UAE policies: Start Hub · Accelerators · Venture Capital · Education · Digital · Government customer</div>
+                </div>
+                <div class="mnemonic-card">
+                    <div class="mnemonic-text">E-C-S (Ch14)</div>
+                    <div class="mnemonic-expand">UAE strategy pillars: Ecosystem · Culture · Sectors</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEY DURATIONS TABLE -->
+        <section class="review-section">
+            <h2>📅 IPR Duration Quick Reference (Ch7)</h2>
+            <table class="comparison-table">
+                <tr><th>IPR Type</th><th>Duration</th><th>Registration?</th><th>Key Example</th></tr>
+                <tr><td><strong>Patent</strong></td><td>20 years from filing</td><td>Must apply + pass NUI exam</td><td>Dyson vacuum, pharma drugs</td></tr>
+                <tr><td><strong>Trade Secret</strong></td><td>Unlimited if kept secret</td><td>No registration — just keep secret</td><td>Coca-Cola formula</td></tr>
+                <tr><td><strong>Copyright</strong></td><td>70 years after death</td><td>AUTOMATIC — no registration</td><td>Books, music, software code</td></tr>
+                <tr><td><strong>Design Right</strong></td><td>15 years</td><td>Must register</td><td>iPhone shape, Audi body</td></tr>
+                <tr><td><strong>Trademark</strong></td><td>Indefinitely renewable</td><td>Must register (10yr periods)</td><td>Apple logo, Nike swoosh</td></tr>
+            </table>
+        </section>
+
+        <!-- KEY NUMBERS -->
+        <section class="review-section">
+            <h2>🔢 Key Numbers to Remember</h2>
+            <div class="grid-2">
+                <div class="concept-card"><strong>UAE Vision 2021:</strong> Non-oil GDP = 80% · Top 10 innovation ranking · 3× R&amp;D spend · 40% tech-skilled workforce · Top 20 knowledge economy</div>
+                <div class="concept-card"><strong>UAE Innovation Funds:</strong> AED 2B MBR Innovation Fund + AED 2B Khalifa Fund = AED 4B total</div>
+                <div class="concept-card"><strong>70-20-10 Rule (Ch11):</strong> 70% Core · 20% Adjacent · 10% Transformational innovation budget</div>
+                <div class="concept-card"><strong>IBM Patents (Ch7):</strong> ~9,000 patents/year · $1B+ licensing revenue annually · 28+ consecutive years as top US patent holder</div>
+                <div class="concept-card"><strong>Kondratiev Waves (Ch3):</strong> ~50 year long economic cycles · Wave 6 emerging = AI + biotech + green energy</div>
+                <div class="concept-card"><strong>Stage-Gate Gates (Ch11):</strong> 3 key gates = Idea Screen → Business Case Gate → Development Gate</div>
+            </div>
+        </section>
+
+        <!-- 9 KEY CONCEPTS -->
+        <section class="review-section">
+            <h2>🧠 9 Key Concepts to Understand</h2>
+            <div class="concept-card"><strong>1. S-Curve phases:</strong> Emergence (slow, uncertain) → Growth (rapid, standardizing) → Maturity (saturated, incremental). Pattern = slow-fast-slow.</div>
+            <div class="concept-card"><strong>2. Porter Hypothesis innovation offset:</strong> Strict environmental regulation → forces innovation → offsets compliance cost → competitive advantage. Holds when regulation is outcome-based, not prescriptive.</div>
+            <div class="concept-card"><strong>3. Stage-Gate kill criteria:</strong> Gates must have power to KILL projects (not just evaluate). Key: early killing (cheap) vs late killing (expensive). Gate = decision point with predefined go/kill/hold criteria.</div>
+            <div class="concept-card"><strong>4. Triple Helix overlaps:</strong> University (knowledge) + Industry (commercialization) + Government (policy) — innovation strongest when ALL THREE overlap and cooperate. UAE example: Khalifa U + Mubadala + UAE AI Strategy.</div>
+            <div class="concept-card"><strong>5. Modularization enables offshoring:</strong> Breaking product into modules with clear interfaces allows geographic separation of activities. Each location specializes in what it does best. Apple iPod = design USA, components Asia, assembly China.</div>
+            <div class="concept-card"><strong>6. Valley of Death:</strong> Funding gap between seed (idea proven) and Series A (revenue proven). Most startups die here. Bridge: convertible notes, angel follow-on, government grants.</div>
+            <div class="concept-card"><strong>7. Porter Diamond — 4 factors for clusters:</strong> Factor Conditions + Demand Conditions + Related &amp; Supporting Industries + Firm Strategy/Rivalry. ALL 4 must be strong for cluster to thrive.</div>
+            <div class="concept-card"><strong>8. Absorptive Capacity (RAA):</strong> You need PRIOR knowledge to recognize and absorb NEW knowledge. "You can't see what you don't already partly know." Firms invest in R&amp;D even when licensing technology — builds capacity to absorb external knowledge.</div>
+            <div class="concept-card"><strong>9. 70-20-10 portfolio logic:</strong> Short-term survival (Core) + medium-term growth (Adjacent) + long-term transformation (Transformational). Without 10% transformational, firm will be disrupted. Without 70% core, firm can't fund R&amp;D.</div>
+        </section>
+
+        <!-- CROSS-CHAPTER CONNECTIONS -->
+        <section class="review-section">
+            <h2>🔗 Cross-Chapter Connections</h2>
+            <div class="connection-card"><strong>UAE (Ch14) ↔ Clusters (Ch9):</strong> Dubai Internet City + Silicon Oasis + Hub71 = UAE's deliberate Porter Diamond implementation. Triple Helix applied nationally.</div>
+            <div class="connection-card"><strong>IPR (Ch7) ↔ Funding (Ch10):</strong> Patents increase startup valuation → easier to raise VC funding. VCs value IP portfolio as competitive moat protecting investment.</div>
+            <div class="connection-card"><strong>Green Innovation (Ch13) ↔ UAE (Ch14):</strong> UAE Green Economy strategy + COP28 Abu Dhabi + Masdar = Porter Hypothesis in action — UAE using regulation to build green innovation competitive advantage.</div>
+            <div class="connection-card"><strong>Innovation Strategy (Ch8) ↔ Managing Innovation (Ch11):</strong> VGRPC strategy → Stage-Gate + Funnel = operational implementation. Strategy sets direction, management processes execute it.</div>
+            <div class="connection-card"><strong>S-Curve (Ch3) ↔ IPR (Ch7):</strong> Patents most valuable in Growth phase (before dominant design). After dominant design: patents on features, not core technology. After maturity: trade secrets and process innovation.</div>
+            <div class="connection-card"><strong>Absorptive Capacity (Ch3) ↔ Offshoring (Ch12):</strong> Low absorptive capacity = danger in offshoring. If you offshore too much, you lose the knowledge base needed to recognize what partners are doing or when they are cutting corners.</div>
+        </section>
+
+        <!-- EXAMPLE BANK -->
+        <section class="review-section">
+            <h2>📝 Example Bank — Use These in Exams</h2>
+            <div class="example-card"><strong>Apple:</strong> Ch8 — innovation strategy (premium design + ecosystem). Ch12 — iPod global value chain (design USA, components Asia, assembly China). Ch3 — iPhone established dominant design in smartphones (FTS).</div>
+            <div class="example-card"><strong>IBM:</strong> Ch7 — largest patent portfolio (~9,000/year), $1B+ licensing revenue. Patent as revenue strategy, not just protection.</div>
+            <div class="example-card"><strong>UAE:</strong> Ch14 — SAVED G policies, E-C-S framework, Vision 2021 numbers. Ch9 — Dubai Internet City, Hub71, Silicon Oasis as cluster building. Ch13 — Masdar, IRENA, COP28, green economy. Ch10 — AED 2B MBR Fund + AED 2B Khalifa Fund.</div>
+            <div class="example-card"><strong>Kodak:</strong> Ch3 — Punctuated Equilibrium. Invented digital camera (1975), filed bankruptcy (2012). Equilibrium (film) → Punctuation (digital) → Failed transition. Lessons: monitor next S-curve, build absorptive capacity, reframe identity.</div>
+            <div class="example-card"><strong>Toyota (Prius):</strong> Ch13 — Porter Hypothesis. Japan's strict fuel efficiency regulation → forced hybrid development → 15-year global competitive advantage in hybrid technology.</div>
+            <div class="example-card"><strong>Silicon Valley:</strong> Ch9 — Porter's Diamond in action. Factor Conditions (Stanford talent + VC). Demand Conditions (tech-savvy US consumers + defense). Related Industries (startup ecosystem). Rivalry (Google/Apple/Facebook/Amazon all competing).</div>
+        </section>
+
+        <!-- EXAM STRATEGY FORMULA -->
+        <section class="review-section">
+            <h2>📊 Exam Strategy Formula</h2>
+            <div class="exam-formula">
+                <h3>🎯 For Every 10+ Mark Question</h3>
+                <div class="formula-step"><strong>Introduction (1-2 marks):</strong> Define the key concept being asked about. One clear sentence definition.</div>
+                <div class="formula-step"><strong>Framework/Theory Explanation (3-4 marks):</strong> Explain the framework with all components (use mnemonics). Show you know the structure.</div>
+                <div class="formula-step"><strong>Application with Examples (3-4 marks):</strong> Apply framework to the question scenario. Use global example (Apple/IBM/Kodak) + UAE example where possible.</div>
+                <div class="formula-step"><strong>Critical Analysis (2-3 marks for 12+ mark questions):</strong> What are the limitations? When does it not work? Counter-argument? Show depth of thinking.</div>
+                <div class="formula-step"><strong>UAE Application (1-2 marks):</strong> Always try to connect to UAE context — UAE National Innovation Strategy, Vision 2021, specific UAE companies or policies.</div>
+                <div class="formula-step"><strong>Conclusion (1 mark):</strong> One clear sentence summarizing the main argument and its significance.</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#fff9e6,#fff3cc);border:2px solid var(--warning-color);border-radius:10px;padding:20px;margin:20px 0;">
+                <h3 style="color:var(--warning-color);margin-bottom:15px;">⚡ Last-Minute Reminders</h3>
+                <ul>
+                    <li><strong>Copyright = AUTOMATIC.</strong> No registration. This is always tested.</li>
+                    <li><strong>Patent = 20 years. Trade Secret = unlimited.</strong> Durations always tested.</li>
+                    <li><strong>S-curve = slow-fast-slow.</strong> Always name all 3 phases.</li>
+                    <li><strong>Porter Hypothesis = regulation CAN drive innovation</strong> (not always does).</li>
+                    <li><strong>Stage-Gate gates must have power to KILL</strong> — not just review.</li>
+                    <li><strong>UAE numbers:</strong> Top 10 global / 3× R&amp;D / 40% tech workforce / AED 4B funds (2+2).</li>
+                    <li><strong>Absorptive Capacity:</strong> Prior knowledge needed to absorb new knowledge (RAA).</li>
+                    <li><strong>Dominant Design (FTS):</strong> Once established, competition shifts from product to process innovation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin:30px 0;gap:15px;flex-wrap:wrap;">
+            <a href="exam-practice.html" style="background:#3498db;color:white;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;">← Exam Practice</a>
+            <a href="index.html" style="background:#27ae60;color:white;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;">🏠 Back to Dashboard</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>📚 Innovation Course — Final Review</strong></p>
+        <p>All Mnemonics · All Concepts · All Connections</p>
+        <p style="margin-top:10px;font-size:0.9em;">You've got this! 🎯 Good Luck! 🚀</p>
+    </footer>
+</div>
+<a href="#" class="back-to-top" id="backToTop">↑</a>
+<script>
+function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
+document.addEventListener('DOMContentLoaded',function(){
+    const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
+    if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}
+    const backToTop=document.getElementById('backToTop');
+    if(backToTop){window.addEventListener('scroll',()=>{if(window.pageYOffset>300)backToTop.classList.add('visible');else backToTop.classList.remove('visible');});}
+    let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(window.innerWidth>768&&quickNav&&navToggle){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else if(navToggle){navToggle.style.display='block';}},250);});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#667eea">
+    <title>Exam Practice - Innovation Study Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        :root { --primary-color: #2c3e50; --secondary-color: #3498db; --memorize-color: #e74c3c; --understand-color: #9b59b6; --success-color: #27ae60; --warning-color: #f39c12; --light-bg: #ecf0f1; --dark-text: #2c3e50; --white: #ffffff; --shadow: 0 2px 10px rgba(0,0,0,0.1); --question-color: #ff6b35; --answer-color: #2ecc71; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark-text); background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); min-height: 100vh; padding: 15px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .container { max-width: 1200px; margin: 0 auto; background: var(--white); border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; animation: fadeIn 0.4s ease forwards; }
+        header { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%); color: var(--white); padding: 40px 30px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
+        header p { font-size: 1.1em; opacity: 0.95; }
+        nav { background: var(--light-bg); padding: 25px 30px; border-bottom: 3px solid #e74c3c; position: sticky; top: 0; z-index: 100; }
+        .nav-toggle { display: none; background: #e74c3c; color: var(--white); border: none; padding: 12px 20px; border-radius: 8px; font-size: 1em; font-weight: 600; cursor: pointer; width: 100%; text-align: center; margin-bottom: 15px; }
+        nav h2 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.6em; text-align: center; }
+        .quick-nav { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .nav-btn { background: var(--white); padding: 12px; border-radius: 10px; border-left: 4px solid var(--secondary-color); transition: transform 0.2s ease; text-align: center; }
+        .nav-btn:hover { transform: translateY(-3px); }
+        .nav-btn a { color: var(--dark-text); text-decoration: none; font-weight: 600; display: block; }
+        .chapter-num { color: var(--secondary-color); font-size: 0.8em; display: block; margin-bottom: 4px; }
+        main { padding: 30px; }
+        .utility-bar { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+        .util-btn { background: linear-gradient(135deg, var(--primary-color), #34495e); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.95em; transition: all 0.3s ease; }
+        .util-btn:hover { transform: translateY(-2px); }
+        .chapter-section { margin-bottom: 40px; }
+        .chapter-section-header { background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%); color: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 1.25em; font-weight: 700; }
+        .chapter-section-header .ch-sub { font-size: 0.8em; opacity: 0.85; font-weight: 400; display: block; margin-top: 4px; }
+        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 20px 0; overflow: hidden; }
+        .question-header { background: var(--question-color); color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
+        .question-header:hover { background: #ff5722; }
+        .question-header::before { content: "❓ "; }
+        .toggle-icon { transition: transform 0.3s ease; }
+        .question-header.active .toggle-icon { transform: rotate(180deg); }
+        .question-content { max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); padding: 0 20px; }
+        .question-content.show { max-height: 3000px; padding: 20px; }
+        .question-text { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--question-color); font-weight: 500; }
+        .marks-badge { background: var(--primary-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 700; margin-left: 10px; }
+        .answer-toggle { background: var(--answer-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin: 10px 0; transition: all 0.3s ease; width: 100%; text-align: center; }
+        .answer-toggle:hover { background: #27ae60; }
+        .model-answer { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 5px solid var(--answer-color); padding: 0; border-radius: 8px; max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s cubic-bezier(0.4,0,0.2,1), margin 0.38s cubic-bezier(0.4,0,0.2,1); }
+        .model-answer.show { max-height: 4000px; padding: 20px; margin-top: 15px; }
+        .model-answer h4 { color: var(--answer-color); margin-bottom: 10px; }
+        .model-answer h4::before { content: "✓ "; }
+        strong { color: var(--primary-color); font-weight: 600; }
+        ul, ol { margin-left: 25px; margin-top: 10px; }
+        li { margin: 8px 0; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: #e74c3c; color: var(--white); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; opacity: 0; pointer-events: none; z-index: 1000; transition: all 0.3s ease; }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 15px 0; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); }
+        .comparison-table th { background: var(--primary-color); color: var(--white); padding: 12px; text-align: left; }
+        .comparison-table td { padding: 10px 12px; border-bottom: 1px solid var(--light-bg); }
+        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        @media (max-width: 768px) {
+            body { padding: 5px; font-size: 14px; }
+            header { padding: 20px 15px; }
+            header h1 { font-size: 1.5em; }
+            nav { padding: 15px; }
+            .nav-toggle { display: block; }
+            .quick-nav { max-height: 0; overflow: hidden; opacity: 0; grid-template-columns: 1fr; }
+            .quick-nav.show { max-height: 2000px; opacity: 1; }
+            main { padding: 15px; }
+            .comparison-table { font-size: 0.85em; display: block; overflow-x: auto; }
+            .utility-bar { flex-direction: column; }
+            .util-btn { width: 100%; }
+            .model-answer.show { max-height: 70vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>✍️ Exam Practice</h1>
+        <p>All Questions — All Chapters</p>
+        <p style="margin-top:10px;font-size:0.9em;opacity:0.85;">Expand questions, attempt them, then reveal model answers</p>
+    </header>
+    <nav id="toc">
+        <h2>📑 Quick Navigation</h2>
+        <button class="nav-toggle" id="navToggle" onclick="toggleNav()">Show Chapters</button>
+        <div class="quick-nav" id="quickNav">
+            <div class="nav-btn" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);"><span class="chapter-num" style="color:rgba(255,255,255,0.85);">🏠 HOME</span><a href="index.html" style="color:white;">Dashboard</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 3</span><a href="chapter-3.html">Innovation Theories</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 7</span><a href="chapter-7.html">IP Rights</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 8</span><a href="chapter-8.html">Innovation Strategy</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 9</span><a href="chapter-9.html">Tech Entrepreneurs</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 10</span><a href="chapter-10.html">Funding Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 11</span><a href="chapter-11.html">Managing Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 12</span><a href="chapter-12.html">Innovation Offshoring</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 13</span><a href="chapter-13.html">Green Innovation</a></div>
+            <div class="nav-btn"><span class="chapter-num">Chapter 14</span><a href="chapter-14.html">UAE Innovation</a></div>
+            <div class="nav-btn" style="border-left-color:#e74c3c;background:linear-gradient(135deg,#fff5f5 0%,#ffe6e6 100%);"><span class="chapter-num" style="color:#e74c3c;">📍 HERE</span><a href="exam-practice.html">Exam Practice</a></div>
+            <div class="nav-btn" style="background:linear-gradient(135deg,#27ae60 0%,#229954 100%);"><span class="chapter-num" style="color:rgba(255,255,255,0.85);">🎯 REVIEW</span><a href="final-review.html" style="color:white;">Final Review</a></div>
+        </div>
+    </nav>
+    <main>
+        <div class="utility-bar">
+            <button class="util-btn" onclick="expandAllQuestions()">📂 Expand All Questions</button>
+            <button class="util-btn" onclick="collapseAllQuestions()">📁 Collapse All</button>
+        </div>
+
+        <!-- Chapter 3 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">📈 Chapter 3 Questions<span class="ch-sub">Innovation Theories: S-Curve, Punctuated Equilibrium, Dominant Design, Absorptive Capacity</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q1 — S-Curve analysis of EV technology <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">The electric vehicle (EV) market is currently experiencing rapid growth globally. Using the S-curve of technological development, analyze the current stage of EV technology and predict the strategic challenges that EV manufacturers will face as the technology matures. Use relevant examples to support your analysis.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (15 marks)</h4>
+                        <p><strong>[Phase 1 — Emergence]</strong> Slow growth, high cost, few adopters. EVs in 2000s: Tesla Roadster $100K+, limited range, no charging infra.</p>
+                        <p><strong>[Phase 2 — Growth]</strong> Rapid adoption, cost falls, standards emerge. EV sales 2M (2018) → 14M (2023). Battery cost $1,200/kWh (2010) → $130/kWh (2023). Major OEMs committing to full EV.</p>
+                        <p><strong>[Phase 3 — Maturity prediction]</strong> Saturation, incremental improvements, consolidation. 500+ EV startups → 5-10 survivors.</p>
+                        <p><strong>[Current Stage]</strong> Growth phase evidence: 600% sales growth, dominant design emerging (BEV over hydrogen), incumbents transitioning.</p>
+                        <p><strong>[Strategic Challenges at Maturity]</strong> (1) Dominant design competition — wrong battery/software architecture = stranded. (2) Process innovation shift — Chinese manufacturers optimizing costs. (3) Next punctuation risk — solid-state batteries. (4) Consolidation — most startups will fail.</p>
+                        <p><strong>[Recommendations]</strong> Invest in next S-curve (solid-state). Build absorptive capacity via R&amp;D partnerships. Lock in ecosystem (OTA updates, energy management).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q2 — Kodak failure and Punctuated Equilibrium <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">In 1975, Kodak engineer Steve Sasson invented the digital camera. Yet by 2012, Kodak had filed for bankruptcy. Using the theory of Punctuated Equilibrium, analyze why Kodak failed to survive the transition from film to digital photography. What lessons does this case provide for today's technology companies?</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (12 marks)</h4>
+                        <p><strong>[Theory]</strong> Punctuated Equilibrium = long stability periods (equilibrium) punctuated by radical discontinuities. After disruption, new equilibrium makes previous competencies obsolete.</p>
+                        <p><strong>[Kodak Equilibrium Phase]</strong> 100-year dominance: 90% US film market, $16B revenue peak (1996). Core competence: chemical film, retail distribution, photolab network. Incremental innovation only.</p>
+                        <p><strong>[The Punctuation]</strong> Digital photography = competence-destroying discontinuity. Kodak invented digital camera (1975) but shelved it. Digital cameras improved exponentially (Moore's Law). Camera phone + Instagram = complete transition. Kodak's chemical knowledge, film manufacturing, photolab network all became worthless.</p>
+                        <p><strong>[Why Kodak Failed]</strong> (1) Innovator's dilemma — digital cannibalized film profits. (2) Low digital absorptive capacity — chemical expertise didn't transfer to software/digital. (3) Cognitive lock-in — Kodak saw itself as "film company" not "imaging company".</p>
+                        <p><strong>[Lessons]</strong> Monitor next S-curve before current matures. Build absorptive capacity in emerging tech early. Reframe identity around customer need, not technology medium.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q3 — iPhone and Dominant Design (FTS) <span><span class="marks-badge">10 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">When Apple launched the iPhone in 2007, the mobile phone market offered consumers many different designs. Using the Dominant Design framework (F-T-S), analyze how the iPhone established dominant design in the smartphone industry and the implications for firms that failed to adopt it.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (10 marks)</h4>
+                        <p><strong>[FTS Framework]</strong> Fluid (many competing designs) → Transitional (convergence) → Specific (dominant design locks in). Once locked, competition shifts from product to process innovation.</p>
+                        <p><strong>[Fluid Phase pre-2007]</strong> Nokia numeric keypad, BlackBerry QWERTY, Motorola flip, Windows Mobile stylus — no standard.</p>
+                        <p><strong>[Transitional 2007-2010]</strong> iPhone: full touchscreen + App Store. Google Android adopted same paradigm immediately. Samsung, LG, HTC transition. BlackBerry/Nokia cling to keyboards — fatal.</p>
+                        <p><strong>[Specific 2010+]</strong> Full-touchscreen slab = universal standard. Competition on camera, processor, price. Physical keyboard smartphones eliminated from mainstream.</p>
+                        <p><strong>[Implications]</strong> Nokia + BlackBerry late adoption = market share collapse. Apple locked in ecosystem + developer loyalty before competitors could respond.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 7 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">⚖️ Chapter 7 Questions<span class="ch-sub">Intellectual Property Rights: Patents, Trade Secrets, Copyright, Design Rights</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q4 — Explain 4 types of IPR and recommend protection strategy <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">A technology startup has developed a new AI-powered medical diagnostic device. The device includes a novel algorithm, a distinctive physical design, a unique brand name, and software code written by the founders. Identify and explain the most appropriate IPR protection for each element. Justify your recommendations using relevant criteria.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (15 marks)</h4>
+                        <p><strong>[Overview]</strong> IPR types = PTCD: Patent, Trade Secret, Copyright, Design Rights.</p>
+                        <p><strong>[Algorithm → Patent]</strong> Apply NUI test: Novelty (not in prior art), Useful (medical application ✓), Inventive step (non-obvious). 20-year monopoly. Patent preferred over trade secret for medical sector (regulatory disclosure required anyway).</p>
+                        <p><strong>[Physical Design → Design Right]</strong> Aesthetic appearance of device. Duration: 15 years. Requirement: new and individual character. Example: Apple design rights against Samsung iPad copy (EU 2012).</p>
+                        <p><strong>[Brand Name → Trademark]</strong> Brand identifiers. Indefinitely renewable (10-year periods). Must register in each jurisdiction. Protects from consumer confusion.</p>
+                        <p><strong>[Software Code → Copyright]</strong> AUTOMATIC — no registration needed. 70 years after author's death. Idea-expression dichotomy: protects specific code (expression) NOT the algorithm idea. Patent still needed for algorithm concept.</p>
+                        <p><strong>[Conclusion]</strong> Layered IPR strategy: Patent + Design Right + Trademark + Copyright maximizes protection across all assets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q5 — IPR trade-off: innovation incentive vs knowledge diffusion <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">"Intellectual Property Rights are a necessary evil — they incentivize innovation but restrict the free flow of knowledge that also drives innovation." Critically analyze this statement using examples from the pharmaceutical industry and the technology sector.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (12 marks)</h4>
+                        <p><strong>[Core Trade-Off]</strong> Strong IPR = more incentive to invest in R&amp;D BUT less knowledge access for follow-on innovation. Weak IPR = more knowledge diffusion BUT less R&amp;D investment incentive.</p>
+                        <p><strong>[FOR strong IPR — Incentive View]</strong> Pharma: developing new drug costs $1-2B, 10-15 years. Without patent protection, generics copy immediately at $50M. No company invests $1B+ without monopoly protection. IBM: $6B R&amp;D/year → 9,000 patents → $1B+ licensing revenue → funds future R&amp;D.</p>
+                        <p><strong>[AGAINST strong IPR — Diffusion View]</strong> Pharma: HIV drugs at $15,000/yr blocked Sub-Saharan Africa access → millions died. Doha Declaration 2001 = compulsory licenses allowed for public health emergencies. Tech: "Patent thicket" problem — 300+ patents in Apple vs Samsung. Small startups can't navigate, reducing innovation dynamism. Open source (Linux, Wikipedia) proves innovation flourishes without IPR.</p>
+                        <p><strong>[Optimal Balance]</strong> Duration and breadth calibrated to actual R&amp;D costs per sector. Software patents (20 years) likely too long given rapid tech change. Industry-specific reform needed.</p>
+                        <p><strong>[Conclusion]</strong> IPR is a policy instrument, not inherently good/evil. Current system overprotects (software, pharma duration) and underprotects (traditional knowledge). Reform requires industry-specific analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 8 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">🎯 Chapter 8 Questions<span class="ch-sub">Innovation Strategy: VGRPC Framework, Maturity Levels, ISO 56000</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q6 — VGRPC framework and strategic alignment for UAE tech company <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">A UAE technology company is struggling to move from ad-hoc innovation to systematic innovation. Using the VGRPC framework, develop a comprehensive innovation strategy. Explain how each component contributes to innovation success and identify maturity level improvements required.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (12 marks)</h4>
+                        <p><strong>[Current State]</strong> Level 1 Ad-hoc: innovation by chance, no dedicated resources. Target: Level 3 Managed in 2-3 years.</p>
+                        <p><strong>[V — Vision]</strong> "UAE's leading AI-powered smart city solutions provider by 2030." Specific innovation vision, separate from general company vision. Communicate to all employees — WHY innovation matters.</p>
+                        <p><strong>[G — Goals]</strong> SMART targets: 20% revenue from products launched &lt;3 years; 3 patents/year; 2 university partnerships. Include both output (products launched) and input (R&amp;D % revenue) KPIs.</p>
+                        <p><strong>[R — Resources]</strong> Minimum 5-10% revenue to R&amp;D. Dedicated innovation team (small, cross-functional). Access UAE funds: MBR Innovation Fund (AED 2B), Hub71, Khalifa University partnerships. Balance: 70-20-10 portfolio allocation.</p>
+                        <p><strong>[P — Processes]</strong> Implement stage-gate: ideation → feasibility → business case → development → launch. Quarterly portfolio reviews. Idea management system for all employees.</p>
+                        <p><strong>[C — Culture]</strong> Psychological safety — celebrate "intelligent failures." 10-15% innovation time (Google 20% rule). Recognize innovative behavior, not just outcomes.</p>
+                        <p><strong>[Strategic Alignment]</strong> Align with UAE Vision 2021 priorities (AI, smart cities, renewable energy). ISO 56000: leadership endorsement required — innovation cannot succeed as isolated department initiative.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 9 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">🚀 Chapter 9 Questions<span class="ch-sub">Technology Entrepreneurs: Porter's Diamond, Triple Helix, Clusters</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q7 — Why clusters emerge and UAE cluster-building strategy <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">"Silicon Valley cannot be replicated" — critically analyze this statement. Using Porter's Diamond, explain why some regions develop into innovation clusters while others do not. Evaluate how the UAE government is attempting to build its own technology cluster ecosystem.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (12 marks)</h4>
+                        <p><strong>[Porter's Diamond — 4 Factors]</strong></p>
+                        <p>(1) <strong>Factor Conditions:</strong> Specialized inputs — SV: Stanford/Berkeley talent + VC concentration + fiber infrastructure.</p>
+                        <p>(2) <strong>Demand Conditions:</strong> Sophisticated customers — SV: US tech consumers + defense contracts forced continuous innovation.</p>
+                        <p>(3) <strong>Related &amp; Supporting Industries:</strong> Ecosystem — SV: startup-specialist law firms, accounting, hardware suppliers, PR, incubators all optimized for startups.</p>
+                        <p>(4) <strong>Firm Strategy, Structure &amp; Rivalry:</strong> Competitive intensity — Google/Apple/Facebook/Amazon all within 50 miles competing for same talent and customers.</p>
+                        <p><strong>[Why SV Is Hard to Replicate]</strong> Path dependency (decades of accumulated networks). Network effects (talent attracts VC, VC attracts talent, alumni start new companies). Culture (failure tolerance, "pay it forward" mentoring) can't be legislated.</p>
+                        <p><strong>[UAE Cluster Strategy — All 4 Diamond Factors]</strong></p>
+                        <p>Factor Conditions: Dubai Internet City, Silicon Oasis, Hub71 ($235M investment, subsidized space, 100% foreign ownership, zero tax).</p>
+                        <p>Demand Conditions: Government entities as "first customer" (Dubai Future Accelerators). Smart city projects create sophisticated demand.</p>
+                        <p>Related Industries: DIFC FinTech Hive, Dubai Design District — sectoral ecosystems.</p>
+                        <p>Rivalry: Abu Dhabi vs Dubai competition stimulates cluster quality improvement.</p>
+                        <p><strong>[Triple Helix]</strong> Khalifa University (U) + Mubadala (I) + UAE AI Strategy (G) = overlapping ecosystem.</p>
+                        <p><strong>[Conclusion]</strong> "Another Silicon Valley" unlikely, but UAE's resource-backed, focused approach can build effective clusters. Clusters take 20-30 years to mature — patience required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 10 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">💰 Chapter 10 Questions<span class="ch-sub">Funding Innovation: Funding Journey, Angels vs VCs, Valley of Death</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q8 — Funding journey from Seed to Series B + Angels vs VCs <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">A UAE-based technology startup has developed an AI-powered logistics management platform. The founders have invested their own savings (AED 500,000) to build an MVP. Explain the funding journey from this point to Series B funding, including the typical investors, amounts, and milestones at each stage. Compare angel investors and venture capitalists as funding sources.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (15 marks)</h4>
+                        <p><strong>[Current Stage: Pre-Seed (Bootstrapped)]</strong> Founders' AED 500K = bootstrapping. Used to build MVP. Risk: 100% borne by founders. Milestone: working prototype + initial customer feedback.</p>
+                        <p><strong>[Stage 1: Seed Round]</strong> Amount: $100K-$2M typically. Sources: Angel investors, family/friends, accelerators (Hub71, Y Combinator). Purpose: Product-market fit, first customers, hire core team. UAE: MBR Innovation Fund seed grants available. Milestone: 10-50 paying customers, product validated.</p>
+                        <p><strong>[Stage 2: Series A]</strong> Amount: $2M-$15M typically. Sources: Early-stage VCs (Wamda, BECO Capital in UAE). Purpose: Scale product, grow customer base, expand team. Milestone: Proven unit economics, clear path to profitability, $1M+ ARR.</p>
+                        <p><strong>[Stage 3: Series B]</strong> Amount: $15M-$50M typically. Sources: Growth-stage VCs (Softbank, Tiger Global). Purpose: Market expansion, talent acquisition, potential international expansion. UAE example: Careem raised Series B before Uber acquisition. Milestone: Dominant market position in UAE, expanding regionally.</p>
+                        <p><strong>[Valley of Death]</strong> Most startups fail between Seed and Series A — burn through seed funding before generating sustainable revenue. Bridge loans, convertible notes, or angel follow-on funding needed to cross valley.</p>
+                        <p><strong>[Angels vs VCs Comparison]</strong></p>
+                        <table>
+                            <tr><th>Factor</th><th>Angel Investors</th><th>Venture Capitalists</th></tr>
+                            <tr><td>Stage</td><td>Seed/early</td><td>Series A onward</td></tr>
+                            <tr><td>Amount</td><td>$25K-$500K</td><td>$1M+</td></tr>
+                            <tr><td>Source of funds</td><td>Personal wealth</td><td>LP funds (institutional)</td></tr>
+                            <tr><td>Involvement</td><td>Mentorship + networks</td><td>Board seats + governance</td></tr>
+                            <tr><td>Decision speed</td><td>Fast (days/weeks)</td><td>Slow (months + due diligence)</td></tr>
+                            <tr><td>Return expectations</td><td>10-30x in 5-7 years</td><td>10x+ fund-level return</td></tr>
+                        </table>
+                        <p><strong>[UAE Context]</strong> AED 2B MBR Innovation Fund + AED 2B Khalifa Fund provide early-stage support to bridge funding gaps in UAE innovation ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 11 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">⚙️ Chapter 11 Questions<span class="ch-sub">Managing Innovation: POLC, Stage-Gate, Development Funnel, 70-20-10</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q9 — Development funnel and stage-gate process <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">A pharmaceutical company receives thousands of drug candidate ideas each year but brings only a handful to market. Using the Development Funnel and Stage-Gate Process, explain how the company should manage its innovation portfolio to maximize the probability of commercial success.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (12 marks)</h4>
+                        <p><strong>[Development Funnel — 3 stages]</strong></p>
+                        <p>(1) <strong>Wide Mouth (Input):</strong> Thousands of ideas collected from R&amp;D scientists, clinicians, external researchers. Quantity over quality. Goal: maximize number of ideas entering the funnel.</p>
+                        <p>(2) <strong>Middle Section (Filtering):</strong> Ideas evaluated against strategic fit, technical feasibility, market potential. Most eliminated at early stages (cheap). Only promising candidates advance.</p>
+                        <p>(3) <strong>Narrow Exit (Output):</strong> Few products reach launch. In pharma: 10,000 compounds → 1 approved drug on average. Each stage costs progressively more.</p>
+                        <p><strong>[Stage-Gate Process — 3 Key Gates]</strong></p>
+                        <p><strong>Gate 1 — Idea Screen:</strong> Questions: Does it fit strategic direction? Is market large enough? Kill criterion: no strategic fit → killed. Deliverable: 1-page concept description.</p>
+                        <p><strong>Gate 2 — Business Case Gate:</strong> Questions: Is technical feasibility confirmed? What's the financial projection? Kill criterion: negative NPV or insufficient capability. Deliverable: Full business case with financial model.</p>
+                        <p><strong>Gate 3 — Development Gate:</strong> Questions: Are clinical trials promising? Is manufacturing feasible? Kill criterion: safety signals → immediate kill. Deliverable: Phase I/II trial results.</p>
+                        <p><strong>[C-S-S-C Portfolio Balance]</strong> Balance portfolio: Core (existing drugs, line extensions) + Stretch (new therapeutic areas) + Speculative (radical drug classes) + Collaborative (partnerships/licensing).</p>
+                        <p><strong>[70-20-10 Rule]</strong> 70% budget = Core (incremental, current drugs). 20% = Adjacent (new therapeutic areas). 10% = Transformational (breakthrough drugs). Maximizes short-term returns while investing in future pipeline.</p>
+                        <p><strong>[Conclusion]</strong> Stage-gate + funnel = structured way to kill projects early (cheap) and invest deeply in promising ones (expensive). Key: gates must have power to kill — innovation theater without kill authority wastes resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 12 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">🌐 Chapter 12 Questions<span class="ch-sub">Innovation Offshoring: CAST, GINs, Modularization, Apple iPod</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q10 — Explain how modularization enables innovation offshoring <span><span class="marks-badge">10 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">Using Apple's iPod as a case study, explain how modularization and well-defined interfaces enable firms to offshore innovation activities to global locations. Discuss the risks of this strategy.</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (10 marks)</h4>
+                        <p><strong>[Modularization Principle]</strong> Breaking a product into separable modules with clear, well-defined interfaces between them. Each module can be designed/manufactured independently as long as interfaces are respected. This enables geographic separation of innovation activities.</p>
+                        <p><strong>[How Interfaces Enable Offshoring]</strong> Clear interfaces = "translation rules" between modules. Teams in different countries can work on different modules simultaneously without constant coordination. Interface specifications replace face-to-face communication. Reduces coordination costs of geographic distribution.</p>
+                        <p><strong>[Apple iPod Case Study]</strong></p>
+                        <table>
+                            <tr><th>Activity</th><th>Location</th><th>Reason</th></tr>
+                            <tr><td>Product design + software</td><td>USA (Cupertino)</td><td>Core IP, kept in-house</td></tr>
+                            <tr><td>Hard drive components</td><td>Japan (Toshiba)</td><td>World-leading miniaturization expertise</td></tr>
+                            <tr><td>Display screens</td><td>South Korea/Japan</td><td>Advanced display manufacturing</td></tr>
+                            <tr><td>Battery</td><td>South Korea</td><td>Li-ion battery expertise</td></tr>
+                            <tr><td>Final assembly</td><td>China (Foxconn)</td><td>Low-cost, high-volume assembly</td></tr>
+                        </table>
+                        <p><strong>[Risks of Offshoring Innovation]</strong> (1) IPR leakage — trade secrets harder to protect in offshore locations. (2) Quality control across distance. (3) Communication failures — interfaces never perfectly specified. (4) Dependency risk — single supplier failure disrupts entire supply chain (COVID-19 exposed semiconductor dependency). (5) Knowledge diffusion — offshore partners learn capabilities and become competitors (Chinese component suppliers building own products).</p>
+                        <p><strong>[Conclusion]</strong> Modularization enables global value chains but requires robust IP protection (Chapter 7) and careful partner selection. Apple's success came from retaining design + software (highest value) while offshoring manufacturing (lower value).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 13 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">🌿 Chapter 13 Questions<span class="ch-sub">Green Innovation: Porter Hypothesis, T-M-R, 5Rs, UAE Green Economy</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q11 — Porter Hypothesis: environmental regulation drives innovation <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">The Porter Hypothesis suggests that well-designed environmental regulations can stimulate innovation, leading to competitive advantage for firms — not just compliance costs. Critically evaluate this hypothesis using evidence from industry. How should UAE policymakers use this insight in designing environmental regulation?</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (15 marks)</h4>
+                        <p><strong>[Porter Hypothesis Core Argument]</strong> Traditional view: environmental regulation = cost burden → competitive disadvantage. Porter's counter-argument: strict, well-designed regulation stimulates innovation that OFFSETS compliance costs ("innovation offset") — making firms more competitive, not less.</p>
+                        <p><strong>[Evidence FOR Porter Hypothesis]</strong> Toyota Prius: Japan's strict fuel efficiency regulations forced Toyota to develop hybrid technology. Result: Toyota built 15-year advantage in hybrid technology, selling globally. First-mover advantage from regulatory pressure. Germany renewable energy: Energiewende regulation forced rapid solar/wind deployment → Germany became global leader in renewable energy technology manufacturing and export.</p>
+                        <p><strong>[Evidence AGAINST Porter Hypothesis]</strong> Short-term costs real: compliance R&amp;D diverts budget from other innovation. Not all regulation is "well-designed" — prescriptive regulations (mandating specific technologies) reduce innovation space. Developing industries can't afford innovation investment — regulation may simply drive them out of business or offshore production to less regulated countries (carbon leakage).</p>
+                        <p><strong>[Conditions for Porter Hypothesis to Hold]</strong> (1) Regulation must be outcome-based (set targets) not prescriptive (mandate technology). (2) Give firms sufficient lead time to innovate. (3) Apply globally or with border adjustment mechanisms to prevent carbon leakage. (4) Pair with R&amp;D subsidies to reduce innovation cost.</p>
+                        <p><strong>[UAE Green Economy Policy Implications]</strong> UAE Green Economy for Sustainable Development: 6 fields (energy, transport, manufacturing, waste, water, sustainable cities). T-M-R drivers: Technology (solar deployment), Market (carbon pricing), Regulation (building codes, vehicle emissions). COP28 Abu Dhabi: UAE positioning as green innovation leader.</p>
+                        <p>Recommendation: UAE should implement outcome-based regulations (e.g., 44% renewable energy by 2050 per UAE Energy Strategy) rather than mandating specific technologies. Allow market to find most efficient pathway. Complement with IRENA (Abu Dhabi HQ) knowledge sharing and R&amp;D subsidies.</p>
+                        <p><strong>[Conclusion]</strong> Porter Hypothesis holds under the right conditions but is not automatic. Poorly designed regulation creates costs without innovation. UAE's relatively young industrial base and abundant solar resources position it well to leverage regulatory pressure as innovation stimulus rather than burden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter 14 Questions -->
+        <div class="chapter-section">
+            <div class="chapter-section-header">🇦🇪 Chapter 14 Questions<span class="ch-sub">UAE Innovation Policy: SAVED G, E-C-S, Vision 2021, AED 2B Funds</span></div>
+            <div class="question-section">
+                <div class="question-header" onclick="toggleQuestion(this)">Q12 — UAE National Innovation Strategy: analysis and evaluation <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-content">
+                    <div class="question-text">The UAE has implemented a comprehensive National Innovation Strategy to diversify its economy away from oil dependence. Critically evaluate the effectiveness of this strategy using the E-C-S framework (Ecosystem, Culture, Sectors). What challenges remain in building a sustainable innovation economy?</div>
+                    <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
+                    <div class="model-answer">
+                        <h4>Model Answer (15 marks)</h4>
+                        <p><strong>[Context: Why Innovation Strategy Needed]</strong> UAE oil reserves estimated to last 50-100 years. But oil price volatility (2014-2020: $100 → $25/barrel) demonstrates risk of oil dependency. UAE Vision 2021 target: non-oil sectors = 80% of GDP. Innovation = pathway to knowledge economy diversification.</p>
+                        <p><strong>[E — Ecosystem Evaluation]</strong></p>
+                        <p>What UAE has built: AED 2B MBR Innovation Fund (grants + equity for startups). AED 2B Khalifa Fund for SMEs. Dubai Internet City, Silicon Oasis, Hub71 (AED 2B committed, subsidized space, 100% foreign ownership). Free zones: 0% tax, 100% repatriation of profits.</p>
+                        <p>SAVED G policies: S=Start Hub, A=Accelerators, V=Venture Capital (AED 2B funds), E=Education reform, D=Digital infrastructure, G=Government first-customer programs.</p>
+                        <p>Strength: World-class physical and regulatory infrastructure. Challenge: Ecosystem is largely foreign-company-dependent — UAE-born startups still minority. Exit market (IPOs, M&amp;A) less developed than US/UK.</p>
+                        <p><strong>[C — Culture Evaluation]</strong></p>
+                        <p>UAE has invested heavily: School curriculum reform (STEM focus, design thinking). National Innovation Day (February 17). Government departments have innovation KPIs. Challenge: Culture change is slow. Risk aversion remains high. Failed startup = social stigma in collectivist culture (harder to attract serial entrepreneurs than Silicon Valley). Expat majority (88%) creates "visitor mentality" — many talented people don't intend to stay long-term, reducing deep ecosystem commitment.</p>
+                        <p><strong>[S — Sectors Evaluation]</strong></p>
+                        <p>7 Priority Sectors: Renewable Energy (Masdar, IRENA), Transport (Hyperloop, autonomous), Education (AI curriculum), Health (genomics, telemedicine), Technology (AI, blockchain), Water, Space (Hope Mars Mission).</p>
+                        <p>Successes: Masdar City (renewable energy hub). IRENA headquarters Abu Dhabi (global clean energy knowledge). Hope Probe (Mars mission) demonstrated UAE deep-tech capability. Challenge: Government-led sectoral choices may miss emerging opportunities. Private sector innovation still nascent.</p>
+                        <p><strong>[Remaining Challenges]</strong></p>
+                        <ol>
+                            <li>Talent retention: international talent leaves when opportunities arise elsewhere</li>
+                            <li>Private sector engagement: innovation concentrated in government-linked entities</li>
+                            <li>University-industry linkages: research commercialization rate low vs USA/UK</li>
+                            <li>Risk capital: despite AED 2B funds, late-stage VC (Series B+) still limited</li>
+                        </ol>
+                        <p><strong>[Conclusion]</strong> UAE's innovation strategy is ambitious and well-resourced — the ecosystem infrastructure is world-class. The remaining challenge is cultural and institutional: building genuine entrepreneurial culture, strengthening university-industry links, and developing home-grown innovations rather than attracting foreign ones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin:30px 0;gap:15px;flex-wrap:wrap;">
+            <a href="chapter-14.html" style="background:#3498db;color:white;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;">← Chapter 14: UAE Innovation</a>
+            <a href="final-review.html" style="background:#27ae60;color:white;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;">Final Review →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>📚 Innovation Course — Exam Practice</strong></p>
+        <p>12 Questions | All Chapters Covered</p>
+        <p style="margin-top:10px;font-size:0.9em;">Good Luck! 🎯</p>
+    </footer>
+</div>
+<a href="#" class="back-to-top" id="backToTop">↑</a>
+<script>
+function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
+function toggleQuestion(h){h.classList.toggle('active');const c=h.nextElementSibling;if(!c||!c.classList.contains('question-content'))return;if(h.classList.contains('active')){c.classList.add('show');requestAnimationFrame(()=>{c.style.maxHeight=c.scrollHeight+'px';});}else{c.style.maxHeight=c.scrollHeight+'px';requestAnimationFrame(()=>{c.style.maxHeight='0px';c.classList.remove('show');});}}
+function toggleAnswer(b){b.classList.toggle('active');const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(b.classList.contains('active')){a.classList.add('show');requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});b.innerHTML='▲ Hide Model Answer';}else{a.style.maxHeight=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.maxHeight='0px';a.classList.remove('show');});b.innerHTML='▼ Show Model Answer';}}
+function collapseAllQuestions(){document.querySelectorAll('.question-header.active').forEach(h=>toggleQuestion(h));}
+function expandAllQuestions(){document.querySelectorAll('.question-header:not(.active)').forEach(h=>toggleQuestion(h));}
+document.addEventListener('DOMContentLoaded',function(){
+    const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
+    if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}
+    const backToTop=document.getElementById('backToTop');
+    if(backToTop){window.addEventListener('scroll',()=>{if(window.pageYOffset>300)backToTop.classList.add('visible');else backToTop.classList.remove('visible');});}
+    let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(window.innerWidth>768&&quickNav&&navToggle){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else if(navToggle){navToggle.style.display='block';}},250);});
+});
+</script>
+</body>
+</html>
