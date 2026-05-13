@@ -119,6 +119,8 @@
             .model-answer.show { max-height: 70vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
         }
     </style>
+    <link rel="stylesheet" href="theme.css">
+    <script defer src="theme.js"></script>
 </head>
 <body>
 <div class="container">
@@ -158,7 +160,7 @@
                 <h3 style="color:#3498db;margin-bottom:12px;">📌 Chapter Summary</h3>
                 <ul style="margin:0;padding-left:20px;line-height:1.8;">
                     <li>This chapter explains how innovation develops and spreads over time using four major theories.</li>
-                    <li>The key theories are <strong>S-Curve</strong> (3 phases of tech growth), <strong>Punctuated Equilibrium</strong> (sudden disruptions), <strong>Dominant Design</strong> (industry standards), and <strong>Absorptive Capacity</strong> (learning from others).</li>
+                    <li>The key theories are <strong>S-Curve</strong> (4 phases: Emergence → Growth → Maturity → Decline/Replacement), <strong>Punctuated Equilibrium</strong> (sudden disruptions), <strong>Dominant Design</strong> (industry standards), and <strong>Absorptive Capacity</strong> (learning from others).</li>
                     <li>Very important for exams — questions often ask you to apply these theories to real-world cases like AI, EVs, or tech disruptions.</li>
                     <li>Use the <strong>SPAD mnemonic</strong> to remember all four theories quickly.</li>
                     <li>Focus on identifying which theory best fits each scenario and explaining all phases/components clearly.</li>
@@ -1137,11 +1139,13 @@
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
                         <div class="model-answer">
                             <h4>Model Answer (15 marks)</h4>
-                            <p><strong>[1. S-Curve Framework — 3 phases - 6 marks]</strong></p>
-                            <p>The S-curve (technology lifecycle) maps technology performance against cumulative investment/time, producing an S-shaped adoption pattern across three distinct phases:</p>
+                            <p><strong>[1. S-Curve Framework — 4 phases - 6 marks]</strong></p>
+                            <p>The S-curve (technology lifecycle) maps technology performance against cumulative investment/time, producing an S-shaped adoption pattern across four distinct phases:</p>
                             <p><strong>Phase 1 — Emergence (slow growth):</strong> Technology is new, uncertain, expensive. Few adopters. High R&amp;D costs per unit improvement. Problems not yet solved. Market unclear. Example: EV in 2000s — Tesla Roadster ($100K+), limited range, no charging infrastructure.</p>
                             <p><strong>Phase 2 — Growth (rapid adoption):</strong> Technology improves rapidly. Costs fall dramatically. Standards emerge. Mass adoption begins. Investment flows in. Example: EVs 2015-present — Tesla Model 3 ($35K), 300+ mile range, global charging networks, major incumbents (GM, Ford, VW) switching to EVs.</p>
                             <p><strong>Phase 3 — Maturity (saturation):</strong> Performance plateaus. Incremental improvements only. Competition on price/features rather than fundamental technology. Consolidation occurs. Example: Future EVs — battery performance approaches physical limits, competition on manufacturing efficiency, software, price.</p>
+                            <p><strong>Phase 4 — Decline / Replacement:</strong> Technology reaches fundamental limits. Performance improvements stall entirely. A disruptive new technology starts its own S-curve. The old technology is replaced. Example: Solid-state batteries will eventually replace lithium-ion; hydrogen fuel cells could replace BEV for long-haul transport. <strong>Firms that only invest in maturing technology miss the next wave.</strong></p>
+                            <div style="background:#fff3cd;border-left:4px solid #f39c12;padding:10px;margin:10px 0;border-radius:6px;"><strong>🔗 Theory Connections:</strong> Decline phase triggers <strong>Creative Destruction</strong> (new tech destroys old industries), <strong>Punctuated Equilibrium</strong> (incumbents fall into competency traps), and <strong>Disruptive Innovation</strong> (new entrants use the next S-curve to displace leaders).</div>
                             <p><strong>[2. Current Stage of EV Technology - 3 marks]</strong></p>
                             <p>EVs are currently in the Growth phase (steep part of S-curve):</p>
                             <ul>
@@ -1241,7 +1245,7 @@
                 <h3>Question Clues - Innovation Theories</h3>
                 <div class="clues-list">
                     <div class="clue-item">SPAD = 4 theories</div>
-                    <div class="clue-item">S-curve = 3 phases (slow-fast-slow)</div>
+                    <div class="clue-item">S-curve = 4 phases (slow-fast-slow-decline): Emergence → Growth → Maturity → Decline/Replacement</div>
                     <div class="clue-item">Punctuated Eq = stable → disruption</div>
                     <div class="clue-item">Dominant Design = FTS (Fluid-Trans-Specific)</div>
                     <div class="clue-item">Absorptive Cap = RAA</div>
@@ -1251,14 +1255,17 @@
             </div>
             <div class="connections-card">
                 <h3>Theory Connections</h3>
-                <div class="connection-item">IPR (Ch 7): Patents are most valuable in Growth phase of S-curve — before dominant design locks in</div>
-                <div class="connection-item">Managing Innovation (Ch 11): Stage-gate process useful during Growth phase; less effective in Emergence</div>
-                <div class="connection-item">Green Innovation (Ch 13): Renewable energy on S-curve — solar is in Growth phase, currently establishing dominant design (monocrystalline silicon)</div>
+                <div class="connection-item">IPR (Ch 7): Patents most valuable in Growth phase of S-curve — before dominant design locks in. At Decline phase, next-technology patents become strategically critical.</div>
+                <div class="connection-item">Managing Innovation (Ch 11): Stage-gate process useful during Growth phase; less effective in Emergence. Portfolio 70-20-10 maps to S-curve phases: Core = Maturity, Adjacent = Growth, Transformational = Emergence of next curve.</div>
+                <div class="connection-item">Green Innovation (Ch 13): Renewable energy on S-curve — solar in Growth phase. Gas cars in Maturity/Decline phase being replaced by EVs starting new S-curve.</div>
+                <div class="connection-item"><strong>S-Curve → Creative Destruction:</strong> When S-curve reaches Decline, old industries get destroyed. Schumpeter's gale is what happens at the end of an S-curve lifecycle.</div>
+                <div class="connection-item"><strong>S-Curve → Disruptive Innovation:</strong> New entrants use the emerging next S-curve to displace incumbents who are optimizing the old, maturing curve.</div>
+                <div class="connection-item"><strong>S-Curve → Competency Trap (Punctuated Equilibrium):</strong> Incumbents stuck in Maturity/Decline phase over-invest in current technology, developing deep but narrow expertise that makes switching to the next S-curve harder.</div>
             </div>
             <div class="confusion-box">
                 <h3>Common Confusion: S-Curve vs Rogers Diffusion of Innovation</h3>
                 <div class="confusion-comparison">
-                    <div class="confusion-item"><strong>S-Curve (Technology Performance)</strong><p>Plots TECHNOLOGY PERFORMANCE vs. R&amp;D investment or time. About how good the technology gets. Slow-fast-slow improvement pattern.</p></div>
+                    <div class="confusion-item"><strong>S-Curve (Technology Performance)</strong><p>Plots TECHNOLOGY PERFORMANCE vs. R&amp;D investment or time. About how good the technology gets. 4 phases: slow → fast → slow → decline/replacement. <strong>All technologies eventually reach limits and get replaced.</strong></p></div>
                     <div class="confusion-item"><strong>Rogers Diffusion (Adoption)</strong><p>Plots ADOPTER CATEGORIES vs. time (Innovators → Early Adopters → Early Majority → Late Majority → Laggards). About who adopts and when.</p></div>
                 </div>
                 <p style="margin-top:10px;font-weight:600;">Both produce S-shaped curves but measure different things. S-curve = technology capability. Rogers = market adoption behavior. Both can apply to same technology but from different angles.</p>
@@ -1353,7 +1360,7 @@
             <div class="casestudy-card">
                 <h3>Case Study Application: Innovation Theories</h3>
                 <div class="casestudy-step">Identify which of the 4 SPAD theories applies to the case company/technology</div>
-                <div class="casestudy-step">For S-curve: identify which phase (Emergence/Growth/Maturity) and what evidence supports it</div>
+                <div class="casestudy-step">For S-curve: identify which phase (Emergence/Growth/Maturity/Decline) and what evidence supports it — and if Maturity, ask: what technology will replace it?</div>
                 <div class="casestudy-step">For Punctuated Eq: identify the equilibrium and the punctuation event</div>
                 <div class="casestudy-step">For Dominant Design: identify the fluid-transitional-specific phases and which design won</div>
                 <div class="casestudy-step">Connect to absorptive capacity: did the firm have prior knowledge to recognize and adapt?</div>

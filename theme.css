@@ -1,0 +1,189 @@
+:root {
+    color-scheme: light;
+    --button-bg: #eef2ff;
+    --button-text: #1e3a8a;
+    --button-border: #c7d2fe;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f172a;
+    --surface: #111827;
+    --surface-alt: #1f2937;
+    --text: #e5e7eb;
+    --border: #334155;
+    --shadow: 0 8px 24px rgba(2, 6, 23, 0.5);
+    --nav-bg: #0b1220;
+    --nav-text: #e5e7eb;
+    --nav-border: #334155;
+    --button-bg: #1e293b;
+    --button-text: #dbeafe;
+    --button-border: #475569;
+    --table-head-bg: #1e293b;
+    --table-row-bg: #111827;
+    --table-row-alt-bg: #1f2937;
+    --memory-bg: #172554;
+    --clue-bg: #1f2937;
+    --confusion-bg: #3f1d1d;
+}
+
+html[data-theme="dark"] body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] header,
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .nav,
+html[data-theme="dark"] .navbar,
+html[data-theme="dark"] .top-nav,
+html[data-theme="dark"] .site-nav,
+html[data-theme="dark"] .page-nav,
+html[data-theme="dark"] .menu-bar {
+    color: var(--nav-text);
+    border-color: var(--nav-border) !important;
+}
+
+html[data-theme="dark"] .container,
+html[data-theme="dark"] .chapter-card,
+html[data-theme="dark"] .chapter,
+html[data-theme="dark"] .chapter-section,
+html[data-theme="dark"] .chapter-content,
+html[data-theme="dark"] .question-section,
+html[data-theme="dark"] .question-content,
+html[data-theme="dark"] .model-answer,
+html[data-theme="dark"] .answer,
+html[data-theme="dark"] .answer-box,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .panel,
+html[data-theme="dark"] .box,
+html[data-theme="dark"] .must-know,
+html[data-theme="dark"] .memory-technique,
+html[data-theme="dark"] .casestudy-card,
+html[data-theme="dark"] .concept-card,
+html[data-theme="dark"] .connection-card,
+html[data-theme="dark"] .example-card,
+html[data-theme="dark"] .formula-step,
+html[data-theme="dark"] .clues-card,
+html[data-theme="dark"] .confusion-box,
+html[data-theme="dark"] .review-section,
+html[data-theme="dark"] .exam-formula,
+html[data-theme="dark"] .summary-card,
+html[data-theme="dark"] .chapter-overview,
+html[data-theme="dark"] [class*="card"],
+html[data-theme="dark"] [class*="box"] {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border) !important;
+    box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .quick-nav .nav-btn,
+html[data-theme="dark"] .quick-nav .nav-btn a {
+    color: var(--nav-text);
+}
+
+html[data-theme="dark"] .memory-line,
+html[data-theme="dark"] .clue-item,
+html[data-theme="dark"] .clues-list,
+html[data-theme="dark"] .question-text,
+html[data-theme="dark"] .model-answer,
+html[data-theme="dark"] .answer,
+html[data-theme="dark"] .answer-box {
+    color: var(--text);
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .question-text,
+html[data-theme="dark"] .model-answer,
+html[data-theme="dark"] .answer,
+html[data-theme="dark"] .answer-box {
+    background: var(--surface-alt) !important;
+}
+
+html[data-theme="dark"] .clues-card,
+html[data-theme="dark"] .clues-list,
+html[data-theme="dark"] .clue-item {
+    background: var(--clue-bg) !important;
+}
+
+html[data-theme="dark"] .memory-line {
+    background: var(--memory-bg) !important;
+    border-left: 4px solid #60a5fa !important;
+}
+
+html[data-theme="dark"] .confusion-box,
+html[data-theme="dark"] .confusion-comparison,
+html[data-theme="dark"] .confusion-item {
+    background: var(--confusion-bg) !important;
+    border-color: #7f1d1d !important;
+}
+
+html[data-theme="dark"] table,
+html[data-theme="dark"] .comparison-table {
+    width: 100%;
+    background: var(--table-row-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] th {
+    background: var(--table-head-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] td,
+html[data-theme="dark"] tr {
+    background: var(--table-row-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] tr:nth-child(even) td {
+    background: var(--table-row-alt-bg) !important;
+}
+
+#theme-toggle,
+.theme-toggle {
+    background: var(--button-bg) !important;
+    color: var(--button-text) !important;
+    border: 1px solid var(--button-border) !important;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    margin-left: 10px;
+}
+
+#theme-toggle:hover,
+.theme-toggle:hover {
+    filter: brightness(1.08);
+}
+
+.theme-nav-fallback {
+    display: flex;
+    justify-content: flex-end;
+    padding: 8px 12px;
+    background: transparent;
+    border-bottom: 0;
+}
+
+html[data-theme="dark"] .theme-nav-fallback {
+    background: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--nav-border) !important;
+}
+
+@media (max-width: 768px) {
+    #theme-toggle,
+    .theme-toggle {
+        font-size: 0.78rem;
+        padding: 7px 10px;
+    }
+
+    .theme-nav-fallback {
+        padding: 6px 10px;
+    }
+}
