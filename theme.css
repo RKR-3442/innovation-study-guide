@@ -79,6 +79,7 @@ html[data-theme="dark"] .top-nav,
 html[data-theme="dark"] .site-nav,
 html[data-theme="dark"] .page-nav,
 html[data-theme="dark"] .menu-bar {
+    background: var(--nav-bg) !important;
     color: var(--nav-text);
     border-color: var(--nav-border) !important;
 }
@@ -88,6 +89,9 @@ html[data-theme="dark"] .chapter-card,
 html[data-theme="dark"] .chapter,
 html[data-theme="dark"] .chapter-section,
 html[data-theme="dark"] .chapter-content,
+html[data-theme="dark"] .memorize-section,
+html[data-theme="dark"] .understand-section,
+html[data-theme="dark"] .mode-selector,
 html[data-theme="dark"] .question-section,
 html[data-theme="dark"] .question-content,
 html[data-theme="dark"] .model-answer,
@@ -115,6 +119,32 @@ html[data-theme="dark"] [class*="box"] {
     color: var(--text) !important;
     border-color: var(--border) !important;
     box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .connection-item,
+html[data-theme="dark"] .casestudy-step,
+html[data-theme="dark"] .clue-item,
+html[data-theme="dark"] .memory-technique,
+html[data-theme="dark"] .mnemonic,
+html[data-theme="dark"] .connection,
+html[data-theme="dark"] .exam-tip,
+html[data-theme="dark"] .must-know,
+html[data-theme="dark"] .chapter-questions,
+html[data-theme="dark"] .question-text {
+    background: var(--surface-alt) !important;
+    background-image: none !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] .must-know {
+    background: #1e293b !important;
+    color: var(--heading-text) !important;
+}
+
+html[data-theme="dark"] .mnemonic {
+    color: var(--heading-text) !important;
+    border-color: #ef4444 !important;
 }
 
 html[data-theme="dark"] main div[style*="background"],
