@@ -124,6 +124,7 @@ html[data-theme="dark"] .chapter div[style*="background"],
 html[data-theme="dark"] .chapter section[style*="background"],
 html[data-theme="dark"] .chapter article[style*="background"] {
     background: var(--surface-alt) !important;
+    background-image: none !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
 }
@@ -140,9 +141,27 @@ html[data-theme="dark"] main [style*="background"] strong {
     opacity: 1 !important;
 }
 
+html[data-theme="dark"] main [style*="background"] *,
+html[data-theme="dark"] .chapter [style*="background"] * {
+    color: var(--text) !important;
+    opacity: 1 !important;
+}
+
 html[data-theme="dark"] .quick-nav .nav-btn,
 html[data-theme="dark"] .quick-nav .nav-btn a {
     color: var(--nav-text);
+}
+
+html[data-theme="dark"] .quick-nav .nav-btn {
+    background: var(--surface) !important;
+    border-left-color: #38bdf8 !important;
+}
+
+html[data-theme="dark"] .quick-nav .nav-btn a,
+html[data-theme="dark"] .quick-nav .chapter-num,
+html[data-theme="dark"] .quick-nav .nav-btn span {
+    color: var(--heading-text) !important;
+    opacity: 1 !important;
 }
 
 html[data-theme="dark"] .memory-line,
