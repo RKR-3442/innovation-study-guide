@@ -71,19 +71,15 @@
         .casestudy-card h3::before { content: "📝 "; }
         .casestudy-step { background: white; padding: 12px 15px; margin: 10px 0; border-radius: 6px; border-left: 3px solid var(--success-color); }
         .casestudy-step::before { content: "✓ "; color: var(--success-color); font-weight: 700; }
-        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: hidden; }
-        .question-header { background: var(--question-color); color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
-        .question-header:hover { background: #ff5722; }
+        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: visible; }
+        .question-header { background: var(--question-color); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
         .question-header::before { content: "❓ "; }
-        .toggle-icon { transition: transform 0.3s ease; }
-        .question-header.active .toggle-icon { transform: rotate(180deg); }
-        .question-content { max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); padding: 0 20px; }
-        .question-content.show { max-height: 2000px; padding: 20px; }
+        .question-content { padding: 20px; }
         .question-text { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--question-color); font-weight: 500; }
         .answer-toggle { background: var(--answer-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin: 10px 0; transition: all 0.3s ease; width: 100%; text-align: center; }
         .answer-toggle:hover { background: #27ae60; }
         .model-answer { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 5px solid var(--answer-color); padding: 0; border-radius: 8px; max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s cubic-bezier(0.4,0,0.2,1), margin 0.38s cubic-bezier(0.4,0,0.2,1); }
-        .model-answer.show { max-height: 2000px; padding: 20px; margin-top: 15px; }
+        .model-answer.show { padding: 20px; margin-top: 15px; }
         .model-answer h4 { color: var(--answer-color); margin-bottom: 10px; }
         .model-answer h4::before { content: "✓ "; }
         .chapter-questions { background: linear-gradient(135deg, #fff5f5, #ffe6e6); border: 3px solid #e74c3c; border-radius: 12px; padding: 25px; margin: 30px 0; }
@@ -158,13 +154,48 @@
     <main>
         <section class="chapter" id="ch12">
             <span class="chapter-number">CHAPTER 12</span>
-            <h2>🌐 Innovation Offshoring &amp; Global Networks</h2>
+            <h2>🌐 Innovation Offshoring &amp; Global Networks</h2>            
+            <div style="background:linear-gradient(135deg,#e8f8ff,#dbe9ff);border-left:5px solid #3498db;padding:25px;margin:20px 0;border-radius:12px;box-shadow:0 4px 15px rgba(52,152,219,0.1);">
+                <h3 style="color:#2c3e50;margin-bottom:15px;font-size:1.3em;">🎯 Why Offshoring Matters for Your Exam</h3>
+                <p style="line-height:1.8;margin-bottom:15px;"><strong>Offshoring questions test your global thinking</strong> — why do companies move R&D across borders? Examiners want to see if you understand the strategic choice (not just cost savings) and the enabling role of modularization.</p>
+                <p style="line-height:1.8;margin-bottom:15px;"><strong>What doctors specifically look for:</strong></p>
+                <ul style="margin:0;padding-left:20px;line-height:1.8;">
+                    <li><strong>CAST benefits:</strong> Can you explain all 4 reasons (not just cost) with examples?</li>
+                    <li><strong>Modularization understanding:</strong> Can you explain how interfaces enable distributed R&D?</li>
+                    <li><strong>GINs concept:</strong> Can you distinguish Global Innovation Networks from simple supply chains?</li>
+                    <li><strong>Apple iPod mastery:</strong> Can you cite the value distribution (design vs manufacturing)?</li>
+                    <li><strong>Offshoring vs Outsourcing:</strong> Can you clearly distinguish same-company vs different-company?</li>
+                </ul>
+                <p style="line-height:1.8;margin-top:15px;"><strong>By the end of this chapter, you'll master:</strong> CAST benefits framework, modularization concept, Global Innovation Networks (GINs), Apple iPod case study, smile curve value distribution, offshoring vs outsourcing distinction, and IP protection challenges in global R&D.</p>
+            </div>
+                        <div style="background:linear-gradient(135deg,#e8f4fd,#d1e7fd);border-left:5px solid #3498db;padding:20px;margin:20px 0;border-radius:10px;">
+                <h3 style="color:#2c3e50;margin-bottom:12px;">📌 Chapter Summary</h3>
+                <ul style="margin:0;padding-left:20px;line-height:1.8;">
+                    <li>This chapter explains why and how companies move innovation activities to other countries.</li>
+                    <li>Key concepts: <strong>Global Innovation Networks (GINs)</strong>, <strong>Modularization</strong> (breaking products into independent modules), and <strong>Knowledge Transfer</strong>.</li>
+                    <li>Covers benefits (lower costs, access to talent) and risks (IP theft, coordination challenges).</li>
+                    <li>Exam may ask you to evaluate whether a company should offshore R&amp;D or recommend how to manage a global innovation network.</li>
+                </ul>
+            </div>
             <div style="margin:15px 0;">
                 <span class="priority-badge badge-star">⭐ HIGH VALUE</span>
                 <span class="priority-badge badge-brain">🧠 UNDERSTAND GINs</span>
                 <span class="priority-badge badge-pin">📌 APPLE EXAMPLE</span>
             </div>
-            <div class="memory-line study-only">Offshoring = CAST benefits + GINs + Modularization enables it + Apple iPod = perfect example</div>
+            <div class="memory-line study-only">Offshoring succeeds when innovation is modularized (defined interfaces enable distributed R&D). CAST benefits drive strategy, not just cost. Apple iPod = perfect modular example.</div>
+            
+            <div style="background:#e8f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                <p><strong>🎯 Scenario Triggers — Use Offshoring Framework When Case Mentions:</strong></p>
+                <ul style="line-height:1.8;">
+                    <li>✓ "Should we move R&D abroad?" → Apply CAST benefit analysis</li>
+                    <li>✓ "Modular product design" → Enables offshoring (interfaces defined)</li>
+                    <li>✓ "Global innovation networks" → GINs = knowledge flow, not just production</li>
+                    <li>✓ "IP protection concerns" → Offshoring risk (especially trade secrets)</li>
+                    <li>✓ "Offshoring vs Outsourcing?" → Same company vs different company</li>
+                    <li>✓ "24/7 development" → Follow-the-sun R&D (Speed benefit in CAST)</li>
+                </ul>
+            </div>
+            
             <div class="memorize-section">
                 <h3>MEMORIZE: Why Offshore R&amp;D? — CAST Benefits</h3>
                 <div class="memory-technique">
@@ -214,7 +245,7 @@
             <div class="chapter-questions practice-only">
                 <h3>Most Likely Exam Questions</h3>
                 <div class="question-section">
-                    <div class="question-header" onclick="toggleQuestion(this)">Explain how modularization enables innovation offshoring — use a real-world example<span class="toggle-icon">▼</span></div>
+                    <div class="question-header">Explain how modularization enables innovation offshoring — use a real-world example</div>
                     <div class="question-content">
                         <div class="question-text"><strong>Full Question:</strong> "Modularization is the key enabler of innovation offshoring." Discuss this statement. Explain the concept of Global Innovation Networks (GINs) and analyze the benefits and risks of offshoring R&amp;D activities. Illustrate with a real-world example.</div>
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -294,8 +325,9 @@
 <script>
 function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
 function setMode(mode){const body=document.body,buttons=document.querySelectorAll('.mode-btn');body.classList.remove('study-mode','practice-mode','quick-mode');body.classList.add(mode+'-mode');buttons.forEach(b=>b.classList.remove('active'));const ab=document.getElementById(mode+'Mode');if(ab)ab.classList.add('active');try{localStorage.setItem('preferredMode',mode);}catch(e){}window.scrollTo({top:0,behavior:'smooth'});}
-function toggleQuestion(h){h.classList.toggle('active');const c=h.nextElementSibling;if(!c||!c.classList.contains('question-content'))return;if(h.classList.contains('active')){c.classList.add('show');requestAnimationFrame(()=>{c.style.maxHeight=c.scrollHeight+'px';});}else{c.style.maxHeight=c.scrollHeight+'px';requestAnimationFrame(()=>{c.style.maxHeight='0px';c.classList.remove('show');});}}
-function toggleAnswer(b){b.classList.toggle('active');const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(b.classList.contains('active')){a.classList.add('show');requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});b.innerHTML='▲ Hide Model Answer';}else{a.style.maxHeight=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.maxHeight='0px';a.classList.remove('show');});b.innerHTML='▼ Show Model Answer';}}
+function toggleAnswer(b){const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(!b.classList.contains('active')){b.classList.add('active');a.classList.add('show');a.style.overflow='hidden';a.style.maxHeight='0px';requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});const onOpen=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onOpen);if(a.classList.contains('show')){if(window.innerWidth<=768){a.style.maxHeight='70vh';a.style.overflowY='auto';}else{a.style.maxHeight='none';a.style.overflow='visible';}}};a.addEventListener('transitionend',onOpen);b.innerHTML='▲ Hide Model Answer';}else{b.classList.remove('active');if(a.style.maxHeight==='none'||a.style.maxHeight==='70vh'){a.style.maxHeight=a.scrollHeight+'px';}a.style.overflow='hidden';a.style.overflowY='hidden';requestAnimationFrame(()=>{a.style.maxHeight='0px';});const onClose=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onClose);a.classList.remove('show');};a.addEventListener('transitionend',onClose);b.innerHTML='▼ Show Model Answer';}}
+function collapseAllAnswers(){document.querySelectorAll('.answer-toggle.active').forEach(b=>toggleAnswer(b));}
+function expandAllAnswers(){document.querySelectorAll('.answer-toggle:not(.active)').forEach(b=>toggleAnswer(b));}
 document.addEventListener('DOMContentLoaded',function(){
     const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
     if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}

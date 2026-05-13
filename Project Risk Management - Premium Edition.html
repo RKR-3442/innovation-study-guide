@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Risk Management — Final Exam Memory Sheet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background: white;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+        
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a3a5c;
+            margin-bottom: 16px;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+        }
+        
+        h1 .icon {
+            font-size: 42px;
+            margin-right: 8px;
+        }
+        
+        .subtitle {
+            background: #e8ecf1;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 16px 28px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            color: #2c3e50;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .chapter-tag {
+            background: #e8f4f8;
+            padding: 10px 20px;
+            border-left: 4px solid #3498db;
+            margin: 32px 0;
+            color: #34495e;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a3a5c;
+            margin: 48px 0 24px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e8f4f8;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 24px 0 16px 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+        
+        .card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            margin: 20px 0;
+        }
+        
+        .definition-card {
+            background: #fafbfc;
+            padding: 28px;
+            border-radius: 8px;
+            border: 2px solid #e8ecef;
+            margin: 20px 0;
+        }
+        
+        .split-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .split-item {
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .split-item strong {
+            color: #1a3a5c;
+        }
+        
+        .callout-important {
+            background: #fff8e1;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 28px 0;
+        }
+        
+        .callout-important .title {
+            color: #f57c00;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .callout-important p, .callout-important ul {
+            color: #5d4037;
+        }
+        
+        .callout-important ul {
+            margin: 12px 0 0 24px;
+        }
+        
+        .callout-important li {
+            margin: 6px 0;
+        }
+        
+        .formula-box {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 24px;
+            border-radius: 6px;
+            margin: 24px 0;
+        }
+        
+        .formula-box p {
+            color: #0c5460;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'Fira Code', monospace;
+        }
+        
+        .dark-card {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 28px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .dark-card h3 {
+            color: #ffffff;
+        }
+        
+        .dark-card ul {
+            margin: 12px 0 0 24px;
+        }
+        
+        .dark-card li {
+            margin: 10px 0;
+        }
+        
+        .highlight-box {
+            background: #e8f4f8;
+            padding: 20px 28px;
+            border-left: 4px solid #e67e22;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box p {
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .memory-trigger {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .memory-trigger .title {
+            color: #1565c0;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .memory-trigger ul {
+            margin: 8px 0 0 24px;
+            color: #1976d2;
+        }
+        
+        .example-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+        
+        .example-box .title {
+            color: #155724;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .example-box p {
+            color: #155724;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: #34495e;
+            color: white;
+        }
+        
+        th {
+            padding: 16px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
+        
+        td {
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tbody tr:hover {
+            background: #e8f4f8;
+        }
+        
+        ul {
+            margin: 16px 0 16px 28px;
+        }
+        
+        li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #1a3a5c;
+        }
+        
+        .final-box {
+            background: #5a67d8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 36px;
+            border-radius: 8px;
+            margin: 32px 0;
+        }
+        
+        .final-box ul {
+            margin: 16px 0 0 28px;
+        }
+        
+        .final-box li {
+            margin: 12px 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 28px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            color: #6c757d;
+            font-size: 13px;
+        }
+        
+        .footer p.sub {
+            color: #adb5bd;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background: #e8ecef;
+            margin: 40px 0;
+        }
+        
+        .gray-card {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 30px;
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 28px;
+                page-break-after: avoid;
+            }
+            
+            h2 {
+                page-break-after: avoid;
+                page-break-before: auto;
+                margin-top: 32px;
+            }
+            
+            h3 {
+                page-break-after: avoid;
+            }
+            
+            .card, .dark-card, .callout-important, .definition-card,
+            .formula-box, .memory-trigger, .example-box, .highlight-box,
+            .gray-card, .final-box {
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+            }
+            
+            .dark-card {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .final-box {
+                background: #5a67d8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .callout-important {
+                background: #fff9e6 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .formula-box {
+                background: #e0f2f7 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .memory-trigger {
+                background: #e8f5f9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .example-box {
+                background: #e8f5e9 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .highlight-box {
+                background: #f0f4f8 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            table {
+                page-break-inside: avoid;
+                font-size: 13px;
+            }
+            
+            thead {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            tbody tr:nth-child(even) {
+                background: #f8f9fa !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            hr {
+                page-break-after: always;
+                visibility: hidden;
+                margin: 0;
+                height: 0;
+            }
+            
+            .subtitle, .chapter-tag, .footer {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="icon">📘</span>PROJECT RISK MANAGEMENT — FINAL EXAM MEMORY SHEET</h1>
+        
+        <div class="subtitle">
+            ⭐ Focused on YOUR Notes + Doctor's Important Topics
+        </div>
+        
+        <div class="chapter-tag">
+            🔥 Chapter 4 Core Focus
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣ CORE DEFINITION</h2>
+        
+        <div class="definition-card">
+            <h3>Risk</h3>
+            <p>An uncertain event or condition that, if it occurs, has a positive or negative effect on project objectives.</p>
+            
+            <div class="split-card">
+                <div class="split-item">
+                    <strong>Positive risk</strong> = Opportunity
+                </div>
+                <div class="split-item">
+                    <strong>Negative risk</strong> = Threat
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <h2>2️⃣ MAIN GOAL OF RISK MANAGEMENT</h2>
+        
+        <div class="card">
+            <ul>
+                <li>Increase opportunities</li>
+                <li>Reduce threats</li>
+                <li>Improve decision making</li>
+                <li>Protect project objectives</li>
+                <li>Support value delivery</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>3️⃣ THE 7 RISK MANAGEMENT PROCESSES <span class="badge">⭐ VERY IMPORTANT</span></h2>
+        
+        <div class="card">
+            <ol>
+                <li><strong>Plan Risk Management</strong></li>
+                <li><strong>Identify Risks</strong></li>
+                <li><strong>Perform Qualitative Risk Analysis</strong></li>
+                <li><strong>Perform Quantitative Risk Analysis</strong></li>
+                <li><strong>Plan Risk Responses</strong></li>
+                <li><strong>Implement Risk Responses</strong></li>
+                <li><strong>Monitor Risks</strong></li>
+            </ol>
+        </div>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ IMPORTANT</div>
+            <p>Risk management is:</p>
+            <ul>
+                <li><strong>continuous</strong></li>
+                <li>repeated throughout the lifecycle</li>
+                <li>updated as risks change</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>4️⃣ QUALITATIVE vs QUANTITATIVE <span class="badge">⭐ VERY IMPORTANT</span></h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Qualitative</th>
+                    <th>Quantitative</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Subjective</td>
+                    <td>Numerical</td>
+                </tr>
+                <tr>
+                    <td>Low/Medium/High</td>
+                    <td>Exact values</td>
+                </tr>
+                <tr>
+                    <td>Fast</td>
+                    <td>Detailed</td>
+                </tr>
+                <tr>
+                    <td>Prioritizes risks</td>
+                    <td>Measures exact impact</td>
+                </tr>
+                <tr>
+                    <td>Uses probability-impact matrix</td>
+                    <td>Uses Monte Carlo / EMV</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ IMPORTANT</div>
+            <p>Quantitative analysis is not always required because it needs:</p>
+            <ul>
+                <li>credible data</li>
+                <li>specialist tools</li>
+                <li>additional cost and effort</li>
+            </ul>
+            <p style="margin-top: 16px; font-style: italic;">For simpler projects, qualitative analysis alone may be sufficient.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>5️⃣ RISK SCORE</h2>
+        
+        <div class="formula-box">
+            <p>Risk Score = Probability × Impact</p>
+        </div>
+        
+        <p style="font-weight: 600; margin-top: 16px;">Higher score = more severe risk</p>
+        
+        <hr>
+        
+        <h2>6️⃣ THREAT RESPONSE STRATEGIES <span class="badge">⭐ VERY IMPORTANT</span></h2>
+        
+        <div class="dark-card">
+            <h3>Threat Response Strategies</h3>
+            <ul>
+                <li><strong>Avoid</strong> — Eliminate the threat</li>
+                <li><strong>Mitigate</strong> — Reduce probability or impact</li>
+                <li><strong>Transfer</strong> — Shift risk to third party</li>
+                <li><strong>Escalate</strong> — Move risk to higher management</li>
+                <li><strong>Accept</strong> — Acknowledge the risk</li>
+            </ul>
+        </div>
+        
+        <h3>Acceptance Types</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Active Acceptance</th>
+                    <th>Passive Acceptance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contingency plan/reserve prepared</td>
+                    <td>No proactive action</td>
+                </tr>
+                <tr>
+                    <td>Response prepared in advance</td>
+                    <td>Risk reviewed only</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>7️⃣ OPPORTUNITY RESPONSE STRATEGIES</h2>
+        
+        <div class="dark-card">
+            <h3>Opportunity Response Strategies</h3>
+            <ul>
+                <li><strong>Exploit</strong> — Ensure opportunity happens</li>
+                <li><strong>Enhance</strong> — Increase probability/impact</li>
+                <li><strong>Share</strong> — Share opportunity with partner</li>
+                <li><strong>Escalate</strong> — Move to higher authority</li>
+                <li><strong>Accept</strong> — Benefit if it occurs</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>8️⃣ ESCALATION RULE <span class="badge">⭐ EXAM FAVORITE</span></h2>
+        
+        <div class="card">
+            <h3>Risk Escalation</h3>
+            <p>Moving a risk to a higher level when:</p>
+            <ul>
+                <li>authority is insufficient</li>
+                <li>strategic objectives are affected</li>
+                <li>multiple projects/departments are impacted</li>
+            </ul>
+        </div>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ VERY IMPORTANT</div>
+            <p>A risk is escalated to:</p>
+        </div>
+        
+        <div class="highlight-box">
+            <p>👉 the level whose objective is affected</p>
+        </div>
+        
+        <hr>
+        
+        <h2>9️⃣ RISK OWNER vs RISK ACTION OWNER ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Risk Owner</th>
+                    <th>Risk Action Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monitors the risk</td>
+                    <td>Implements response</td>
+                </tr>
+                <tr>
+                    <td>Tracks triggers</td>
+                    <td>Executes actions</td>
+                </tr>
+                <tr>
+                    <td><strong>Accountable for risk</strong></td>
+                    <td><strong>Responsible for action</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>🔟 SECONDARY vs RESIDUAL RISK ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Secondary Risk</th>
+                    <th>Residual Risk</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>New risk created by response</td>
+                    <td>Remaining risk after response</td>
+                </tr>
+                <tr>
+                    <td>Caused by mitigation/action</td>
+                    <td>Cannot be eliminated completely</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="memory-trigger">
+            <div class="title">💡 Memory Trigger</div>
+            <ul>
+                <li>Residual risk = <strong>REMAINS</strong> after response</li>
+                <li>Secondary risk = <strong>CREATED BY</strong> response</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣1️⃣ CONTINGENCY vs MANAGEMENT RESERVE ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Contingency Reserve</th>
+                    <th>Management Reserve</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Known risks</td>
+                    <td>Unknown risks</td>
+                </tr>
+                <tr>
+                    <td>Included in baseline</td>
+                    <td>Outside baseline</td>
+                </tr>
+                <tr>
+                    <td>Planned uncertainty</td>
+                    <td>Unforeseen uncertainty</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>1️⃣2️⃣ TRIGGER CONDITIONS ⭐</h2>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ IMPORTANT</div>
+            <p>Trigger conditions activate planned risk responses during the Implement Risk Responses process.</p>
+        </div>
+        
+        <div class="gray-card">
+            <h3>Trigger Conditions</h3>
+            <p>Indicators showing that a risk response should be activated.</p>
+            
+            <p style="margin-top: 16px;"><strong>Example</strong></p>
+            <p>If supplier delay exceeds 5 days → activate backup supplier plan.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣3️⃣ RISK REGISTER ⭐</h2>
+        
+        <div class="card">
+            <h3>Risk Register Contents</h3>
+            <ul>
+                <li>Risk ID</li>
+                <li>Description</li>
+                <li>Category</li>
+                <li>Probability</li>
+                <li>Impact</li>
+                <li>Trigger</li>
+                <li>Response</li>
+                <li>Risk owner</li>
+                <li>Status</li>
+            </ul>
+        </div>
+        
+        <div class="gray-card">
+            <h3>Top 10 Risk Tracking</h3>
+            <p>A monitoring technique used to continuously review the highest-priority risks throughout the project lifecycle.</p>
+        </div>
+        
+        <div class="dark-card">
+            <h3>Complete PMI Risk Statement</h3>
+            <p>Due to <strong>[cause]</strong>, <strong>[risk event]</strong> may occur, resulting in <strong>[effect]</strong>.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣4️⃣ RISK ATTITUDE vs TOLERANCE vs THRESHOLD ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Concept</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Risk Attitude</strong></td>
+                    <td>Behavior toward risk</td>
+                </tr>
+                <tr>
+                    <td><strong>Risk Tolerance</strong></td>
+                    <td>Amount of variation acceptable</td>
+                </tr>
+                <tr>
+                    <td><strong>Risk Threshold</strong></td>
+                    <td>Exact limit requiring action/escalation</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="example-box">
+            <div class="title">📌 Example</div>
+            <p><strong>Tolerance</strong> = organization accepts moderate schedule delays</p>
+            <p style="margin-top: 8px;"><strong>Threshold</strong> = delays above 5 days require escalation</p>
+        </div>
+        
+        <div class="gray-card">
+            <h3>Risk Attitude Types</h3>
+            <p><strong>Risk-Averse</strong> — Avoids risk and prefers stability</p>
+            <p style="margin-top: 12px;"><strong>Risk-Seeking</strong> — Willing to take higher risks for greater rewards</p>
+            <p style="margin-top: 12px;"><strong>Risk-Neutral</strong> — Balances risk and reward objectively</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣5️⃣ PREDICTIVE vs ADAPTIVE vs HYBRID <span class="badge">⭐ VERY IMPORTANT</span></h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Predictive</th>
+                    <th>Adaptive</th>
+                    <th>Hybrid</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Upfront planning</td>
+                    <td>Continuous review</td>
+                    <td>Combination</td>
+                </tr>
+                <tr>
+                    <td>Stable requirements</td>
+                    <td>Frequent changes</td>
+                    <td>Mixed environment</td>
+                </tr>
+                <tr>
+                    <td>Waterfall</td>
+                    <td>Agile</td>
+                    <td>Both</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ IMPORTANT</div>
+            <p>Adaptive projects require:</p>
+            <ul>
+                <li>continuous risk review</li>
+                <li>flexibility</li>
+                <li>frequent reassessment</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣6️⃣ EMV FORMULA</h2>
+        
+        <div class="formula-box">
+            <p>EMV = Σ(Probability × Impact)</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣7️⃣ WATCHLIST</h2>
+        
+        <div class="card">
+            <p>A list of low-priority risks that are:</p>
+            <ul>
+                <li>monitored regularly</li>
+                <li>reviewed for changes</li>
+                <li>reassessed throughout the project lifecycle</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣8️⃣ SWOT ⭐</h2>
+        
+        <div class="dark-card">
+            <h3>SWOT</h3>
+            <ul>
+                <li><strong>Strengths</strong> — Internal advantages</li>
+                <li><strong>Weaknesses</strong> — Internal disadvantages</li>
+                <li><strong>Opportunities</strong> — Positive risks</li>
+                <li><strong>Threats</strong> — Negative risks</li>
+            </ul>
+        </div>
+        
+        <div class="gray-card">
+            <h3>Delphi Method</h3>
+            <p>A risk identification technique where experts provide anonymous opinions repeatedly until consensus is reached.</p>
+        </div>
+        
+        <hr>
+        
+        <h2>1️⃣9️⃣ ACCOUNTABILITY vs RESPONSIBILITY ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Accountability</th>
+                    <th>Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ownership of result</td>
+                    <td>Performs the work</td>
+                </tr>
+                <tr>
+                    <td>Cannot be delegated</td>
+                    <td>Can be delegated</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>2️⃣0️⃣ PROJECT vs PROGRAM vs PORTFOLIO vs ORGANIZATIONAL RISK ⭐</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Focus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Project</strong></td>
+                    <td>Operational objectives and tactical risks</td>
+                </tr>
+                <tr>
+                    <td><strong>Program</strong></td>
+                    <td>Integrated benefits across related projects</td>
+                </tr>
+                <tr>
+                    <td><strong>Portfolio</strong></td>
+                    <td>Strategic value and organizational priorities</td>
+                </tr>
+                <tr>
+                    <td><strong>Organizational / Enterprise</strong></td>
+                    <td>Enterprise-wide governance and resilience</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="callout-important">
+            <div class="title">⚠️ IMPORTANT</div>
+            <ul>
+                <li>Project risks are operational and tactical</li>
+                <li>Portfolio and organizational risks are strategic</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>2️⃣1️⃣ MOST IMPORTANT EXAM PHRASES 🔥</h2>
+        
+        <div class="final-box">
+            <ul>
+                <li>Risk management is <strong>continuous</strong> throughout the lifecycle</li>
+                <li>Risks <strong>change over time</strong></li>
+                <li>Adaptive environments require <strong>frequent reassessment</strong></li>
+                <li>Qualitative = <strong>prioritization</strong></li>
+                <li>Quantitative = <strong>numerical analysis</strong></li>
+                <li>Risk owner <strong>monitors</strong></li>
+                <li>Risk action owner <strong>implements</strong></li>
+                <li>Escalate to <strong>the level whose objective is affected</strong></li>
+                <li>Secondary risk is <strong>created by response</strong></li>
+                <li>Residual risk <strong>remains after response</strong></li>
+                <li>Contingency reserve = <strong>known risks</strong></li>
+                <li>Management reserve = <strong>unknown risks</strong></li>
+                <li>Quantitative analysis is <strong>not always required</strong></li>
+                <li>Trigger conditions <strong>activate planned responses</strong></li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <div class="footer">
+            <p>📚 Project Risk Management — Final Exam Memory Sheet</p>
+            <p class="sub">Premium Edition | Academic Study Framework</p>
+        </div>
+    </div>
+</body>
+</html>

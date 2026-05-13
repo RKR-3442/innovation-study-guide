@@ -70,19 +70,15 @@
         .casestudy-card h3::before { content: "📝 "; }
         .casestudy-step { background: white; padding: 12px 15px; margin: 10px 0; border-radius: 6px; border-left: 3px solid var(--success-color); }
         .casestudy-step::before { content: "✓ "; color: var(--success-color); font-weight: 700; }
-        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: hidden; }
-        .question-header { background: var(--question-color); color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
-        .question-header:hover { background: #ff5722; }
+        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: visible; }
+        .question-header { background: var(--question-color); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
         .question-header::before { content: "❓ "; }
-        .toggle-icon { transition: transform 0.3s ease; }
-        .question-header.active .toggle-icon { transform: rotate(180deg); }
-        .question-content { max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); padding: 0 20px; }
-        .question-content.show { max-height: 3000px; padding: 20px; }
+        .question-content { padding: 20px; }
         .question-text { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--question-color); font-weight: 500; }
         .answer-toggle { background: var(--answer-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin: 10px 0; transition: all 0.3s ease; width: 100%; text-align: center; }
         .answer-toggle:hover { background: #27ae60; }
         .model-answer { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 5px solid var(--answer-color); padding: 0; border-radius: 8px; max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s cubic-bezier(0.4,0,0.2,1), margin 0.38s cubic-bezier(0.4,0,0.2,1); }
-        .model-answer.show { max-height: 3000px; padding: 20px; margin-top: 15px; }
+        .model-answer.show { padding: 20px; margin-top: 15px; }
         .model-answer h4 { color: var(--answer-color); margin-bottom: 10px; }
         .model-answer h4::before { content: "✓ "; }
         .chapter-questions { background: linear-gradient(135deg, #fff5f5, #ffe6e6); border: 3px solid #e74c3c; border-radius: 12px; padding: 25px; margin: 30px 0; }
@@ -158,99 +154,984 @@
         <section class="chapter" id="ch3">
             <span class="chapter-number">CHAPTER 3</span>
             <h2>📈 Innovation Theories</h2>
+            <div style="background:linear-gradient(135deg,#e8f4fd,#d1e7fd);border-left:5px solid #3498db;padding:20px;margin:20px 0;border-radius:10px;">
+                <h3 style="color:#3498db;margin-bottom:12px;">📌 Chapter Summary</h3>
+                <ul style="margin:0;padding-left:20px;line-height:1.8;">
+                    <li>This chapter explains how innovation develops and spreads over time using four major theories.</li>
+                    <li>The key theories are <strong>S-Curve</strong> (3 phases of tech growth), <strong>Punctuated Equilibrium</strong> (sudden disruptions), <strong>Dominant Design</strong> (industry standards), and <strong>Absorptive Capacity</strong> (learning from others).</li>
+                    <li>Very important for exams — questions often ask you to apply these theories to real-world cases like AI, EVs, or tech disruptions.</li>
+                    <li>Use the <strong>SPAD mnemonic</strong> to remember all four theories quickly.</li>
+                    <li>Focus on identifying which theory best fits each scenario and explaining all phases/components clearly.</li>
+                </ul>
+            </div>
             <div style="margin:15px 0;">
                 <span class="priority-badge badge-fire">🔥 VERY IMPORTANT</span>
                 <span class="priority-badge badge-star">⭐ SPAD MNEMONIC</span>
                 <span class="priority-badge badge-brain">🧠 4 MAJOR THEORIES</span>
             </div>
-            <div class="memory-line study-only">Innovation Theories = SPAD: S-curve + Punctuated Equilibrium + Absorptive Capacity + Dominant Design</div>
+            <div class="memory-line study-only">Innovation Theories = SPAD: S-curve + Punctuated Equilibrium + Absorptive Capacity + Dominant Design + Rogers + Creative Destruction</div>
+            
+            <div style="background:linear-gradient(135deg,#e8f4fd,#d1e7fd);border-left:5px solid #3498db;padding:20px;margin:20px 0;border-radius:10px;">
+                <h3 style="color:#3498db;margin-bottom:15px;">📋 CHAPTER OVERVIEW</h3>
+                <p><strong>This chapter explains:</strong></p>
+                <ul style="line-height:1.8;margin:10px 0;">
+                    <li>How technologies develop and mature over time</li>
+                    <li>Why industries experience sudden disruption after stability</li>
+                    <li>How industry standards emerge and lock in</li>
+                    <li>Why some firms learn and innovate faster than others</li>
+                    <li>How innovations spread through populations</li>
+                </ul>
+                <p><strong>Why this chapter matters:</strong></p>
+                <ul style="line-height:1.8;margin:10px 0;">
+                    <li>Most exam case studies test theory application</li>
+                    <li>Doctors ask "which theory explains this scenario?"</li>
+                    <li>Understanding theory differences prevents confusion</li>
+                    <li>Real-world strategy decisions require theory frameworks</li>
+                </ul>
+                <p><strong>By the end you'll master:</strong></p>
+                <ul style="line-height:1.8;margin:10px 0;">
+                    <li>Identifying which theory fits each case study</li>
+                    <li>Explaining complete lifecycles (including endings)</li>
+                    <li>Differentiating similar-sounding theories</li>
+                    <li>Applying theories to AI, EVs, and modern tech</li>
+                </ul>
+            </div>
+
             <div class="memorize-section">
-                <h3>MEMORIZE: 4 Innovation Theories — SPAD</h3>
+                <h3>MEMORIZE: 6 Core Innovation Theories</h3>
                 <div class="memory-technique">
-                    <h4>Mnemonic: "SPAD" — 4 core theories</h4>
-                    <div class="mnemonic">S-P-A-D</div>
+                    <h4>Mnemonic: "SPAD-RC" — 6 essential theories</h4>
+                    <div class="mnemonic">S-P-A-D-R-C</div>
                     <ul>
                         <li><strong>S</strong> = S-Curve of Technology</li>
                         <li><strong>P</strong> = Punctuated Equilibrium</li>
                         <li><strong>A</strong> = Absorptive Capacity</li>
                         <li><strong>D</strong> = Dominant Design</li>
+                        <li><strong>R</strong> = Rogers Diffusion</li>
+                        <li><strong>C</strong> = Creative Destruction</li>
                     </ul>
                 </div>
-                <div class="must-know">Theory 1: S-Curve — 3 Phases</div>
-                <div class="connection">Pattern = <strong>slow → fast → slow</strong> (Emergence → Growth → Maturity)</div>
+
+                <div class="must-know">Theory 1: S-Curve — Technology Lifecycle (4 Phases)</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> The S-Curve maps technology performance improvements against cumulative R&D investment/time, showing how technologies evolve through predictable lifecycle stages from emergence to eventual replacement.</p>
+                </div>
+                <div class="connection">Pattern = <strong>slow → fast → slow → decline → replacement</strong> (Emergence → Growth → Maturity → Decline)</div>
+                
+                <p><strong>⚠️ CRITICAL: S-Curve Has FOUR Phases (Most Students Miss Phase 4)</strong></p>
+                
                 <table class="comparison-table">
                     <tr><th>Phase</th><th>What Happens</th><th>Innovation Type</th><th>Example</th></tr>
-                    <tr><td><strong>1. Emergence</strong> (bottom of S)</td><td>Slow growth, high uncertainty, few adopters, high cost</td><td>Radical / breakthrough innovations</td><td>Early smartphones (2000-2007)</td></tr>
-                    <tr><td><strong>2. Growth</strong> (steep middle)</td><td>Rapid adoption, standards emerge, cost drops, scale</td><td>Incremental + architectural innovations</td><td>Smartphone explosion (2007-2015)</td></tr>
-                    <tr><td><strong>3. Maturity</strong> (top flat)</td><td>Saturation, incremental improvements, commoditization</td><td>Process innovations, cost reduction</td><td>Smartphone market today</td></tr>
+                    <tr><td><strong>1. Emergence</strong> (bottom of S)</td><td>Slow growth, high uncertainty, few adopters, high cost, basic R&D</td><td>Radical / breakthrough innovations</td><td>Early smartphones (2000-2007), AI pre-ChatGPT</td></tr>
+                    <tr><td><strong>2. Growth</strong> (steep middle)</td><td>Rapid adoption, standards emerge, cost drops dramatically, scaling begins</td><td>Incremental + architectural innovations</td><td>Smartphone explosion (2007-2015), Generative AI boom (2023-)</td></tr>
+                    <tr><td><strong>3. Maturity</strong> (top flat)</td><td>Performance plateaus, physical/theoretical limits reached, incremental gains only</td><td>Process innovations, cost reduction, efficiency</td><td>Smartphone market today, lithium-ion batteries nearing limits</td></tr>
+                    <tr style="background:#fff3cd;"><td><strong>4. Decline</strong> (S-curve tops out)</td><td><strong>Technology reaches fundamental limits and is REPLACED by new technology starting a new S-curve</strong></td><td>Disruptive innovations, paradigm shifts</td><td>Film → Digital photography, DVDs → Streaming, Gas cars → EVs</td></tr>
                 </table>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong> Many students stop at "Maturity" phase. This is INCOMPLETE. The S-Curve is about technology replacement. Every technology eventually reaches physical limits and is disrupted by a new technology. The new technology starts its own S-curve. <strong>If you don't mention decline/replacement, you lose marks.</strong></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>S-Curve explains why technologies eventually stop improving and why innovation efforts produce diminishing returns. It helps firms understand when to invest in the next technology wave before competitors do.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When technology maturity is discussed</li>
+                        <li>When performance improvements are slowing</li>
+                        <li>When firms debate investing in next-generation tech</li>
+                        <li>When one technology is replacing another</li>
+                        <li>When questioning "how much improvement is left?"</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal S-Curve:</strong></p>
+                    <p><strong>maturity • plateau • limits • diminishing returns • replacement • next generation • transition • performance ceiling • saturation • new technology wave</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"The S-Curve shows that all technologies eventually reach fundamental performance limits and are replaced by new technologies, creating successive waves of innovation."</em></p>
+                </div>
+
+                <div class="confusion-box">
+                    <h3>⚔️ S-Curve vs Rogers Diffusion — DON'T CONFUSE</h3>
+                    <div class="confusion-comparison">
+                        <div class="confusion-item">
+                            <strong>S-Curve</strong>
+                            <p>• Technology PERFORMANCE improvement over time</p>
+                            <p>• Measures R&D productivity</p>
+                            <p>• About the technology itself maturing</p>
+                            <p>• Ends with technology replacement</p>
+                            <p><strong>Example:</strong> Battery energy density improvements over time</p>
+                        </div>
+                        <div class="confusion-item">
+                            <strong>Rogers Diffusion</strong>
+                            <p>• Customer ADOPTION rate over time</p>
+                            <p>• Measures market penetration</p>
+                            <p>• About how users accept innovation</p>
+                            <p>• Ends with market saturation</p>
+                            <p><strong>Example:</strong> How many people bought EVs over time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Lithium-Ion Battery S-Curve</h3>
+                    <p><strong>Emergence (1991-2000):</strong> Sony commercialized first lithium-ion battery. Expensive ($3000/kWh), low energy density, safety concerns. Used only in premium laptops.</p>
+                    <p><strong>Growth (2000-2015):</strong> Rapid improvements in energy density (100 → 250 Wh/kg). Cost crashed ($3000 → $400/kWh). Tesla bet on this phase for Model S.</p>
+                    <p><strong>Maturity (2015-present):</strong> Energy density improvements slowing (250 → 280 Wh/kg). Approaching theoretical limits of lithium-ion chemistry (~350 Wh/kg). Focus shifting to cost reduction and manufacturing.</p>
+                    <p><strong>Decline (near future):</strong> Lithium-ion approaching physical limits. <strong>New S-curve emerging: Solid-state batteries</strong> promise 500+ Wh/kg. This is the replacement phase. Firms investing in solid-state NOW will win the next curve.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"OpenAI's GPT models have improved rapidly from GPT-2 (2019) to GPT-4 (2023), but some experts predict performance gains will slow as models approach fundamental limits of transformer architecture. Using S-Curve theory, advise Maysoon (CEO of an AI startup) on her technology strategy. Should she continue investing in transformer-based models or explore alternative architectures? (12 marks)"</em></p>
+                </div>
+                
+                <div style="background:#e8f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Scenario Triggers — Use S-Curve When Case Mentions:</strong></p>
+                    <ul style="line-height:1.8;">
+                        <li>✓ "Technology reaching limits" or "diminishing returns"</li>
+                        <li>✓ "Performance plateauing" or "saturation"</li>
+                        <li>✓ "Should we invest in next-generation technology?"</li>
+                        <li>✓ "Replacement" or "transition to new paradigm"</li>
+                        <li>✓ Examples: AI model limits, battery technology, Moore's Law ending</li>
+                    </ul>
+                </div>
+                
+                <div style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:2px solid #0891b2;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 THEORY TRANSITION:</strong> S-Curve explains <em>how technology performance improves over time</em>, but it doesn't explain <em>how industries respond when technology hits limits</em>. That's where Punctuated Equilibrium comes in — it shows what happens to companies during these technological transitions.</p>
+                </div>
+                
                 <div class="must-know">Theory 2: Punctuated Equilibrium</div>
-                <div class="connection">Pattern = <strong>stable → disruption → new stable</strong></div>
-                <ul>
-                    <li>Long periods of relative stability with incremental improvement (equilibrium)</li>
-                    <li>"Punctuated" by sudden radical technological discontinuities (punctuations)</li>
-                    <li>After disruption: new equilibrium established around new technology</li>
-                </ul>
-                <div class="connection"><strong>Kodak Example:</strong> Film photography was stable for 100 years (incremental improvement in film quality, camera design). Digital photography = punctuation event (technological discontinuity). Kodak failed to transition to new equilibrium despite INVENTING digital camera (1975). Result: bankruptcy 2012.</div>
-                <div class="must-know">Theory 3: Dominant Design — F-T-S</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Punctuated Equilibrium (Tushman & Anderson) describes how industries experience long periods of stable, incremental change (equilibrium) that are interrupted by sudden, radical technological disruptions (punctuations) that destroy existing competencies and reset competitive dynamics.</p>
+                </div>
+                <div class="connection">Pattern = <strong>stable → disruption → new stable</strong> (Equilibrium → Punctuation → New Equilibrium)</div>
+                
+                <div style="background:#f9f9f9;padding:15px;margin:15px 0;border-radius:8px;border:2px solid #34495e;">
+                    <h4 style="color:#34495e;">📊 Three Stages of Punctuated Equilibrium:</h4>
+                    <p><strong>1. Equilibrium Period (Stability):</strong></p>
+                    <ul>
+                        <li>Incremental innovation dominates</li>
+                        <li>Existing competencies are valuable</li>
+                        <li>Incumbents have competitive advantage</li>
+                        <li>Barriers to entry protect established firms</li>
+                        <li>Customer needs are well-understood</li>
+                    </ul>
+                    <p><strong>2. Punctuation Event (Disruption):</strong></p>
+                    <ul>
+                        <li>Radical technological discontinuity appears</li>
+                        <li>Existing competencies become obsolete overnight</li>
+                        <li>New entrants often lead the new technology</li>
+                        <li>Incumbents face "competency trap" — their strengths become weaknesses</li>
+                        <li>Market uncertainty spikes dramatically</li>
+                    </ul>
+                    <p><strong>3. New Equilibrium (Re-stabilization):</strong></p>
+                    <ul>
+                        <li>New dominant design emerges around the new technology</li>
+                        <li>New set of core competencies required</li>
+                        <li>Winners and losers determined</li>
+                        <li>Industry returns to incremental innovation</li>
+                        <li>Survivors establish new barriers to entry</li>
+                    </ul>
+                </div>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong></p>
+                    <p>❌ <strong>Wrong:</strong> "Technology changed so companies failed."</p>
+                    <p>✅ <strong>Correct:</strong> "Incumbents fell into competency traps — their core strengths became liabilities when the technology paradigm shifted, creating organizational inertia and cannibalization fears."</p>
+                    <p><strong>Key words to use:</strong> competency trap • organizational inertia • radical discontinuity • punctuation event</p>
+                </div>
+                
+                <div style="background:#e8f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Scenario Triggers — Use Punctuated Equilibrium When Case Mentions:</strong></p>
+                    <ul style="line-height:1.8;">
+                        <li>✓ "Established industry leader failing" during technological shift</li>
+                        <li>✓ "Core competencies becoming obsolete"</li>
+                        <li>✓ "New entrants overtaking incumbents"</li>
+                        <li>✓ Classic examples: Kodak, Nokia, Blockbuster, BlackBerry</li>
+                        <li>✓ Question: "Why didn't they see it coming?"</li>
+                    </ul>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why dominant firms with resources, talent, and market knowledge still fail during technological transitions. It's not about being lazy or stupid — it's structural. The very capabilities that made them successful become liabilities when technology paradigms shift.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When an established industry leader fails during technological transition</li>
+                        <li>When new entrants overtake incumbents</li>
+                        <li>When core competencies become irrelevant</li>
+                        <li>When discussing Kodak, Nokia, Blockbuster, BlackBerry failures</li>
+                        <li>When questioning "why didn't they adapt?"</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal Punctuated Equilibrium:</strong></p>
+                    <p><strong>disruption • obsolete competencies • incumbent failure • new entrants • technological discontinuity • competency trap • organizational inertia • paradigm shift • cannibalization fear • resistance to change</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Punctuated Equilibrium explains why successful incumbents often fail during technological discontinuities — their core competencies, organizational structures, and business models built for the old equilibrium become liabilities in the new one."</em></p>
+                </div>
+
+                <div class="confusion-box">
+                    <h3>⚔️ Punctuated Equilibrium vs S-Curve — DON'T CONFUSE</h3>
+                    <div class="confusion-comparison">
+                        <div class="confusion-item">
+                            <strong>Punctuated Equilibrium</strong>
+                            <p>• Explains INDUSTRY dynamics and competitive shakeouts</p>
+                            <p>• About incumbent firms failing during disruption</p>
+                            <p>• Focus on organizational inertia and competency traps</p>
+                            <p>• Timing: sudden disruption after long stability</p>
+                            <p><strong>Example:</strong> Why Kodak failed despite inventing digital camera</p>
+                        </div>
+                        <div class="confusion-item">
+                            <strong>S-Curve</strong>
+                            <p>• Explains TECHNOLOGY performance evolution</p>
+                            <p>• About how technologies mature over time</p>
+                            <p>• Focus on diminishing returns and replacement</p>
+                            <p>• Timing: smooth progression through phases</p>
+                            <p><strong>Example:</strong> How battery energy density improves then plateaus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Kodak — The Textbook Punctuation Failure</h3>
+                    <p><strong>Equilibrium Period (1900-1990):</strong> Film photography stable for 90 years. Kodak dominated with 70% market share. Core competencies: chemical engineering, film manufacturing, retail distribution (Kodak stores). Business model: sell cameras cheap, profit from film sales (razor-blade model). Incremental improvements: film sensitivity, color accuracy, processing speed.</p>
+                    <p><strong>Punctuation Event (1990-2000):</strong> Digital photography emerged. Ironically, Kodak engineer Steve Sasson invented the first digital camera in 1975. But digital required COMPLETELY DIFFERENT competencies: sensors, software, image processing algorithms. Kodak's core competencies (chemical film manufacturing) became worthless overnight.</p>
+                    <p><strong>Why Kodak Failed — The Competency Trap:</strong></p>
+                    <ul>
+                        <li><strong>Cannibalization fear:</strong> Digital cameras killed film sales (their profit center)</li>
+                        <li><strong>Wrong metrics:</strong> Digital cameras had lower margins than film in 1990s</li>
+                        <li><strong>Organizational structure:</strong> Film division had all the power and budgets</li>
+                        <li><strong>Sunk assets:</strong> Billions invested in film manufacturing plants</li>
+                        <li><strong>Identity crisis:</strong> "We're a chemical film company" mentality</li>
+                    </ul>
+                    <p><strong>New Equilibrium (2000-present):</strong> Digital photography became dominant design. Winners: Canon, Nikon (pivoted fast), Sony (electronics competencies fit digital). Kodak filed bankruptcy 2012. New punctuation emerging now: Smartphones replacing dedicated cameras.</p>
+                    <p><strong>Lesson:</strong> Having resources and talent doesn't save you. Organizational structure and business model inertia kill incumbents.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"Traditional automotive companies (Ford, GM, VW) dominated for decades through competencies in internal combustion engines, mechanical engineering, and dealer networks. Tesla entered with electric powertrains, software-defined vehicles, and direct sales. Using Punctuated Equilibrium theory, analyze whether traditional automakers face a 'Kodak moment' or can successfully transition. What strategies should they employ to avoid competency traps? (15 marks)"</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ S-Curve:</strong> Punctuation often occurs when incumbent technology reaches S-curve maturity and new technology starts its growth phase</p>
+                    <p>• <strong>+ Dominant Design:</strong> After punctuation, new dominant design emerges around the new technology</p>
+                    <p>• <strong>+ Absorptive Capacity:</strong> Firms with high absorptive capacity can recognize punctuation coming and develop new competencies faster</p>
+                    <p>• <strong>+ Creative Destruction:</strong> Punctuation is the mechanism of Schumpeter's creative destruction</p>
+                </div>
+
+                <div style="background:#fff5f5;border-left:4px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ Common Confusion:</strong> Don't say "the company was lazy" or "didn't see it coming." Kodak INVENTED digital cameras. Nokia saw smartphones coming. Blockbuster had online streaming before Netflix was big. The issue is STRUCTURAL — organizational inertia, cannibalization fears, and competency traps prevent action even when firms know the threat exists.</p>
+                </div>
+                <div class="must-know">Theory 3: Dominant Design</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Dominant Design (Utterback & Abernathy) describes the process by which one product architecture emerges as the industry standard after a period of experimentation with multiple competing designs. Once established, innovation shifts from product to process.</p>
+                </div>
                 <div class="memory-technique">
-                    <h4>Mnemonic: "FTS" — 3 phases of dominant design</h4>
+                    <h4>Mnemonic: "FTS" — 3 phases of dominant design emergence</h4>
                     <div class="mnemonic">F-T-S</div>
                     <ul>
-                        <li><strong>F</strong>luid phase: Many competing designs, no standard, high experimentation. Customer preferences unclear.</li>
-                        <li><strong>T</strong>ransitional phase: One design begins to emerge as preferred. Competitors adopt or modify it.</li>
-                        <li><strong>S</strong>pecific phase: One dominant design established. Firms compete on price/process, not product variety.</li>
+                        <li><strong>F</strong>luid phase</li>
+                        <li><strong>T</strong>ransitional phase</li>
+                        <li><strong>S</strong>pecific phase</li>
                     </ul>
                 </div>
-                <div class="quick-list">
-                    <p><strong>iPhone Example (Dominant Design in Smartphones):</strong></p>
+                
+                <div style="background:#f9f9f9;padding:15px;margin:15px 0;border-radius:8px;border:2px solid #34495e;">
+                    <h4 style="color:#34495e;">📊 Three Phases of Dominant Design:</h4>
+                    <p><strong>1. Fluid Phase (Pre-Dominant Design):</strong></p>
                     <ul>
-                        <li>Fluid (2000-2007): Nokia QWERTY, Blackberry keyboard, Motorola flip, Windows Mobile — many competing designs</li>
-                        <li>Transitional (2007-2010): iPhone touchscreen wins user preference. Android adopts same paradigm.</li>
-                        <li>Specific (2010+): Full-touchscreen slab = dominant design. All smartphones converge. QWERTY keyboards disappear.</li>
+                        <li>Many competing product designs and technologies</li>
+                        <li>High uncertainty about customer needs and preferences</li>
+                        <li>Firms experiment with radical product innovations</li>
+                        <li>Low barriers to entry — startups can compete</li>
+                        <li>Performance metrics not yet standardized</li>
+                        <li>Production volumes low, prices high</li>
+                    </ul>
+                    <p><strong>2. Transitional Phase (Convergence Begins):</strong></p>
+                    <ul>
+                        <li>One design begins to gain market traction</li>
+                        <li>Network effects and economies of scale kick in</li>
+                        <li>Competitors adopt similar architectures</li>
+                        <li>Standards bodies may form</li>
+                        <li>Customer preferences crystallize</li>
+                        <li>Some firms exit, others pivot to winning design</li>
+                    </ul>
+                    <p><strong>3. Specific Phase (Post-Dominant Design):</strong></p>
+                    <ul>
+                        <li>One dominant design controls >50% market share</li>
+                        <li>Product innovation slows dramatically</li>
+                        <li><strong>Process innovation accelerates</strong> — focus shifts to manufacturing efficiency, cost reduction, quality</li>
+                        <li>High barriers to entry — requires scale and process expertise</li>
+                        <li>Competition on price, features, brand — not fundamental architecture</li>
+                        <li>Industry consolidates — only large firms survive</li>
                     </ul>
                 </div>
-                <div class="must-know">Theory 4: Absorptive Capacity — R-A-A</div>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong> The key insight is the SHIFT from product to process innovation after dominant design. Students often forget to mention that once a dominant design locks in, firms stop competing on product variety and start competing on manufacturing efficiency, cost, and quality. This is why newcomers struggle to enter mature markets.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why product variety decreases over time, why late entrants struggle, and why manufacturing efficiency becomes critical in mature industries. Helps firms understand when to invest in product innovation vs. process innovation.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When industry is transitioning from many designs to one standard</li>
+                        <li>When discussing platform competition (VHS vs Betamax, iOS vs Android)</li>
+                        <li>When firms debate whether to adopt emerging standard or stay different</li>
+                        <li>When new entrants struggle to compete in mature markets</li>
+                        <li>When discussing shift from R&D focus to manufacturing focus</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal Dominant Design:</strong></p>
+                    <p><strong>industry standard • lock-in • process innovation • manufacturing efficiency • convergence • platform • compatibility • ecosystem • economies of scale • consolidation</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Once a dominant design emerges, competitive focus shifts from product innovation to process innovation, raising barriers to entry as manufacturing efficiency and scale become critical success factors."</em></p>
+                </div>
+
+                <div class="confusion-box">
+                    <h3>⚔️ Dominant Design vs Network Effects — DON'T CONFUSE</h3>
+                    <div class="confusion-comparison">
+                        <div class="confusion-item">
+                            <strong>Dominant Design</strong>
+                            <p>• PRODUCT ARCHITECTURE that wins</p>
+                            <p>• Can happen without network effects (e.g., cars)</p>
+                            <p>• Driven by technical superiority, manufacturing efficiency, complementary assets</p>
+                            <p>• Once locked, hard to change (tooling, skills)</p>
+                            <p><strong>Example:</strong> QWERTY keyboard layout, gasoline engine</p>
+                        </div>
+                        <div class="confusion-item">
+                            <strong>Network Effects</strong>
+                            <p>• Value increases as more users join</p>
+                            <p>• Mechanism that HELPS lock in dominant design</p>
+                            <p>• Driven by user base size, compatibility</p>
+                            <p>• Software/platform-specific phenomenon</p>
+                            <p><strong>Example:</strong> WhatsApp, Windows OS, iPhone app ecosystem</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Smartphone Dominant Design — Touchscreen Slab</h3>
+                    <p><strong>Fluid Phase (2000-2007):</strong> High experimentation, no clear winner. Competing designs:</p>
+                    <ul>
+                        <li>Nokia QWERTY keyboards with small screens</li>
+                        <li>BlackBerry physical keyboards optimized for email</li>
+                        <li>Motorola flip phones and Razr</li>
+                        <li>Windows Mobile stylus-based PDAs</li>
+                        <li>Palm Treo hybrid designs</li>
+                    </ul>
+                    <p>Customer preferences unclear. Different segments wanted different things. No dominant architecture.</p>
+                    <p><strong>Transitional Phase (2007-2010):</strong> iPhone introduced June 2007 with revolutionary design:</p>
+                    <ul>
+                        <li>Large multi-touch capacitive screen (3.5 inches — huge for 2007)</li>
+                        <li>NO physical keyboard</li>
+                        <li>App ecosystem (App Store launched 2008)</li>
+                        <li>Virtual keyboard that adapts to context</li>
+                    </ul>
+                    <p>Initially mocked ("no keyboard? who wants to type on glass?"). But users loved it. Android adopted same architecture (2008). Samsung, HTC, LG all copied. BlackBerry resisted — kept physical keyboards.</p>
+                    <p><strong>Specific Phase (2010-present):</strong> Full-touchscreen slab became dominant design:</p>
+                    <ul>
+                        <li>All major smartphones converge on similar form factor</li>
+                        <li>Physical keyboards disappeared (BlackBerry died 2016)</li>
+                        <li>Product innovation narrowed: incremental camera improvements, screen size tweaks, battery life</li>
+                        <li><strong>Process innovation accelerated:</strong> Manufacturing efficiency, supply chain optimization, cost reduction became key. This is why Chinese manufacturers (Xiaomi, OPPO, vivo) could compete — they mastered process innovation.</li>
+                        <li>Barriers to entry increased dramatically: Requires massive scale, supplier relationships, app ecosystem</li>
+                    </ul>
+                    <p><strong>Lesson:</strong> Once dominant design locks in, late entrants struggle. Microsoft tried Windows Phone (2010-2017) — failed despite billions invested. Why? No app ecosystem (network effects), no manufacturing scale, dominant design already established.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"The VR/AR headset market shows competing designs: Meta Quest (standalone), Apple Vision Pro (premium mixed reality), PlayStation VR (console-tethered), and various PC-tethered headsets. Using Dominant Design theory, analyze which phase the VR market is in and predict what design might emerge as dominant. What strategic implications exist for companies in this market? (12 marks)"</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ S-Curve:</strong> Dominant design typically emerges during Growth phase of S-curve</p>
+                    <p>• <strong>+ Punctuated Equilibrium:</strong> After punctuation, new dominant design forms around new technology</p>
+                    <p>• <strong>+ Creative Destruction:</strong> When new dominant design emerges, it destroys firms locked into old architectures</p>
+                    <p>• <strong>+ Network Effects:</strong> Strong network effects can accelerate lock-in of dominant design</p>
+                </div>
+
+                <div style="background:#fff5f5;border-left:4px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ Common Confusion:</strong> Don't confuse "market leader" with "dominant design." Apple is market leader in premium smartphones BUT the dominant DESIGN (touchscreen slab) is shared across all brands. Dominant design = product architecture, not brand dominance.</p>
+                </div>
+                <div class="must-know">Theory 4: Absorptive Capacity</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Absorptive Capacity (Cohen & Levinthal, 1990) is a firm's ability to recognize the value of new external knowledge, assimilate it into existing knowledge structures, and apply it for commercial purposes. Critically, prior related knowledge is required to absorb new knowledge.</p>
+                </div>
                 <div class="memory-technique">
-                    <h4>Mnemonic: "RAA" — Cohen &amp; Levinthal</h4>
+                    <h4>Mnemonic: "RAA" — 3 components of absorptive capacity</h4>
                     <div class="mnemonic">R-A-A</div>
                     <ul>
-                        <li><strong>R</strong>ecognize: Identify valuable external knowledge (requires prior related knowledge)</li>
-                        <li><strong>A</strong>ssimilate: Integrate external knowledge into existing knowledge base</li>
-                        <li><strong>A</strong>pply: Use assimilated knowledge for commercial innovation</li>
+                        <li><strong>R</strong>ecognize valuable external knowledge</li>
+                        <li><strong>A</strong>ssimilate it into existing knowledge base</li>
+                        <li><strong>A</strong>pply it for commercial innovation</li>
                     </ul>
                 </div>
-                <div class="connection"><strong>Key Insight:</strong> "Prior knowledge is required to absorb new knowledge." You need existing expertise to recognize, understand, and apply external knowledge. This is why firms invest in basic R&amp;D even when they license technology — it builds absorptive capacity.</div>
-                <div class="must-know">Kondratiev Waves (Long Economic Cycles)</div>
-                <div class="quick-list">
+                
+                <div style="background:#f9f9f9;padding:15px;margin:15px 0;border-radius:8px;border:2px solid #34495e;">
+                    <h4 style="color:#34495e;">📊 Three Components Explained:</h4>
+                    <p><strong>1. Recognize (Identification):</strong></p>
                     <ul>
-                        <li>Long-wave economic cycles of ~50 years, driven by clusters of innovation</li>
-                        <li>Wave 1: Industrial Revolution (textiles, iron)</li>
-                        <li>Wave 2: Railways, steam power</li>
-                        <li>Wave 3: Electricity, chemicals, steel</li>
-                        <li>Wave 4: Automotive, oil, aerospace</li>
-                        <li>Wave 5: ICT, internet, software</li>
-                        <li>Wave 6 (emerging): AI, biotech, green energy?</li>
+                        <li>Scan external environment for valuable knowledge</li>
+                        <li>Distinguish signal from noise in research publications, patents, conferences</li>
+                        <li>Requires domain expertise to identify what's important</li>
+                        <li>Firms without prior knowledge can't even recognize breakthroughs</li>
+                    </ul>
+                    <p><strong>2. Assimilate (Integration):</strong></p>
+                    <ul>
+                        <li>Understand the external knowledge deeply</li>
+                        <li>Connect it to existing internal knowledge</li>
+                        <li>Translate external concepts into internal language and processes</li>
+                        <li>Requires internal R&D capability and shared knowledge base</li>
+                    </ul>
+                    <p><strong>3. Apply (Exploitation):</strong></p>
+                    <ul>
+                        <li>Use assimilated knowledge to create commercial innovations</li>
+                        <li>Adapt external knowledge to firm-specific context</li>
+                        <li>Integrate into products, processes, or business models</li>
+                        <li>Generate competitive advantage from external insights</li>
                     </ul>
                 </div>
+
+                <div class="connection"><strong>🔑 KEY INSIGHT:</strong> "Prior knowledge is REQUIRED to absorb new knowledge." You can't recognize, understand, or apply knowledge in domains where you have zero existing expertise. This is why firms invest in internal R&D even when they license technology — it builds absorptive capacity.</div>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong> Students say "companies should just license technology instead of doing R&D." Wrong! Without internal R&D, firms lack absorptive capacity. They won't recognize valuable external knowledge, won't understand licensed technology deeply enough to improve it, and won't apply it effectively. Always mention: internal R&D builds absorptive capacity even when you license technology.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why firms can't just "buy" innovation through licensing or hiring. Knowledge is tacit and context-dependent. You need existing expertise to absorb external knowledge. Answers the question: "Why do firms invest in R&D in fields where others are already ahead?"</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When firms license technology but fail to implement it</li>
+                        <li>When discussing why some firms learn from alliances while others don't</li>
+                        <li>When questioning why firms invest in basic research with no immediate payoff</li>
+                        <li>When analyzing why copycat strategies fail</li>
+                        <li>When discussing R&D investment strategies</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal Absorptive Capacity:</strong></p>
+                    <p><strong>knowledge acquisition • learning from partners • technology licensing • R&D investment • prior expertise • internal capabilities • technology transfer • failed implementation • alliance learning • cannot understand external knowledge</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Absorptive capacity explains why firms must maintain internal R&D capabilities even when external knowledge is freely available — prior related knowledge is required to recognize, assimilate, and apply external innovations."</em></p>
+                </div>
+
+                <div class="confusion-box">
+                    <h3>⚔️ Absorptive Capacity vs Technology Transfer — DON'T CONFUSE</h3>
+                    <div class="confusion-comparison">
+                        <div class="confusion-item">
+                            <strong>Absorptive Capacity</strong>
+                            <p>• ABILITY to learn from external sources</p>
+                            <p>• Internal capability that must be built</p>
+                            <p>• Requires prior related knowledge</p>
+                            <p>• Explains WHY technology transfer often fails</p>
+                            <p><strong>Example:</strong> Chinese firms building EV expertise through R&D partnerships</p>
+                        </div>
+                        <div class="confusion-item">
+                            <strong>Technology Transfer</strong>
+                            <p>• ACT of moving knowledge between entities</p>
+                            <p>• Can be licensing, hiring, partnerships</p>
+                            <p>• Doesn't guarantee recipient can use it</p>
+                            <p>• The MECHANISM, not the capability</p>
+                            <p><strong>Example:</strong> Indian firms licensing Japanese manufacturing processes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Chinese EV Industry — Building Absorptive Capacity</h3>
+                    <p><strong>Context:</strong> In 2000s, Chinese firms lacked expertise in automotive technology. Western firms dominated. How did China build EV leadership by 2020?</p>
+                    <p><strong>Step 1 — Recognize (2000-2010):</strong></p>
+                    <ul>
+                        <li>Chinese government recognized EVs as strategic opportunity</li>
+                        <li>Realized internal combustion engines had huge knowledge gap</li>
+                        <li>EVs = electric motors, batteries, software — different knowledge domain</li>
+                        <li>This recognition required prior knowledge of automotive industry dynamics</li>
+                    </ul>
+                    <p><strong>Step 2 — Assimilate (2010-2015):</strong></p>
+                    <ul>
+                        <li>Mandated joint ventures with foreign firms (Tesla-BYD partnerships)</li>
+                        <li>Sent engineers to study in US, Germany, Japan</li>
+                        <li>Invested heavily in battery research at universities</li>
+                        <li>Built INTERNAL R&D capabilities (not just licensed technology)</li>
+                        <li>This built absorptive capacity to understand external EV knowledge</li>
+                    </ul>
+                    <p><strong>Step 3 — Apply (2015-present):</strong></p>
+                    <ul>
+                        <li>BYD now world's largest EV manufacturer (2023)</li>
+                        <li>CATL controls 37% of global EV battery market</li>
+                        <li>Chinese firms developing proprietary innovations (blade batteries, LFP chemistry advances)</li>
+                        <li>Not just copying — applying learned knowledge to create new innovations</li>
+                    </ul>
+                    <p><strong>Lesson:</strong> China didn't just "buy" EV technology through licensing. They invested in building absorptive capacity through internal R&D, university partnerships, and strategic alliances. This allowed them to recognize valuable external knowledge, assimilate it, and apply it to leapfrog Western firms.</p>
+                    <p><strong>Counter-example:</strong> Many African countries licensed manufacturing technologies in 1980s-90s but failed to implement them. Why? Lack of absorptive capacity — no prior industrial knowledge base, no internal R&D, no technical education infrastructure.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"A UAE healthcare startup wants to implement cutting-edge AI diagnostic tools licensed from a US company. However, they have no in-house AI expertise and plan to rely entirely on the licensed technology. Using Absorptive Capacity theory, evaluate this strategy and recommend alternative approaches. What investments should they make to successfully implement and improve the licensed technology? (10 marks)"</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ S-Curve:</strong> High absorptive capacity helps firms recognize when technologies are transitioning between S-curves</p>
+                    <p>• <strong>+ Punctuated Equilibrium:</strong> Firms with absorptive capacity can recognize punctuation events earlier and develop new competencies faster</p>
+                    <p>• <strong>+ Open Innovation:</strong> Absorptive capacity is prerequisite for successful open innovation — can't leverage external knowledge without it</p>
+                    <p>• <strong>+ Learning Organization:</strong> Absorptive capacity is organizational learning capability operationalized</p>
+                </div>
+
+                <div style="background:#fff5f5;border-left:4px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ Common Confusion:</strong> Students think absorptive capacity is just "hiring smart people." It's organizational capability, not individual talent. Requires: shared knowledge bases, communication routines, incentive structures, prior R&D experience. One brilliant hire can't create absorptive capacity without organizational infrastructure.</p>
+                </div>
+
+                <div class="must-know">Theory 5: Rogers Diffusion of Innovation</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Rogers Diffusion of Innovation (Everett Rogers, 1962) explains how, why, and at what rate new ideas, technologies, and innovations spread through populations. It maps adoption rates across five distinct customer segments over time, forming an S-curve adoption pattern.</p>
+                </div>
+                <div class="memory-technique">
+                    <h4>Mnemonic: "I-E-E-L-L" — 5 adopter categories (in order)</h4>
+                    <div class="mnemonic">I-E-E-L-L</div>
+                    <ul>
+                        <li><strong>I</strong>nnovators (2.5%)</li>
+                        <li><strong>E</strong>arly Adopters (13.5%)</li>
+                        <li><strong>E</strong>arly Majority (34%)</li>
+                        <li><strong>L</strong>ate Majority (34%)</li>
+                        <li><strong>L</strong>aggards (16%)</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f9f9f9;padding:15px;margin:15px 0;border-radius:8px;border:2px solid #34495e;">
+                    <h4 style="color:#34495e;">📊 Five Adopter Categories (Bell Curve Distribution):</h4>
+                    <p><strong>1. Innovators (2.5%) — "Technology Enthusiasts"</strong></p>
+                    <ul>
+                        <li>First to adopt, even when buggy and expensive</li>
+                        <li>High risk tolerance, tech-savvy, well-connected</li>
+                        <li>Willing to pay premium for novelty</li>
+                        <li>Example: People who bought Tesla Roadster ($100K+), early Bitcoin adopters, first iPhone buyers waiting in line</li>
+                    </ul>
+                    <p><strong>2. Early Adopters (13.5%) — "Visionaries"</strong></p>
+                    <ul>
+                        <li>Opinion leaders who see strategic advantage</li>
+                        <li>Willing to tolerate imperfection for competitive edge</li>
+                        <li>Influence mainstream adoption through visibility</li>
+                        <li>Example: Early SaaS adopters (Salesforce 2000s), early social media power users, business executives testing AI tools</li>
+                    </ul>
+                    <p><strong>3. Early Majority (34%) — "Pragmatists"</strong></p>
+                    <ul>
+                        <li>Adopt when proven, but before mainstream saturation</li>
+                        <li>Want references, case studies, ROI proof</li>
+                        <li>Risk-averse but forward-thinking</li>
+                        <li>This segment = mass market begins</li>
+                        <li>Example: SMEs adopting cloud computing after seeing enterprise success</li>
+                    </ul>
+                    <p><strong>4. Late Majority (34%) — "Conservatives"</strong></p>
+                    <ul>
+                        <li>Adopt when technology becomes standard/necessary</li>
+                        <li>Skeptical, price-sensitive, peer-pressure driven</li>
+                        <li>Wait for technology to become commodity</li>
+                        <li>Example: Traditional retailers finally launching e-commerce in 2010s</li>
+                    </ul>
+                    <p><strong>5. Laggards (16%) — "Traditionalists"</strong></p>
+                    <ul>
+                        <li>Last to adopt, often only when forced</li>
+                        <li>Prefer traditional methods, deeply skeptical of change</li>
+                        <li>May never adopt some innovations</li>
+                        <li>Example: Businesses still using fax machines, people without smartphones, cash-only vendors</li>
+                    </ul>
+                </div>
+
+                <div class="connection"><strong>🔑 KEY INSIGHT — "Crossing the Chasm":</strong> The biggest challenge is crossing the gap between Early Adopters (visionaries) and Early Majority (pragmatists). This "chasm" kills most innovations. Why? Early Adopters tolerate bugs for strategic advantage. Early Majority demands proven, complete solutions with support. Different value propositions needed.</div>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong></p>
+                    <p>❌ <strong>Wrong:</strong> Confusing Rogers with S-Curve (both are S-shaped)</p>
+                    <p>✅ <strong>Correct:</strong> Rogers = WHO adopts innovation WHEN (customer segments). S-Curve = HOW technology performance improves (R&D productivity)</p>
+                    <p><strong>Memory trick:</strong> Rogers = people adopting. S-Curve = technology maturing.</p>
+                </div>
+                
+                <div style="background:#e8f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Scenario Triggers — Use Rogers Diffusion When Case Mentions:</strong></p>
+                    <ul style="line-height:1.8;">
+                        <li>✓ "Customer adoption" or "market penetration"</li>
+                        <li>✓ "Early adopters" or "mainstream market"</li>
+                        <li>✓ "Crossing the chasm" or "adoption barriers"</li>
+                        <li>✓ "Why isn't our superior product selling?"</li>
+                        <li>✓ Segmentation: tech enthusiasts vs pragmatists vs conservatives</li>
+                    </ul>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why innovations don't spread instantly even when superior. Different customer segments have different needs, risk tolerances, and adoption triggers. Helps firms target the right segment with the right message at the right time.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When discussing go-to-market strategy and customer segmentation</li>
+                        <li>When analyzing adoption rates and market penetration speed</li>
+                        <li>When explaining why superior innovations fail (couldn't cross the chasm)</li>
+                        <li>When discussing pricing strategy across adoption phases</li>
+                        <li>When analyzing why some markets adopt faster than others</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal Rogers Diffusion:</strong></p>
+                    <p><strong>adoption rate • customer segments • early adopters • mainstream market • chasm • diffusion speed • laggards • opinion leaders • pragmatists • market penetration • adoption barriers</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Rogers Diffusion explains that innovations spread through five adopter segments with different risk tolerances and adoption triggers, with the critical challenge being crossing the chasm between visionary Early Adopters and pragmatist Early Majority."</em></p>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Electric Vehicle Adoption Following Rogers Curve</h3>
+                    <p><strong>Innovators (2006-2012) — 2.5%:</strong></p>
+                    <ul>
+                        <li>Tesla Roadster buyers ($100K+)</li>
+                        <li>Early Nissan Leaf adopters willing to tolerate 80-mile range</li>
+                        <li>Environmentalists, tech enthusiasts, wealthy experimenters</li>
+                        <li>Total EVs sold: <100,000 globally</li>
+                    </ul>
+                    <p><strong>Early Adopters (2012-2018) — 13.5%:</strong></p>
+                    <ul>
+                        <li>Tesla Model S buyers (premium sedan, 250+ mile range)</li>
+                        <li>Early Bolt, Leaf 2.0, Jaguar I-PACE adopters</li>
+                        <li>Opinion leaders: celebrities, tech CEOs, forward-thinking executives</li>
+                        <li>Charging infrastructure still limited but expanding</li>
+                        <li>Total: ~2 million EVs globally by 2018</li>
+                    </ul>
+                    <p><strong>Early Majority (2018-2024) — 34%:</strong></p>
+                    <ul>
+                        <li>Tesla Model 3 ($35K entry price), VW ID.4, Ford Mustang Mach-E</li>
+                        <li>Mainstream buyers convinced by: range >300 miles, charging networks (Supercharger, Electrify America), total cost of ownership analysis</li>
+                        <li>Government incentives help adoption (tax credits, HOV lane access)</li>
+                        <li>Total: 14 million EVs sold globally in 2023 — crossing into mass market</li>
+                    </ul>
+                    <p><strong>Late Majority (2024-2030) — 34%:</strong></p>
+                    <ul>
+                        <li>Will adopt as: EVs become price-competitive with gas cars without subsidies, charging becomes ubiquitous, used EV market matures</li>
+                        <li>Driven by necessity (gas car bans in EU 2035, California 2035)</li>
+                        <li>Skeptical but forced by regulation and economics</li>
+                    </ul>
+                    <p><strong>Laggards (2030+) — 16%:</strong></p>
+                    <ul>
+                        <li>Holdouts preferring gas cars</li>
+                        <li>Rural areas with limited charging infrastructure</li>
+                        <li>Will adopt only when gas cars phased out entirely or become too expensive</li>
+                    </ul>
+                    <p><strong>Key Lesson — Crossing the Chasm:</strong> Tesla's challenge 2012-2018 was crossing from Early Adopters (luxury buyers) to Early Majority (mainstream pragmatists). Solution: Model 3 at $35K, Supercharger network proving range anxiety is solved, demonstrating total cost of ownership savings. This is classic chasm-crossing strategy.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"Generative AI tools (ChatGPT, Midjourney, GitHub Copilot) launched in 2022-2023 and achieved rapid Early Adopter uptake among tech workers. However, mainstream enterprise adoption remains limited due to concerns about accuracy, data privacy, and job displacement. Using Rogers Diffusion theory, analyze which adoption phase generative AI is currently in and recommend strategies for vendors to cross the chasm into the Early Majority corporate market. (12 marks)"</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ S-Curve:</strong> Rogers measures CUSTOMER adoption (who buys when), S-Curve measures TECHNOLOGY performance (how good it gets)</p>
+                    <p>• <strong>+ Dominant Design:</strong> Dominant design typically emerges when crossing from Early Adopters to Early Majority</p>
+                    <p>• <strong>+ Network Effects:</strong> Products with network effects accelerate through Rogers curve as each segment makes next segment more likely to adopt</p>
+                    <p>• <strong>+ Crossing the Chasm (Geoffrey Moore):</strong> Moore extended Rogers by emphasizing the gap between Early Adopters and Early Majority</p>
+                </div>
+
+                <div style="background:#fff5f5;border-left:4px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ Common Confusion:</strong> Students think "Early Majority" means "mainstream." Actually, Early Majority is FIRST half of mainstream (the pragmatists who adopt proven innovations). Late Majority is SECOND half (conservatives who adopt when forced). The chasm exists BEFORE Early Majority, not within it.</p>
+                </div>
+
+                <div class="must-know">Theory 6: Creative Destruction (Schumpeter)</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Creative Destruction (Joseph Schumpeter, 1942) describes the process by which new innovations continuously destroy old industries, business models, and economic structures while simultaneously creating new ones. This "creative destruction" is the essential driving force of capitalism and economic growth.</p>
+                </div>
+                <div class="connection">Pattern = <strong>innovation creates value → old models destroyed → new economic structures emerge → cycle repeats</strong></div>
+                
+                <div style="background:#f9f9f9;padding:15px;margin:15px 0;border-radius:8px;border:2px solid #34495e;">
+                    <h4 style="color:#34495e;">📊 Key Concepts of Creative Destruction:</h4>
+                    <p><strong>1. Innovation as Destruction:</strong></p>
+                    <ul>
+                        <li>Every major innovation destroys existing value chains</li>
+                        <li>Incumbent firms, skills, infrastructure become obsolete</li>
+                        <li>Not gradual evolution — violent disruption</li>
+                        <li>Example: Smartphones destroyed: cameras, MP3 players, GPS devices, alarm clocks, calculators, flashlights</li>
+                    </ul>
+                    <p><strong>2. The Entrepreneur as Agent:</strong></p>
+                    <ul>
+                        <li>Schumpeter saw entrepreneurs (not managers) as drivers</li>
+                        <li>Entrepreneurs combine resources in novel ways</li>
+                        <li>Willing to destroy existing profitable models</li>
+                        <li>Example: Bezos destroyed retail stores, Musk destroying auto dealerships</li>
+                    </ul>
+                    <p><strong>3. Economic Progress Through Chaos:</strong></p>
+                    <ul>
+                        <li>Destruction is NECESSARY for progress</li>
+                        <li>Protecting incumbents stifles innovation</li>
+                        <li>Short-term pain (job losses, bankruptcies) → long-term gain (new industries, wealth creation)</li>
+                        <li>Example: AI automation destroying jobs but creating AI industry worth trillions</li>
+                    </ul>
+                    <p><strong>4. Cycles of Disruption:</strong></p>
+                    <ul>
+                        <li>Innovation comes in waves (relates to Kondratiev Waves)</li>
+                        <li>Each wave destroys previous wave's leaders</li>
+                        <li>No firm is permanently safe — today's disruptor is tomorrow's disrupted</li>
+                        <li>Example: Google disrupted Yahoo, now Google faces disruption from AI (ChatGPT threatening search monopoly)</li>
+                    </ul>
+                </div>
+
+                <div style="background:linear-gradient(135deg,#fff5f5,#ffe8e8);border:2px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ EXAM TRAP:</strong> Creative Destruction is not just "competition" or "disruption." It's about ECONOMIC STRUCTURE change. When discussing it, mention: (1) what was destroyed (specific industries/jobs/value chains), (2) what was created (new industries/jobs/value chains), (3) the net economic impact (creative > destructive in long run). Don't just say "Uber disrupted taxis" — explain the economic restructuring.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why economic progress requires allowing failure, why protecting incumbents harms innovation, and why capitalism is characterized by constant upheaval rather than equilibrium. Helps understand why job displacement from innovation is inevitable and (Schumpeter argues) ultimately beneficial.</p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔍 When To Use In Case Studies:</strong></p>
+                    <ul>
+                        <li>When industries are being fundamentally reshaped by innovation</li>
+                        <li>When discussing job displacement and automation</li>
+                        <li>When analyzing why governments struggle with innovation policy (protect incumbents vs enable disruption)</li>
+                        <li>When explaining long-term economic growth sources</li>
+                        <li>When discussing why dominant firms eventually fail</li>
+                    </ul>
+                </div>
+
+                <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🎯 Keywords That Signal Creative Destruction:</strong></p>
+                    <p><strong>disruption • obsolescence • transformation • restructuring • job displacement • new industries • economic renewal • incumbent failure • entrepreneurship • cannibalization • paradigm shift</strong></p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Schumpeter's Creative Destruction explains that economic progress requires continuous destruction of old industries and business models through innovation, with entrepreneurs acting as agents of this necessary but disruptive transformation."</em></p>
+                </div>
+
+                <div class="confusion-box">
+                    <h3>⚔️ Creative Destruction vs Punctuated Equilibrium — DON'T CONFUSE</h3>
+                    <div class="confusion-comparison">
+                        <div class="confusion-item">
+                            <strong>Creative Destruction</strong>
+                            <p>• MACRO-ECONOMIC perspective on capitalism</p>
+                            <p>• About entire economic structures transforming</p>
+                            <p>• Emphasizes new industries emerging from destruction</p>
+                            <p>• Continuous, ongoing process (waves of innovation)</p>
+                            <p><strong>Example:</strong> Internet economy destroying retail, creating e-commerce, gig economy, SaaS industry</p>
+                        </div>
+                        <div class="confusion-item">
+                            <strong>Punctuated Equilibrium</strong>
+                            <p>• FIRM/INDUSTRY-LEVEL perspective on competition</p>
+                            <p>• About specific incumbent firms failing during technological shifts</p>
+                            <p>• Emphasizes organizational inertia and competency traps</p>
+                            <p>• Episodic disruption alternating with stability</p>
+                            <p><strong>Example:</strong> Why Kodak failed (organizational reasons) during digital transition</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="casestudy-card">
+                    <h3>🎯 Real Example: Streaming Economy — Creative Destruction in Action</h3>
+                    <p><strong>What Was Destroyed (2000-2020):</strong></p>
+                    <ul>
+                        <li><strong>Industries killed:</strong> Video rental (Blockbuster, bankruptcy 2010), DVD manufacturing/retail, cable TV bundles, movie theaters (declining), physical media supply chains</li>
+                        <li><strong>Jobs destroyed:</strong> 100,000+ video rental store jobs, DVD manufacturing workers, retail employees at Best Buy/Walmart media sections</li>
+                        <li><strong>Infrastructure obsolete:</strong> Thousands of retail locations, DVD pressing plants, distribution networks</li>
+                        <li><strong>Value chains disrupted:</strong> Traditional film distribution (theatrical → DVD → TV), music album sales</li>
+                    </ul>
+                    <p><strong>What Was Created (2000-2020):</strong></p>
+                    <ul>
+                        <li><strong>New industries:</strong> Streaming platforms (Netflix $300B market cap), content delivery networks (CDN), cloud storage at scale, podcast industry ($4B), YouTube creator economy</li>
+                        <li><strong>Jobs created:</strong> Software engineers, data scientists, content recommendation algorithm developers, cloud infrastructure specialists, streaming service UX designers, podcast producers, YouTubers/influencers</li>
+                        <li><strong>New infrastructure:</strong> Global CDN networks, data centers, fiber optic networks, 5G towers</li>
+                        <li><strong>New value chains:</strong> Direct-to-streaming content (bypassing theaters), binge-release models, data-driven content production</li>
+                    </ul>
+                    <p><strong>Net Economic Impact:</strong></p>
+                    <ul>
+                        <li>Streaming industry worth >$500B globally (2024)</li>
+                        <li>Consumer surplus massive: $10-20/month for unlimited content vs $5/DVD rental in Blockbuster era</li>
+                        <li>BUT: Geographic concentration of value (Silicon Valley, LA), income inequality (few mega-successful creators vs many struggling), job quality debate (gig economy vs stable retail jobs)</li>
+                    </ul>
+                    <p><strong>Key Lesson — Creative > Destructive:</strong> Short-term pain (Blockbuster bankruptcies, job losses) but long-term gain (cheaper entertainment, more content diversity, new industries worth hundreds of billions). This is Schumpeter's core argument: allowing destruction is necessary for progress. Governments protecting Blockbuster would have prevented Netflix.</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>📝 Doctor-Style Exam Question:</strong></p>
+                    <p><em>"Generative AI (ChatGPT, Midjourney, GitHub Copilot) threatens millions of knowledge worker jobs including writers, programmers, designers, and customer service agents. Using Schumpeter's Creative Destruction theory, analyze the economic transformation occurring and evaluate whether governments should regulate AI to protect existing jobs or allow full disruption. What new industries and jobs might emerge from this destruction? (15 marks)"</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ Punctuated Equilibrium:</strong> Creative Destruction is the macro-economic process, Punctuation is the firm-level manifestation</p>
+                    <p>• <strong>+ Kondratiev Waves:</strong> Creative Destruction happens in waves matching Kondratiev cycles</p>
+                    <p>• <strong>+ S-Curve:</strong> Each new S-curve destroys the old one — mechanism of Creative Destruction</p>
+                    <p>• <strong>+ Disruptive Innovation (Christensen):</strong> Modern refinement of Creative Destruction focusing on how new entrants disrupt incumbents</p>
+                </div>
+
+                <div style="background:#fff5f5;border-left:4px solid #e74c3c;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⚠️ Common Confusion:</strong> Students think Creative Destruction only applies to technology. Schumpeter's concept applies to ALL innovations: organizational (Amazon distribution centers destroying retail stores), business model (Spotify subscription model destroying music sales), financial (fintech destroying bank branches), policy (deregulation destroying protected industries). Technology is just one mechanism.</p>
+                </div>
+
+                <div class="must-know">Kondratiev Waves (Long Economic Cycles)</div>
+                <div style="background:linear-gradient(135deg,#fff3e6,#ffe6cc);border-left:4px solid #e67e22;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔥 Definition:</strong> Kondratiev Waves (Nikolai Kondratiev, 1925) are long-term economic cycles of approximately 40-60 years, driven by clusters of fundamental innovations. Each wave consists of expansion (prosperity driven by new technologies) followed by contraction (stagnation as technologies mature).</p>
+                </div>
+                <div class="connection">Pattern = <strong>innovation cluster emerges → economic expansion → technology matures → stagnation/recession → new innovation cluster → repeat</strong></div>
+                
+                <table class="comparison-table">
+                    <tr><th>Wave</th><th>Period</th><th>Core Technologies</th><th>Economic Impact</th><th>Status</th></tr>
+                    <tr><td><strong>Wave 1</strong></td><td>1780-1840</td><td>Water power, textiles, iron</td><td>Industrial Revolution, factory system</td><td>Complete</td></tr>
+                    <tr><td><strong>Wave 2</strong></td><td>1840-1890</td><td>Steam power, railways, steel</td><td>Transportation revolution, global trade expansion</td><td>Complete</td></tr>
+                    <tr><td><strong>Wave 3</strong></td><td>1890-1940</td><td>Electricity, chemicals, automotive</td><td>Mass production, urban electrification</td><td>Complete</td></tr>
+                    <tr><td><strong>Wave 4</strong></td><td>1940-1990</td><td>Electronics, aviation, petrochemicals</td><td>Suburbanization, aerospace industry, plastic age</td><td>Complete</td></tr>
+                    <tr><td><strong>Wave 5</strong></td><td>1990-2020</td><td>ICT, internet, software, telecommunications</td><td>Digital economy, globalization, dot-com boom</td><td>Maturing</td></tr>
+                    <tr style="background:#fff3cd;"><td><strong>Wave 6</strong></td><td>2020-2070?</td><td>AI, biotech, renewable energy, quantum computing, space tech</td><td>Automation economy, energy transition, personalized medicine</td><td>Emerging</td></tr>
+                </table>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🧩 Why This Theory Exists:</strong></p>
+                    <p>Explains why economic growth is not smooth but happens in waves. Helps understand why certain eras experience simultaneous innovation clusters (AI + biotech + green energy NOW, not randomly). Predicts when next major disruption wave will emerge.</p>
+                </div>
+
+                <div style="background:#e8f8f5;border-left:4px solid #27ae60;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>⭐ Key Exam Sentence:</strong></p>
+                    <p><em>"Kondratiev Waves show that economic development occurs in 50-year cycles driven by clusters of breakthrough innovations, with each wave's prosperity phase followed by maturation and eventual displacement by the next innovation wave."</em></p>
+                </div>
+
+                <div style="background:#f0f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>🔗 Theory Connections:</strong></p>
+                    <p>• <strong>+ Creative Destruction:</strong> Each Kondratiev Wave is a cycle of Creative Destruction on macro scale</p>
+                    <p>• <strong>+ S-Curve:</strong> Each wave corresponds to multiple overlapping S-curves of constituent technologies</p>
+                    <p>• <strong>+ Punctuated Equilibrium:</strong> Transitions between waves are punctuation events at economy-wide scale</p>
+                </div>
+
+                <div style="background:#fff3e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                    <p><strong>💡 Exam Application:</strong> When case studies mention "we're at an inflection point" or "fundamental transformation," reference Kondratiev Wave 6 emerging (AI, biotech, green energy). Shows macro-economic awareness.</p>
+                </div>
             </div>
+
+            <div style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);border:3px solid #2196f3;padding:25px;margin:30px 0;border-radius:12px;">
+                <h3 style="color:#1976d2;margin-bottom:20px;">📊 MASTER THEORY COMPARISON TABLE</h3>
+                <p style="margin-bottom:15px;"><strong>Use this table to quickly identify which theory applies to your case study:</strong></p>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Theory</th>
+                        <th>Main Focus</th>
+                        <th>Main Question Answered</th>
+                        <th>Example Signal</th>
+                        <th>Keywords</th>
+                    </tr>
+                    <tr>
+                        <td><strong>S-Curve</strong></td>
+                        <td>Technology performance evolution</td>
+                        <td>"How mature is this technology?"</td>
+                        <td>Battery improvements slowing, approaching theoretical limits</td>
+                        <td>maturity, plateau, limits, replacement</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Punctuated Equilibrium</strong></td>
+                        <td>Industry disruption patterns</td>
+                        <td>"Why did dominant firms fail during transition?"</td>
+                        <td>Kodak invented digital cameras but went bankrupt</td>
+                        <td>disruption, competency trap, incumbent failure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dominant Design</strong></td>
+                        <td>Product architecture convergence</td>
+                        <td>"Why are all products looking similar now?"</td>
+                        <td>All smartphones converged to touchscreen slab design</td>
+                        <td>industry standard, lock-in, process innovation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Absorptive Capacity</strong></td>
+                        <td>Organizational learning ability</td>
+                        <td>"Why can't we implement licensed technology?"</td>
+                        <td>Firm licensed AI tools but lacks expertise to apply them</td>
+                        <td>prior knowledge, learning, R&D investment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rogers Diffusion</strong></td>
+                        <td>Customer adoption patterns</td>
+                        <td>"How fast will customers adopt this?"</td>
+                        <td>Tech enthusiasts love it but mainstream skeptical</td>
+                        <td>adoption rate, early adopters, chasm, segments</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Creative Destruction</strong></td>
+                        <td>Economic transformation</td>
+                        <td>"What industries will this destroy and create?"</td>
+                        <td>Streaming destroyed Blockbuster, created Netflix economy</td>
+                        <td>disruption, obsolescence, new industries</td>
+                    </tr>
+                </table>
+            </div>
+
             <div class="understand-section">
-                <h3>UNDERSTAND: How Theories Connect</h3>
+                <h3>UNDERSTAND: How All 6 Theories Connect</h3>
                 <div class="connection">
-                    S-Curve + Punctuated Equilibrium: When a technology reaches S-curve maturity, it becomes vulnerable to punctuation (radical disruption). The new technology starts a new S-curve. This is why Kodak failed — they were at the top of the film photography S-curve when digital punctuated the equilibrium.
+                    <strong>S-Curve + Punctuated Equilibrium:</strong> When a technology reaches S-curve maturity, it becomes vulnerable to punctuation (radical disruption). The new technology starts a new S-curve. This is why Kodak failed — they were at the top of the film photography S-curve when digital punctuated the equilibrium.
                 </div>
                 <div class="connection">
-                    Dominant Design + S-Curve: Dominant design typically emerges during the Growth phase of the S-curve. Once dominant design is established, innovation transitions from product to process innovation.
+                    <strong>Dominant Design + S-Curve:</strong> Dominant design typically emerges during the Growth phase of the S-curve. Once dominant design is established, innovation transitions from product to process innovation.
                 </div>
                 <div class="connection">
-                    Absorptive Capacity + All Theories: Firms with high absorptive capacity can recognize when punctuation is coming, adopt new dominant designs faster, and navigate S-curve transitions more successfully.
+                    <strong>Absorptive Capacity + All Theories:</strong> Firms with high absorptive capacity can recognize when punctuation is coming (Punctuated Equilibrium), adopt new dominant designs faster (Dominant Design), recognize S-curve transitions earlier (S-Curve), and identify which customer segment to target (Rogers Diffusion).
+                </div>
+                <div class="connection">
+                    <strong>Rogers Diffusion + Dominant Design:</strong> Dominant design typically crystallizes when adoption crosses from Early Adopters to Early Majority (crossing the chasm). Before that, multiple designs compete.
+                </div>
+                <div class="connection">
+                    <strong>Creative Destruction + Punctuated Equilibrium:</strong> Creative Destruction is the macro-economic process; Punctuated Equilibrium is the firm/industry manifestation. Same phenomenon, different analytical levels.
+                </div>
+                <div class="connection">
+                    <strong>Kondratiev Waves + All Theories:</strong> Each Kondratiev Wave consists of multiple overlapping S-curves (technology lifecycles), punctuation events (disruptions), dominant design formations (industry standards), and Creative Destruction cycles (economic restructuring).
                 </div>
             </div>
-            <div class="exam-tip">S-curve questions: ALWAYS name all 3 phases and describe what happens in each. Punctuated equilibrium questions: ALWAYS use Kodak example. Dominant Design questions: iPhone example is perfect. Absorptive capacity questions: explain why PRIOR knowledge matters.</div>
+            <div class="exam-tip"><strong>Theory Selection Strategy:</strong> S-curve questions: ALWAYS mention all 4 phases including decline/replacement. Punctuated equilibrium questions: ALWAYS explain competency traps and organizational inertia (not just "they didn't see it coming"). Dominant Design questions: ALWAYS mention the shift from product to process innovation. Absorptive capacity questions: ALWAYS explain why PRIOR knowledge matters. Rogers Diffusion questions: ALWAYS identify which adopter segment and mention crossing the chasm. Creative Destruction questions: ALWAYS explain what was destroyed AND what was created (both sides).</div>
             <div class="chapter-questions practice-only">
                 <h3>Most Likely Exam Questions</h3>
                 <div class="question-section">
-                    <div class="question-header" onclick="toggleQuestion(this)">Explain the S-curve of technological development and its strategic implications<span class="toggle-icon">▼</span></div>
+                    <div class="question-header">Explain the S-curve of technological development and its strategic implications</div>
                     <div class="question-content">
                         <div class="question-text"><strong>Full Question (15 marks):</strong> The electric vehicle (EV) market is currently experiencing rapid growth globally. Using the S-curve of technological development, analyze the current stage of EV technology and predict the strategic challenges that EV manufacturers will face as the technology matures. Use relevant examples to support your analysis.</div>
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -285,7 +1166,7 @@
                     </div>
                 </div>
                 <div class="question-section">
-                    <div class="question-header" onclick="toggleQuestion(this)">Analyze Kodak's failure using Punctuated Equilibrium theory<span class="toggle-icon">▼</span></div>
+                    <div class="question-header">Analyze Kodak's failure using Punctuated Equilibrium theory</div>
                     <div class="question-content">
                         <div class="question-text"><strong>Full Question (12 marks):</strong> In 1975, Kodak engineer Steve Sasson invented the digital camera. Yet by 2012, Kodak had filed for bankruptcy. Using the theory of Punctuated Equilibrium, analyze why Kodak failed to survive the transition from film to digital photography. What lessons does this case provide for today's technology companies?</div>
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -327,7 +1208,7 @@
                     </div>
                 </div>
                 <div class="question-section">
-                    <div class="question-header" onclick="toggleQuestion(this)">Analyze the iPhone using Dominant Design theory<span class="toggle-icon">▼</span></div>
+                    <div class="question-header">Analyze the iPhone using Dominant Design theory</div>
                     <div class="question-content">
                         <div class="question-text"><strong>Full Question (10 marks):</strong> When Apple launched the iPhone in 2007, the mobile phone market offered consumers many different designs including QWERTY keyboards, stylus devices, and flip phones. Using the Dominant Design framework (F-T-S), analyze how the iPhone established dominant design in the smartphone industry and the implications for firms that failed to adopt it.</div>
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -382,6 +1263,93 @@
                 </div>
                 <p style="margin-top:10px;font-weight:600;">Both produce S-shaped curves but measure different things. S-curve = technology capability. Rogers = market adoption behavior. Both can apply to same technology but from different angles.</p>
             </div>
+            
+            <div style="background:linear-gradient(135deg,#f0f4ff,#e5edff);border:3px solid #6366f1;padding:25px;margin:30px 0;border-radius:12px;box-shadow:0 4px 20px rgba(99,102,241,0.2);">
+                <h3 style="color:#4338ca;margin-bottom:15px;font-size:1.3em;">🤖 INTEGRATED AI CASE STUDY: ChatGPT — Multiple Theories in Action</h3>
+                <p style="font-style:italic;color:#4338ca;margin-bottom:20px;">This case demonstrates how MULTIPLE theories apply to ONE innovation scenario. In exams, you'll often need to synthesize 2-3 theories to fully answer questions.</p>
+                
+                <div style="background:white;padding:20px;border-radius:8px;margin:15px 0;">
+                    <h4 style="color:#4338ca;margin-bottom:10px;">📖 Scenario: ChatGPT Launch (November 2022 - Present)</h4>
+                    <p>OpenAI launched ChatGPT on November 30, 2022. Within 5 days, it reached 1 million users. Within 2 months, 100 million users. By mid-2023, generative AI became a mainstream technology conversation, disrupting content creation, coding, education, and customer service industries.</p>
+                </div>
+                
+                <div style="background:#fff7ed;border-left:4px solid #f97316;padding:15px;margin:15px 0;border-radius:8px;">
+                    <h4 style="color:#ea580c;">🎯 Theory 1: S-Curve (Technology Maturity)</h4>
+                    <p><strong>Application:</strong> Transformer architecture (underlying ChatGPT) is in <strong>Growth Phase</strong> of S-curve:</p>
+                    <ul>
+                        <li><strong>Evidence:</strong> Rapid performance improvements from GPT-2 (2019) → GPT-3 (2020) → GPT-3.5 (2022) → GPT-4 (2023)</li>
+                        <li><strong>Current status:</strong> Each model generation shows measurable improvements in reasoning, context length, accuracy</li>
+                        <li><strong>Maturity signal:</strong> Some researchers predict transformer architecture approaching limits — diminishing returns visible in GPT-4 → GPT-4.5</li>
+                        <li><strong>Strategic implication:</strong> Firms must watch for <strong>next S-curve emerging</strong> — alternative architectures (diffusion models, neuromorphic computing, quantum ML) that could replace transformers</li>
+                    </ul>
+                    <p><strong>Exam application:</strong> "Using S-Curve theory, explain whether OpenAI should continue scaling transformers or explore alternative architectures."</p>
+                </div>
+                
+                <div style="background:#f0fdf4;border-left:4px solid #22c55e;padding:15px;margin:15px 0;border-radius:8px;">
+                    <h4 style="color:#16a34a;">🎯 Theory 2: Rogers Diffusion (Adoption Pattern)</h4>
+                    <p><strong>Application:</strong> ChatGPT adoption following classic Rogers curve:</p>
+                    <ul>
+                        <li><strong>Innovators (2.5%) — Nov-Dec 2022:</strong> Tech enthusiasts, AI researchers, early experimenters testing capabilities</li>
+                        <li><strong>Early Adopters (13.5%) — Jan-Mar 2023:</strong> Content creators, software developers, students using for productivity — opinion leaders demonstrating value</li>
+                        <li><strong>Crossing the Chasm (2023-2024):</strong> Current challenge = moving from Early Adopters to Early Majority (mainstream enterprises)</li>
+                        <li><strong>Barriers:</strong> Accuracy concerns, hallucinations, data privacy fears, job displacement anxiety, lack of enterprise controls</li>
+                        <li><strong>Early Majority (2024-2025):</strong> Will adopt when: enterprise versions with data governance exist, accuracy improves, ROI proven, competitors force adoption</li>
+                    </ul>
+                    <p><strong>Exam application:</strong> "Using Rogers Diffusion, analyze why ChatGPT achieved rapid Early Adopter uptake but faces challenges crossing to mainstream enterprise market."</p>
+                </div>
+                
+                <div style="background:#fef2f2;border-left:4px solid #ef4444;padding:15px;margin:15px 0;border-radius:8px;">
+                    <h4 style="color:#dc2626;">🎯 Theory 3: Creative Destruction (Industry Disruption)</h4>
+                    <p><strong>Application:</strong> ChatGPT destroying existing business models while creating new ones:</p>
+                    <ul>
+                        <li><strong>Industries disrupted:</strong> Content writing agencies (copywriting automated), tutoring services (AI tutors), basic coding bootcamps (GitHub Copilot), customer service call centers (AI chatbots)</li>
+                        <li><strong>Jobs threatened:</strong> Entry-level content writers, junior programmers, translators, basic data analysts</li>
+                        <li><strong>New value creation:</strong> Prompt engineering jobs, AI content editors, AI ethics consultants, generative AI startups ($20B+ invested 2023)</li>
+                        <li><strong>Schumpeterian gale:</strong> Traditional education models disrupted (essay-based assessment no longer valid), legal industry (contract review automated)</li>
+                    </ul>
+                    <p><strong>Exam application:</strong> "Using Creative Destruction, analyze which industries are most vulnerable to generative AI and what new economic structures are emerging."</p>
+                </div>
+                
+                <div style="background:#faf5ff;border-left:4px solid #a855f7;padding:15px;margin:15px 0;border-radius:8px;">
+                    <h4 style="color:#9333ea;">🎯 Theory 4: Dominant Design (Standard Emergence)</h4>
+                    <p><strong>Application:</strong> ChatGPT attempting to establish dominant design in conversational AI:</p>
+                    <ul>
+                        <li><strong>Fluid Phase (2022-2023):</strong> Multiple competing approaches — ChatGPT (OpenAI), Bard/Gemini (Google), Claude (Anthropic), Llama (Meta)</li>
+                        <li><strong>Transitional Phase (2023-2024):</strong> Market converging on chat interface + transformer architecture as standard. All major players copying ChatGPT's interaction pattern.</li>
+                        <li><strong>Competition focus:</strong> Shifting from "what interface?" to "which model is most accurate/safe/cheap?"</li>
+                        <li><strong>Dominant design emerging:</strong> Chat-based interface with prompt → response pattern, multimodal (text + image + code), API access for integration</li>
+                        <li><strong>Strategic implication:</strong> Once dominant design locks in, competition becomes process innovation (efficiency, cost, safety) rather than product innovation</li>
+                    </ul>
+                    <p><strong>Exam application:</strong> "Using Dominant Design framework, analyze whether the ChatGPT interface has become the dominant standard for generative AI interaction."</p>
+                </div>
+                
+                <div style="background:#ecfeff;border-left:4px solid #06b6d4;padding:15px;margin:15px 0;border-radius:8px;">
+                    <h4 style="color:#0891b2;">🎯 Theory 5: Punctuated Equilibrium (Incumbent Response)</h4>
+                    <p><strong>Application:</strong> How established tech giants responded to ChatGPT disruption:</p>
+                    <ul>
+                        <li><strong>Equilibrium period (pre-2022):</strong> Google dominated search with incremental improvements, Microsoft dominated productivity with Office suite</li>
+                        <li><strong>Punctuation event (Nov 2022):</strong> ChatGPT launch = radical discontinuity in how people access information and create content</li>
+                        <li><strong>Competency trap:</strong> Google's search algorithm expertise suddenly less relevant when users prefer conversational answers over 10 blue links</li>
+                        <li><strong>Incumbent panic:</strong> Google declared "Code Red" emergency, rushed Bard launch (Feb 2023) with errors, Microsoft integrated ChatGPT into Bing gaining search share for first time in decade</li>
+                        <li><strong>New equilibrium forming (2024+):</strong> All major tech firms now have generative AI products, competition resetting with new competencies required</li>
+                    </ul>
+                    <p><strong>Exam application:</strong> "Using Punctuated Equilibrium, explain why Google struggled to respond to ChatGPT despite having superior AI research capabilities."</p>
+                </div>
+                
+                <div style="background:#fffbeb;border:2px solid #f59e0b;padding:20px;margin:20px 0;border-radius:8px;">
+                    <h4 style="color:#d97706;margin-bottom:10px;">🎓 EXAM STRATEGY: Synthesizing Multiple Theories</h4>
+                    <p><strong>When a case study is complex (like ChatGPT), use this framework:</strong></p>
+                    <ol style="line-height:1.8;">
+                        <li><strong>S-Curve:</strong> Where is the TECHNOLOGY in its lifecycle? (maturity assessment)</li>
+                        <li><strong>Rogers:</strong> Where are CUSTOMERS in adoption? (market penetration assessment)</li>
+                        <li><strong>Creative Destruction:</strong> What's being DESTROYED and CREATED? (industry impact assessment)</li>
+                        <li><strong>Dominant Design:</strong> What STANDARD is emerging? (competitive convergence assessment)</li>
+                        <li><strong>Punctuated Equilibrium:</strong> How are INCUMBENTS responding? (organizational response assessment)</li>
+                    </ol>
+                    <p style="margin-top:15px;"><strong>Doctor's expectation:</strong> High-scoring answers don't just apply ONE theory. They synthesize 2-3 theories to provide comprehensive analysis. ChatGPT case shows all 5 theories working simultaneously in one innovation scenario.</p>
+                </div>
+            </div>
+            
             <div class="casestudy-card">
                 <h3>Case Study Application: Innovation Theories</h3>
                 <div class="casestudy-step">Identify which of the 4 SPAD theories applies to the case company/technology</div>
@@ -407,8 +1375,9 @@
 <script>
 function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
 function setMode(mode){const body=document.body,buttons=document.querySelectorAll('.mode-btn');body.classList.remove('study-mode','practice-mode','quick-mode');body.classList.add(mode+'-mode');buttons.forEach(b=>b.classList.remove('active'));const ab=document.getElementById(mode+'Mode');if(ab)ab.classList.add('active');try{localStorage.setItem('preferredMode',mode);}catch(e){}window.scrollTo({top:0,behavior:'smooth'});}
-function toggleQuestion(h){h.classList.toggle('active');const c=h.nextElementSibling;if(!c||!c.classList.contains('question-content'))return;if(h.classList.contains('active')){c.classList.add('show');requestAnimationFrame(()=>{c.style.maxHeight=c.scrollHeight+'px';});}else{c.style.maxHeight=c.scrollHeight+'px';requestAnimationFrame(()=>{c.style.maxHeight='0px';c.classList.remove('show');});}}
-function toggleAnswer(b){b.classList.toggle('active');const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(b.classList.contains('active')){a.classList.add('show');requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});b.innerHTML='▲ Hide Model Answer';}else{a.style.maxHeight=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.maxHeight='0px';a.classList.remove('show');});b.innerHTML='▼ Show Model Answer';}}
+function toggleAnswer(b){const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(!b.classList.contains('active')){b.classList.add('active');a.classList.add('show');a.style.overflow='hidden';a.style.maxHeight='0px';requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});const onOpen=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onOpen);if(a.classList.contains('show')){if(window.innerWidth<=768){a.style.maxHeight='70vh';a.style.overflowY='auto';}else{a.style.maxHeight='none';a.style.overflow='visible';}}};a.addEventListener('transitionend',onOpen);b.innerHTML='▲ Hide Model Answer';}else{b.classList.remove('active');if(a.style.maxHeight==='none'||a.style.maxHeight==='70vh'){a.style.maxHeight=a.scrollHeight+'px';}a.style.overflow='hidden';a.style.overflowY='hidden';requestAnimationFrame(()=>{a.style.maxHeight='0px';});const onClose=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onClose);a.classList.remove('show');};a.addEventListener('transitionend',onClose);b.innerHTML='▼ Show Model Answer';}}
+function collapseAllAnswers(){document.querySelectorAll('.answer-toggle.active').forEach(b=>toggleAnswer(b));}
+function expandAllAnswers(){document.querySelectorAll('.answer-toggle:not(.active)').forEach(b=>toggleAnswer(b));}
 document.addEventListener('DOMContentLoaded',function(){
     const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
     if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}

@@ -32,20 +32,16 @@
         .chapter-section { margin-bottom: 40px; }
         .chapter-section-header { background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%); color: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; font-size: 1.25em; font-weight: 700; }
         .chapter-section-header .ch-sub { font-size: 0.8em; opacity: 0.85; font-weight: 400; display: block; margin-top: 4px; }
-        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 20px 0; overflow: hidden; }
-        .question-header { background: var(--question-color); color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
-        .question-header:hover { background: #ff5722; }
+        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 20px 0; overflow: visible; }
+        .question-header { background: var(--question-color); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
         .question-header::before { content: "❓ "; }
-        .toggle-icon { transition: transform 0.3s ease; }
-        .question-header.active .toggle-icon { transform: rotate(180deg); }
-        .question-content { max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); padding: 0 20px; }
-        .question-content.show { max-height: 3000px; padding: 20px; }
+        .question-content { padding: 20px; }
         .question-text { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--question-color); font-weight: 500; }
         .marks-badge { background: var(--primary-color); color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; font-weight: 700; margin-left: 10px; }
         .answer-toggle { background: var(--answer-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin: 10px 0; transition: all 0.3s ease; width: 100%; text-align: center; }
         .answer-toggle:hover { background: #27ae60; }
         .model-answer { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 5px solid var(--answer-color); padding: 0; border-radius: 8px; max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s cubic-bezier(0.4,0,0.2,1), margin 0.38s cubic-bezier(0.4,0,0.2,1); }
-        .model-answer.show { max-height: 4000px; padding: 20px; margin-top: 15px; }
+        .model-answer.show { padding: 20px; margin-top: 15px; }
         .model-answer h4 { color: var(--answer-color); margin-bottom: 10px; }
         .model-answer h4::before { content: "✓ "; }
         strong { color: var(--primary-color); font-weight: 600; }
@@ -101,15 +97,15 @@
     </nav>
     <main>
         <div class="utility-bar">
-            <button class="util-btn" onclick="expandAllQuestions()">📂 Expand All Questions</button>
-            <button class="util-btn" onclick="collapseAllQuestions()">📁 Collapse All</button>
+            <button class="util-btn" onclick="expandAllAnswers()">📂 Expand All Answers</button>
+            <button class="util-btn" onclick="collapseAllAnswers()">📁 Collapse All Answers</button>
         </div>
 
         <!-- Chapter 3 Questions -->
         <div class="chapter-section">
             <div class="chapter-section-header">📈 Chapter 3 Questions<span class="ch-sub">Innovation Theories: S-Curve, Punctuated Equilibrium, Dominant Design, Absorptive Capacity</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q1 — S-Curve analysis of EV technology <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q1 — S-Curve analysis of EV technology <span class="marks-badge">15 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">The electric vehicle (EV) market is currently experiencing rapid growth globally. Using the S-curve of technological development, analyze the current stage of EV technology and predict the strategic challenges that EV manufacturers will face as the technology matures. Use relevant examples to support your analysis.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -125,7 +121,7 @@
                 </div>
             </div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q2 — Kodak failure and Punctuated Equilibrium <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q2 — Kodak failure and Punctuated Equilibrium <span class="marks-badge">12 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">In 1975, Kodak engineer Steve Sasson invented the digital camera. Yet by 2012, Kodak had filed for bankruptcy. Using the theory of Punctuated Equilibrium, analyze why Kodak failed to survive the transition from film to digital photography. What lessons does this case provide for today's technology companies?</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -140,7 +136,7 @@
                 </div>
             </div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q3 — iPhone and Dominant Design (FTS) <span><span class="marks-badge">10 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q3 — iPhone and Dominant Design (FTS) <span class="marks-badge">10 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">When Apple launched the iPhone in 2007, the mobile phone market offered consumers many different designs. Using the Dominant Design framework (F-T-S), analyze how the iPhone established dominant design in the smartphone industry and the implications for firms that failed to adopt it.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -160,7 +156,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">⚖️ Chapter 7 Questions<span class="ch-sub">Intellectual Property Rights: Patents, Trade Secrets, Copyright, Design Rights</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q4 — Explain 4 types of IPR and recommend protection strategy <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q4 — Explain 4 types of IPR and recommend protection strategy <span class="marks-badge">15 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">A technology startup has developed a new AI-powered medical diagnostic device. The device includes a novel algorithm, a distinctive physical design, a unique brand name, and software code written by the founders. Identify and explain the most appropriate IPR protection for each element. Justify your recommendations using relevant criteria.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -176,7 +172,7 @@
                 </div>
             </div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q5 — IPR trade-off: innovation incentive vs knowledge diffusion <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q5 — IPR trade-off: innovation incentive vs knowledge diffusion <span class="marks-badge">12 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">"Intellectual Property Rights are a necessary evil — they incentivize innovation but restrict the free flow of knowledge that also drives innovation." Critically analyze this statement using examples from the pharmaceutical industry and the technology sector.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -196,7 +192,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">🎯 Chapter 8 Questions<span class="ch-sub">Innovation Strategy: VGRPC Framework, Maturity Levels, ISO 56000</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q6 — VGRPC framework and strategic alignment for UAE tech company <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q6 — VGRPC framework and strategic alignment for UAE tech company <span class="marks-badge">12 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">A UAE technology company is struggling to move from ad-hoc innovation to systematic innovation. Using the VGRPC framework, develop a comprehensive innovation strategy. Explain how each component contributes to innovation success and identify maturity level improvements required.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -218,7 +214,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">🚀 Chapter 9 Questions<span class="ch-sub">Technology Entrepreneurs: Porter's Diamond, Triple Helix, Clusters</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q7 — Why clusters emerge and UAE cluster-building strategy <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q7 — Why clusters emerge and UAE cluster-building strategy <span class="marks-badge">12 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">"Silicon Valley cannot be replicated" — critically analyze this statement. Using Porter's Diamond, explain why some regions develop into innovation clusters while others do not. Evaluate how the UAE government is attempting to build its own technology cluster ecosystem.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -246,7 +242,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">💰 Chapter 10 Questions<span class="ch-sub">Funding Innovation: Funding Journey, Angels vs VCs, Valley of Death</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q8 — Funding journey from Seed to Series B + Angels vs VCs <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q8 — Funding journey from Seed to Series B + Angels vs VCs <span class="marks-badge">15 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">A UAE-based technology startup has developed an AI-powered logistics management platform. The founders have invested their own savings (AED 500,000) to build an MVP. Explain the funding journey from this point to Series B funding, including the typical investors, amounts, and milestones at each stage. Compare angel investors and venture capitalists as funding sources.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -277,7 +273,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">⚙️ Chapter 11 Questions<span class="ch-sub">Managing Innovation: POLC, Stage-Gate, Development Funnel, 70-20-10</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q9 — Development funnel and stage-gate process <span><span class="marks-badge">12 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q9 — Development funnel and stage-gate process <span class="marks-badge">12 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">A pharmaceutical company receives thousands of drug candidate ideas each year but brings only a handful to market. Using the Development Funnel and Stage-Gate Process, explain how the company should manage its innovation portfolio to maximize the probability of commercial success.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -303,7 +299,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">🌐 Chapter 12 Questions<span class="ch-sub">Innovation Offshoring: CAST, GINs, Modularization, Apple iPod</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q10 — Explain how modularization enables innovation offshoring <span><span class="marks-badge">10 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q10 — Explain how modularization enables innovation offshoring <span class="marks-badge">10 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">Using Apple's iPod as a case study, explain how modularization and well-defined interfaces enable firms to offshore innovation activities to global locations. Discuss the risks of this strategy.</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -331,7 +327,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">🌿 Chapter 13 Questions<span class="ch-sub">Green Innovation: Porter Hypothesis, T-M-R, 5Rs, UAE Green Economy</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q11 — Porter Hypothesis: environmental regulation drives innovation <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q11 — Porter Hypothesis: environmental regulation drives innovation <span class="marks-badge">15 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">The Porter Hypothesis suggests that well-designed environmental regulations can stimulate innovation, leading to competitive advantage for firms — not just compliance costs. Critically evaluate this hypothesis using evidence from industry. How should UAE policymakers use this insight in designing environmental regulation?</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -353,7 +349,7 @@
         <div class="chapter-section">
             <div class="chapter-section-header">🇦🇪 Chapter 14 Questions<span class="ch-sub">UAE Innovation Policy: SAVED G, E-C-S, Vision 2021, AED 2B Funds</span></div>
             <div class="question-section">
-                <div class="question-header" onclick="toggleQuestion(this)">Q12 — UAE National Innovation Strategy: analysis and evaluation <span><span class="marks-badge">15 marks</span><span class="toggle-icon">▼</span></span></div>
+                <div class="question-header">Q12 — UAE National Innovation Strategy: analysis and evaluation <span class="marks-badge">15 marks</span></div>
                 <div class="question-content">
                     <div class="question-text">The UAE has implemented a comprehensive National Innovation Strategy to diversify its economy away from oil dependence. Critically evaluate the effectiveness of this strategy using the E-C-S framework (Ecosystem, Culture, Sectors). What challenges remain in building a sustainable innovation economy?</div>
                     <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -396,10 +392,9 @@
 <a href="#" class="back-to-top" id="backToTop">↑</a>
 <script>
 function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
-function toggleQuestion(h){h.classList.toggle('active');const c=h.nextElementSibling;if(!c||!c.classList.contains('question-content'))return;if(h.classList.contains('active')){c.classList.add('show');requestAnimationFrame(()=>{c.style.maxHeight=c.scrollHeight+'px';});}else{c.style.maxHeight=c.scrollHeight+'px';requestAnimationFrame(()=>{c.style.maxHeight='0px';c.classList.remove('show');});}}
-function toggleAnswer(b){b.classList.toggle('active');const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(b.classList.contains('active')){a.classList.add('show');requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});b.innerHTML='▲ Hide Model Answer';}else{a.style.maxHeight=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.maxHeight='0px';a.classList.remove('show');});b.innerHTML='▼ Show Model Answer';}}
-function collapseAllQuestions(){document.querySelectorAll('.question-header.active').forEach(h=>toggleQuestion(h));}
-function expandAllQuestions(){document.querySelectorAll('.question-header:not(.active)').forEach(h=>toggleQuestion(h));}
+function toggleAnswer(b){const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(!b.classList.contains('active')){b.classList.add('active');a.classList.add('show');a.style.overflow='hidden';a.style.maxHeight='0px';requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});const onOpen=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onOpen);if(a.classList.contains('show')){if(window.innerWidth<=768){a.style.maxHeight='70vh';a.style.overflowY='auto';}else{a.style.maxHeight='none';a.style.overflow='visible';}}};a.addEventListener('transitionend',onOpen);b.innerHTML='▲ Hide Model Answer';}else{b.classList.remove('active');if(a.style.maxHeight==='none'||a.style.maxHeight==='70vh'){a.style.maxHeight=a.scrollHeight+'px';}a.style.overflow='hidden';a.style.overflowY='hidden';requestAnimationFrame(()=>{a.style.maxHeight='0px';});const onClose=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onClose);a.classList.remove('show');};a.addEventListener('transitionend',onClose);b.innerHTML='▼ Show Model Answer';}}
+function collapseAllAnswers(){document.querySelectorAll('.answer-toggle.active').forEach(b=>toggleAnswer(b));}
+function expandAllAnswers(){document.querySelectorAll('.answer-toggle:not(.active)').forEach(b=>toggleAnswer(b));}
 document.addEventListener('DOMContentLoaded',function(){
     const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
     if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}

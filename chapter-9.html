@@ -71,19 +71,15 @@
         .casestudy-card h3::before { content: "📝 "; }
         .casestudy-step { background: white; padding: 12px 15px; margin: 10px 0; border-radius: 6px; border-left: 3px solid var(--success-color); }
         .casestudy-step::before { content: "✓ "; color: var(--success-color); font-weight: 700; }
-        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: hidden; }
-        .question-header { background: var(--question-color); color: white; padding: 15px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
-        .question-header:hover { background: #ff5722; }
+        .question-section { background: linear-gradient(135deg, #fff3e6, #ffe6cc); border: 3px solid var(--question-color); border-radius: 12px; margin: 25px 0; overflow: visible; }
+        .question-header { background: var(--question-color); color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; user-select: none; }
         .question-header::before { content: "❓ "; }
-        .toggle-icon { transition: transform 0.3s ease; }
-        .question-header.active .toggle-icon { transform: rotate(180deg); }
-        .question-content { max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1); padding: 0 20px; }
-        .question-content.show { max-height: 2000px; padding: 20px; }
+        .question-content { padding: 20px; }
         .question-text { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--question-color); font-weight: 500; }
         .answer-toggle { background: var(--answer-color); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1em; margin: 10px 0; transition: all 0.3s ease; width: 100%; text-align: center; }
         .answer-toggle:hover { background: #27ae60; }
         .model-answer { background: linear-gradient(135deg, #e8f8f5, #d5f5e3); border-left: 5px solid var(--answer-color); padding: 0; border-radius: 8px; max-height: 0; overflow: hidden; transition: max-height 0.38s cubic-bezier(0.4,0,0.2,1), padding 0.38s cubic-bezier(0.4,0,0.2,1), margin 0.38s cubic-bezier(0.4,0,0.2,1); }
-        .model-answer.show { max-height: 2000px; padding: 20px; margin-top: 15px; }
+        .model-answer.show { padding: 20px; margin-top: 15px; }
         .model-answer h4 { color: var(--answer-color); margin-bottom: 10px; }
         .model-answer h4::before { content: "✓ "; }
         .chapter-questions { background: linear-gradient(135deg, #fff5f5, #ffe6e6); border: 3px solid #e74c3c; border-radius: 12px; padding: 25px; margin: 30px 0; }
@@ -159,12 +155,60 @@
         <section class="chapter" id="ch9">
             <span class="chapter-number">CHAPTER 9</span>
             <h2>🚀 Technology Entrepreneurs &amp; Clusters</h2>
+            
+            <div style="background:linear-gradient(135deg,#e8fff8,#d5f5e8);border-left:5px solid #27ae60;padding:25px;margin:20px 0;border-radius:12px;box-shadow:0 4px 15px rgba(39,174,96,0.1);">
+                <h3 style="color:#229954;margin-bottom:15px;font-size:1.3em;">🎯 Why Clusters & Entrepreneurs Matter for Your Exam</h3>
+                <p style="line-height:1.8;margin-bottom:15px;"><strong>Cluster questions test your spatial thinking</strong> — why do innovations concentrate geographically? Examiners love this topic because it combines economics, geography, and policy, testing your ability to explain complex ecosystem dynamics.</p>
+                <p style="line-height:1.8;margin-bottom:15px;"><strong>What doctors specifically look for:</strong></p>
+                <ul style="margin:0;padding-left:20px;line-height:1.8;">
+                    <li><strong>Porter's Diamond mastery:</strong> Can you analyze all 4 factors (not just list them) for a specific region?</li>
+                    <li><strong>Triple Helix application:</strong> Can you identify U-I-G actors and their interactions in a case?</li>
+                    <li><strong>Cluster success diagnosis:</strong> Can you explain why Silicon Valley succeeded while others failed?</li>
+                    <li><strong>UAE cluster policy:</strong> Can you evaluate UAE's cluster-building initiatives using frameworks?</li>
+                    <li><strong>Entrepreneur traits:</strong> Can you link VRCAP traits to case study scenarios?</li>
+                </ul>
+                <p style="line-height:1.8;margin-top:15px;"><strong>By the end of this chapter, you'll master:</strong> Porter's Diamond (4 factors), Triple Helix (U-I-G), VRCAP entrepreneur traits, cluster formation dynamics, UAE cluster examples (Dubai Internet City, Hub71, Silicon Oasis), and why "you can't just build another Silicon Valley."</p>
+            </div>
+            
+            <div style="background:linear-gradient(135deg,#e8f8f5,#d5f5e3);border-left:5px solid #27ae60;padding:20px;margin:20px 0;border-radius:10px;">
+                <h3 style="color:#229954;margin-bottom:12px;">📌 Chapter Summary</h3>
+                <ul style="margin:0;padding-left:20px;line-height:1.8;">
+                    <li>This chapter explains why certain regions (like Silicon Valley) become innovation hubs and how entrepreneurs thrive in clusters.</li>
+                    <li>Key models: <strong>Porter's Diamond</strong> (4 factors for competitive advantage), <strong>Innovation Clusters</strong> (geographic concentration), <strong>Triple Helix</strong> (university-industry-government collaboration).</li>
+                    <li>Exam questions may ask you to analyze why a region succeeded/failed as an innovation hub using these frameworks.</li>
+                    <li>Focus on real examples: Silicon Valley, Dubai Silicon Oasis, Research Triangle Park.</li>
+                </ul>
+            </div>
             <div style="margin:15px 0;">
                 <span class="priority-badge badge-fire">🔥 VERY IMPORTANT</span>
                 <span class="priority-badge badge-star">⭐ PORTER'S DIAMOND</span>
                 <span class="priority-badge badge-brain">🧠 TRIPLE HELIX</span>
             </div>
-            <div class="memory-line study-only">Entrepreneurs = VRCAP traits + 3 success factors + Clusters (Porter's Diamond 4 factors) + Triple Helix (U-I-G)</div>
+            <div class="memory-line study-only">Clusters succeed through mutual reinforcement: universities → talent → startups → VC → successful firms → alumni entrepreneurs → stronger universities. Virtuous cycle = competitive advantage.</div>
+            
+            <div style="background:#e8f8ff;border-left:4px solid #3498db;padding:15px;margin:15px 0;border-radius:8px;">
+                <p><strong>🎯 Scenario Triggers — Use Porter's Diamond When Case Mentions:</strong></p>
+                <ul style="line-height:1.8;">
+                    <li>✓ "Why does this region dominate this industry?" → Apply all 4 Diamond factors</li>
+                    <li>✓ "Skilled labor shortage" → Factor Conditions weakness</li>
+                    <li>✓ "Sophisticated customers" → Demand Conditions strength</li>
+                    <li>✓ "Strong supplier ecosystem" → Related Industries factor</li>
+                    <li>✓ "Intense local competition" → Rivalry factor (drives innovation)</li>
+                    <li>✓ "Can UAE replicate Silicon Valley?" → Diamond analysis shows gaps</li>
+                </ul>
+            </div>
+            
+            <div style="background:#fff9e6;border-left:4px solid #f39c12;padding:15px;margin:15px 0;border-radius:8px;">
+                <p><strong>🎯 Scenario Triggers — Use Triple Helix When Case Mentions:</strong></p>
+                <ul style="line-height:1.8;">
+                    <li>✓ "University-industry partnerships" → U-I overlap</li>
+                    <li>✓ "Government funding research" → G-U collaboration</li>
+                    <li>✓ "Research commercialization" → U spins out companies</li>
+                    <li>✓ "Ecosystem cooperation" → All three helices working together</li>
+                    <li>✓ "Innovation policy effectiveness" → Assess U-I-G strength</li>
+                </ul>
+            </div>
+            
             <div class="memorize-section">
                 <h3>MEMORIZE: Tech Entrepreneur Traits</h3>
                 <div class="memory-technique">
@@ -209,6 +253,89 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="understand-section">
+                <h3>UNDERSTAND: Why Porter's Diamond Exists</h3>
+                <p style="margin-bottom:15px;"><strong>Problem being solved:</strong> Why do certain regions dominate specific industries? Why is Silicon Valley tech, Bangalore IT services, Shenzhen electronics? Random chance or systematic factors?</p>
+                <p style="margin-bottom:15px;"><strong>Porter's insight:</strong> Competitive advantage comes from 4 mutually reinforcing factors that create self-sustaining ecosystems:</p>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">💎 Diamond Factor 1: Factor Conditions (Why it matters)</h4>
+                    <p><strong>What it means:</strong> Specialized, high-quality inputs — skilled labor, infrastructure, capital, knowledge institutions.</p>
+                    <p><strong>Why it drives clustering:</strong> Firms locate where inputs are best. Stanford graduates stay in Bay Area. VC firms locate near startups. Creates concentration.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing why startups choose specific locations OR when evaluating workforce availability.</p>
+                    <p><strong>Keywords that signal Factor Conditions:</strong> "skilled labor", "universities", "VC availability", "infrastructure", "specialized suppliers"</p>
+                    <p><strong>Silicon Valley example:</strong> Stanford/Berkeley produce 10,000+ engineering graduates annually. 40% of US VC funding concentrated there. Fiber optic infrastructure. Specialized law firms.</p>
+                </div>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">💎 Diamond Factor 2: Demand Conditions (Why it matters)</h4>
+                    <p><strong>What it means:</strong> Sophisticated, demanding local customers who push firms to innovate.</p>
+                    <p><strong>Why it drives innovation:</strong> Tough customers = higher standards. Firms that satisfy demanding customers gain global competitiveness.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing market sophistication OR when explaining why companies from certain countries dominate globally.</p>
+                    <p><strong>Keywords that signal Demand:</strong> "sophisticated customers", "early adopters", "demanding market", "quality standards"</p>
+                    <p><strong>Silicon Valley example:</strong> US consumers are tech-savvy early adopters. Defense contracts (DARPA) funded early internet/GPS. Feedback loops faster than anywhere.</p>
+                </div>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">💎 Diamond Factor 3: Related & Supporting Industries (Why it matters)</h4>
+                    <p><strong>What it means:</strong> Ecosystem of suppliers, service providers, and complementary firms.</p>
+                    <p><strong>Why it creates advantage:</strong> Reduces transaction costs. Enables specialization. Spreads knowledge through ecosystem.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing ecosystem completeness OR when explaining cluster depth beyond just startups.</p>
+                    <p><strong>Keywords that signal Related Industries:</strong> "ecosystem", "suppliers", "supporting services", "value chain", "complementary firms"</p>
+                    <p><strong>Silicon Valley example:</strong> Hardware suppliers (Intel, Cisco), law firms (Wilson Sonsini — startup specialists), PR agencies, design firms, recruiters — entire ecosystem optimized for tech.</p>
+                </div>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">💎 Diamond Factor 4: Firm Strategy, Structure & Rivalry (Why it matters)</h4>
+                    <p><strong>What it means:</strong> Intense local competition drives continuous innovation.</p>
+                    <p><strong>Why it drives excellence:</strong> Complacency = death. Competition for same talent, customers, funding forces constant improvement.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing competitive intensity OR when explaining innovation pressure.</p>
+                    <p><strong>Keywords that signal Rivalry:</strong> "intense competition", "multiple competitors", "talent war", "customer battle"</p>
+                    <p><strong>Silicon Valley example:</strong> Google, Apple, Facebook, Amazon, Tesla, Netflix — all within 50 miles. Competing for same engineers (salary inflation), same customers, same markets. This rivalry IS the innovation engine.</p>
+                </div>
+                
+                <div class="connection" style="margin-top:15px;">
+                    <strong>Critical insight:</strong> Diamond factors are MUTUALLY REINFORCING. Good universities attract VC, VC funds startups, successful startups hire graduates, graduates strengthen universities. Virtuous cycle = why clusters are hard to replicate.
+                </div>
+            </div>
+            
+            <div class="understand-section">
+                <h3>UNDERSTAND: Why Triple Helix Exists</h3>
+                <p style="margin-bottom:15px;"><strong>Problem being solved:</strong> Traditional model = universities do research, industry does commercialization, government does policy. But innovation requires OVERLAP and INTERACTION, not isolated roles.</p>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">🎓 U — University (Why critical)</h4>
+                    <p><strong>Role:</strong> Knowledge generation, research, talent production, technology transfer.</p>
+                    <p><strong>Why it matters:</strong> Universities are R&amp;D engines. Produce both knowledge (research) and people (graduates). Without universities, cluster has no knowledge source.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing research capability OR when university presence/absence mentioned.</p>
+                    <p><strong>Keywords that signal University:</strong> "university research", "PhD graduates", "technology transfer", "spin-outs", "academic partnerships"</p>
+                    <p><strong>Silicon Valley example:</strong> Stanford alone = $3B+ research spending annually. Google, HP, Cisco, Sun Microsystems = Stanford spin-outs.</p>
+                </div>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">🏭 I — Industry (Why critical)</h4>
+                    <p><strong>Role:</strong> Commercialization, market application, implementation, jobs.</p>
+                    <p><strong>Why it matters:</strong> Without industry, research stays in labs. Industry converts knowledge into products, generates revenue, creates employment.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing commercialization capability OR when discussing industry-university partnerships.</p>
+                    <p><strong>Keywords that signal Industry:</strong> "commercialization", "product development", "industry partnerships", "corporate R&amp;D"</p>
+                    <p><strong>Silicon Valley example:</strong> Apple, Google, Meta fund university research + hire graduates + license university patents. Two-way flow.</p>
+                </div>
+                
+                <div style="margin:20px 0;">
+                    <h4 style="color:#229954;margin-bottom:10px;">🏛️ G — Government (Why critical)</h4>
+                    <p><strong>Role:</strong> Policy, regulation, funding, infrastructure, anchor customer.</p>
+                    <p><strong>Why it matters:</strong> Government creates enabling environment. Funds basic research (no commercial value yet). Provides infrastructure. First customer for risky innovations.</p>
+                    <p><strong>When to use in case studies:</strong> When analyzing policy environment OR when government funding/support mentioned.</p>
+                    <p><strong>Keywords that signal Government:</strong> "policy support", "government funding", "infrastructure investment", "first customer", "regulatory environment"</p>
+                    <p><strong>Silicon Valley example:</strong> DARPA funded internet, GPS, touchscreens (all "useless" basic research that became iPhone foundations). Government = first customer for space tech, defense tech.</p>
+                </div>
+                
+                <div class="connection" style="margin-top:15px;">
+                    <strong>Triple Helix insight:</strong> Strongest ecosystems have ROLE OVERLAP. Stanford acts like company (spin-outs), Google acts like university (research labs), government acts like VC (SBIR grants). Blurred boundaries = innovation acceleration.
+                </div>
+            </div>
+            
             <div class="understand-section">
                 <h3>UNDERSTAND: Triple Helix Model</h3>
                 <p><strong>Core Concept:</strong> Innovation ecosystems require three actors working together in overlapping roles:</p>
@@ -231,7 +358,7 @@
             <div class="chapter-questions practice-only">
                 <h3>Most Likely Exam Questions</h3>
                 <div class="question-section">
-                    <div class="question-header" onclick="toggleQuestion(this)">Analyze why technology clusters emerge and how governments can create them<span class="toggle-icon">▼</span></div>
+                    <div class="question-header">Analyze why technology clusters emerge and how governments can create them</div>
                     <div class="question-content">
                         <div class="question-text"><strong>Full Question:</strong> "Silicon Valley cannot be replicated" — critically analyze this statement. Using Porter's Diamond framework, explain why some regions develop into innovation clusters while others do not. Evaluate how the UAE government is attempting to build its own technology cluster ecosystem.</div>
                         <button class="answer-toggle" onclick="toggleAnswer(this)">▼ Show Model Answer</button>
@@ -311,8 +438,9 @@
 <script>
 function toggleNav(){const q=document.getElementById('quickNav'),n=document.getElementById('navToggle');if(!q||!n)return;const h=q.style.maxHeight===''||q.style.maxHeight==='0px';if(h){q.style.maxHeight='2000px';q.style.opacity='1';q.classList.add('show');n.textContent='Hide Chapters';n.classList.add('active');}else{q.style.maxHeight='0px';q.style.opacity='0';q.classList.remove('show');n.textContent='Show Chapters';n.classList.remove('active');}}
 function setMode(mode){const body=document.body,buttons=document.querySelectorAll('.mode-btn');body.classList.remove('study-mode','practice-mode','quick-mode');body.classList.add(mode+'-mode');buttons.forEach(b=>b.classList.remove('active'));const ab=document.getElementById(mode+'Mode');if(ab)ab.classList.add('active');try{localStorage.setItem('preferredMode',mode);}catch(e){}window.scrollTo({top:0,behavior:'smooth'});}
-function toggleQuestion(h){h.classList.toggle('active');const c=h.nextElementSibling;if(!c||!c.classList.contains('question-content'))return;if(h.classList.contains('active')){c.classList.add('show');requestAnimationFrame(()=>{c.style.maxHeight=c.scrollHeight+'px';});}else{c.style.maxHeight=c.scrollHeight+'px';requestAnimationFrame(()=>{c.style.maxHeight='0px';c.classList.remove('show');});}}
-function toggleAnswer(b){b.classList.toggle('active');const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(b.classList.contains('active')){a.classList.add('show');requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});b.innerHTML='▲ Hide Model Answer';}else{a.style.maxHeight=a.scrollHeight+'px';requestAnimationFrame(()=>{a.style.maxHeight='0px';a.classList.remove('show');});b.innerHTML='▼ Show Model Answer';}}
+function toggleAnswer(b){const a=b.nextElementSibling;if(!a||!a.classList.contains('model-answer'))return;if(!b.classList.contains('active')){b.classList.add('active');a.classList.add('show');a.style.overflow='hidden';a.style.maxHeight='0px';requestAnimationFrame(()=>{a.style.maxHeight=a.scrollHeight+'px';});const onOpen=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onOpen);if(a.classList.contains('show')){if(window.innerWidth<=768){a.style.maxHeight='70vh';a.style.overflowY='auto';}else{a.style.maxHeight='none';a.style.overflow='visible';}}};a.addEventListener('transitionend',onOpen);b.innerHTML='▲ Hide Model Answer';}else{b.classList.remove('active');if(a.style.maxHeight==='none'||a.style.maxHeight==='70vh'){a.style.maxHeight=a.scrollHeight+'px';}a.style.overflow='hidden';a.style.overflowY='hidden';requestAnimationFrame(()=>{a.style.maxHeight='0px';});const onClose=(e)=>{if(e.target!==a||e.propertyName!=='max-height')return;a.removeEventListener('transitionend',onClose);a.classList.remove('show');};a.addEventListener('transitionend',onClose);b.innerHTML='▼ Show Model Answer';}}
+function collapseAllAnswers(){document.querySelectorAll('.answer-toggle.active').forEach(b=>toggleAnswer(b));}
+function expandAllAnswers(){document.querySelectorAll('.answer-toggle:not(.active)').forEach(b=>toggleAnswer(b));}
 document.addEventListener('DOMContentLoaded',function(){
     const navToggle=document.getElementById('navToggle'),quickNav=document.getElementById('quickNav');
     if(navToggle&&quickNav){if(window.innerWidth>768){quickNav.classList.add('show');quickNav.style.maxHeight='2000px';quickNav.style.opacity='1';navToggle.style.display='none';}else{quickNav.style.maxHeight='0px';quickNav.style.opacity='0';navToggle.style.display='block';navToggle.textContent='Show Chapters';}}

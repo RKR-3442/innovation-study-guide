@@ -1,0 +1,4 @@
+Testing file creation capability for large HTML files.
+This confirms the directory path works and I can create files here.
+
+Next step: Create all 12 HTML files with full content.
