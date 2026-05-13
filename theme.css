@@ -117,25 +117,25 @@ html[data-theme="dark"] [class*="box"] {
     box-shadow: var(--shadow);
 }
 
-html[data-theme="dark"] .chapter-content div[style*="background"],
-html[data-theme="dark"] .chapter-content section[style*="background"],
-html[data-theme="dark"] .chapter-content article[style*="background"],
-html[data-theme="dark"] main div[style*="background:linear-gradient"],
-html[data-theme="dark"] main div[style*="background:#"],
-html[data-theme="dark"] main div[style*="background: #"] {
+html[data-theme="dark"] main div[style*="background"],
+html[data-theme="dark"] main section[style*="background"],
+html[data-theme="dark"] main article[style*="background"],
+html[data-theme="dark"] .chapter div[style*="background"],
+html[data-theme="dark"] .chapter section[style*="background"],
+html[data-theme="dark"] .chapter article[style*="background"] {
     background: var(--surface-alt) !important;
     color: var(--text) !important;
     border-color: var(--border) !important;
 }
 
-html[data-theme="dark"] .chapter-content div[style*="background"] h1,
-html[data-theme="dark"] .chapter-content div[style*="background"] h2,
-html[data-theme="dark"] .chapter-content div[style*="background"] h3,
-html[data-theme="dark"] .chapter-content div[style*="background"] h4,
-html[data-theme="dark"] .chapter-content div[style*="background"] p,
-html[data-theme="dark"] .chapter-content div[style*="background"] li,
-html[data-theme="dark"] .chapter-content div[style*="background"] span,
-html[data-theme="dark"] .chapter-content div[style*="background"] strong {
+html[data-theme="dark"] main [style*="background"] h1,
+html[data-theme="dark"] main [style*="background"] h2,
+html[data-theme="dark"] main [style*="background"] h3,
+html[data-theme="dark"] main [style*="background"] h4,
+html[data-theme="dark"] main [style*="background"] p,
+html[data-theme="dark"] main [style*="background"] li,
+html[data-theme="dark"] main [style*="background"] span,
+html[data-theme="dark"] main [style*="background"] strong {
     color: var(--text) !important;
     opacity: 1 !important;
 }
