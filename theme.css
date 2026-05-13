@@ -287,6 +287,55 @@ html[data-theme="dark"] .theme-nav-fallback {
     border-bottom: 1px solid var(--nav-border) !important;
 }
 
+/* Final hard overrides: prevent any pale/faded chapter content in dark mode */
+html[data-theme="dark"] main,
+html[data-theme="dark"] .chapter,
+html[data-theme="dark"] .memorize-section,
+html[data-theme="dark"] .understand-section,
+html[data-theme="dark"] .chapter-questions,
+html[data-theme="dark"] .connections-card,
+html[data-theme="dark"] .clues-card,
+html[data-theme="dark"] .casestudy-card,
+html[data-theme="dark"] .confusion-box,
+html[data-theme="dark"] .mode-selector {
+    background-color: var(--surface) !important;
+    background-image: none !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .chapter .connection,
+html[data-theme="dark"] .chapter .connection-item,
+html[data-theme="dark"] .chapter .casestudy-step,
+html[data-theme="dark"] .chapter .clue-item,
+html[data-theme="dark"] .chapter .memory-technique,
+html[data-theme="dark"] .chapter .mnemonic,
+html[data-theme="dark"] .chapter .exam-tip,
+html[data-theme="dark"] .chapter .question-text,
+html[data-theme="dark"] .chapter .must-know,
+html[data-theme="dark"] .chapter .priority-badge {
+    background-color: var(--surface-alt) !important;
+    background-image: none !important;
+    color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="dark"] .chapter [style*="background"],
+html[data-theme="dark"] main [style*="background"] {
+    background-color: var(--surface-alt) !important;
+    background-image: none !important;
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .chapter [style*="color"],
+html[data-theme="dark"] main [style*="color"] {
+    color: var(--text) !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="dark"] .chapter * {
+    opacity: 1 !important;
+}
+
 @media (max-width: 768px) {
     #theme-toggle,
     .theme-toggle {
